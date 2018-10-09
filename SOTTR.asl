@@ -1,7 +1,8 @@
 state("SOTTR")
 {
-  bool IsLoading    : 0x228C9A8;
-  bool InCutscene   : 0x14198F0; // Skipable or Not Skipable
+  bool IsLoading    : 0x36079A0, 0x748, 0x7D4;
+  bool InCutscene   : 0x141B8F0;
+  // Doesn't remove Deaths at Trial of the Eagle (After Skip Falling down)
 }
 
 init
