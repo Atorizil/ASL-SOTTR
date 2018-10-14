@@ -18,3 +18,8 @@ Load Removal for Shadow of the Tomb Raider
   - Skippable & Unskippable Cutscenes
     - Improve Cutscene Addresses
 -->
+
+## For Reference (Version Numbers)
+The first number means the game update. So V2 is the next game update after V1 and so on...
+
+The second number after the decimal means the script version for that game update
