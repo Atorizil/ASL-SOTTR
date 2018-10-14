@@ -4,12 +4,14 @@
     <CheatEntry>
       <ID>35</ID>
       <Description>"Cutscene"</Description>
+      <LastState Value="1" RealAddress="14141B8F0"/>
       <VariableType>4 Bytes</VariableType>
       <Address>SOTTR.exe+141B8F0</Address>
       <CheatEntries>
         <CheatEntry>
           <ID>36</ID>
           <Description>"AOB"</Description>
+          <LastState Value="88 41 38 A8 01" RealAddress="147890429"/>
           <ShowAsHex>1</ShowAsHex>
           <VariableType>Array of byte</VariableType>
           <ByteLength>5</ByteLength>
@@ -18,81 +20,26 @@
       </CheatEntries>
     </CheatEntry>
     <CheatEntry>
-      <ID>41</ID>
+      <ID>43</ID>
       <Description>"Loading"</Description>
+      <LastState Value="0" RealAddress="852AEE04"/>
       <VariableType>4 Bytes</VariableType>
       <Address>"SOTTR.exe"+036079A0</Address>
       <Offsets>
-        <Offset>7D4</Offset>
-        <Offset>748</Offset>
+        <Offset>24</Offset>
+        <Offset>4D0</Offset>
       </Offsets>
       <CheatEntries>
         <CheatEntry>
           <ID>46</ID>
           <Description>"AOB"</Description>
+          <LastState Value="C6 40 24 00 F3" RealAddress="14B671897"/>
           <ShowAsHex>1</ShowAsHex>
           <VariableType>Array of byte</VariableType>
           <ByteLength>5</ByteLength>
           <Address>SOTTR.exe+B671897</Address>
         </CheatEntry>
-        <CheatEntry>
-          <ID>47</ID>
-          <Description>"Backup"</Description>
-          <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="00000000"/>
-          <Color>FF8000</Color>
-          <GroupHeader>1</GroupHeader>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>42</ID>
-              <Description>"Loading"</Description>
-              <VariableType>4 Bytes</VariableType>
-              <Address>"SOTTR.exe"+036079A0</Address>
-              <Offsets>
-                <Offset>6B4</Offset>
-                <Offset>7E8</Offset>
-              </Offsets>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>43</ID>
-              <Description>"Loading"</Description>
-              <VariableType>4 Bytes</VariableType>
-              <Address>"SOTTR.exe"+036079A0</Address>
-              <Offsets>
-                <Offset>24</Offset>
-                <Offset>4D0</Offset>
-              </Offsets>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>44</ID>
-              <Description>"Loading"</Description>
-              <VariableType>4 Bytes</VariableType>
-              <Address>"SOTTR.exe"+036079A0</Address>
-              <Offsets>
-                <Offset>774</Offset>
-                <Offset>798</Offset>
-              </Offsets>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>45</ID>
-              <Description>"Loading"</Description>
-              <VariableType>4 Bytes</VariableType>
-              <Address>"SOTTR.exe"+036079A0</Address>
-              <Offsets>
-                <Offset>3B4</Offset>
-                <Offset>5B8</Offset>
-              </Offsets>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
       </CheatEntries>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>48</ID>
-      <Description>"Blue = Expandable"</Description>
-      <LastState Value="" RealAddress="00000000"/>
-      <Color>0000FF</Color>
-      <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
       <ID>49</ID>
