@@ -1,7 +1,8 @@
 state("SOTTR")
 {
-  bool IsLoading    : 0x36079A0, 0x4D0, 0x24;
-  bool InCutscene   : 0x141B8F0;
+  bool Loading    : 0x13E18E0;
+  bool Loading2   : 0x14153D0;
+  bool InCutscene   : 0x141C9F0;
   // Doesn't remove Deaths at Trial of the Eagle (After Skip Falling down)
 }
 
@@ -12,7 +13,7 @@ init
 
 isLoading
 {
-    return current.IsLoading || current.InCutscene;
+    return current.Loading || current.InCutscene || current.Loading2;
 }
 
 exit

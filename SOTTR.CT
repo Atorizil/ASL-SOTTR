@@ -2,58 +2,69 @@
 <CheatTable CheatEngineTableVersion="27">
   <CheatEntries>
     <CheatEntry>
-      <ID>35</ID>
+      <ID>60</ID>
       <Description>"Cutscene"</Description>
-      <LastState Value="1" RealAddress="14141B8F0"/>
+      <LastState Value="1" RealAddress="14141C9F0"/>
+      <Color>008000</Color>
       <VariableType>4 Bytes</VariableType>
-      <Address>SOTTR.exe+141B8F0</Address>
+      <Address>SOTTR.exe+141C9F0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>72</ID>
+      <Description>"Loading (Used In Script)"</Description>
+      <LastState Value="0" RealAddress="1413E18E0"/>
+      <Color>008000</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>SOTTR.exe+13E18E0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>73</ID>
+      <Description>"Loading (Used In Script)"</Description>
+      <LastState Value="0" RealAddress="1414153D0"/>
+      <Color>008000</Color>
+      <VariableType>4 Bytes</VariableType>
+      <Address>SOTTR.exe+14153D0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>80</ID>
+      <Description>"Stuff to Ignore"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
-          <ID>36</ID>
-          <Description>"AOB"</Description>
-          <LastState Value="88 41 38 A8 01" RealAddress="147890429"/>
-          <ShowAsHex>1</ShowAsHex>
-          <VariableType>Array of byte</VariableType>
-          <ByteLength>5</ByteLength>
-          <Address>SOTTR.exe+7890429</Address>
+          <ID>76</ID>
+          <Description>"Loading"</Description>
+          <LastState Value="1" RealAddress="14228FAE8"/>
+          <Color>0000FF</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>SOTTR.exe+228FAE8</Address>
         </CheatEntry>
-      </CheatEntries>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>43</ID>
-      <Description>"Loading"</Description>
-      <LastState Value="0" RealAddress="852AEE04"/>
-      <VariableType>4 Bytes</VariableType>
-      <Address>"SOTTR.exe"+036079A0</Address>
-      <Offsets>
-        <Offset>24</Offset>
-        <Offset>4D0</Offset>
-      </Offsets>
-      <CheatEntries>
         <CheatEntry>
-          <ID>46</ID>
-          <Description>"AOB"</Description>
-          <LastState Value="C6 40 24 00 F3" RealAddress="14B671897"/>
-          <ShowAsHex>1</ShowAsHex>
-          <VariableType>Array of byte</VariableType>
-          <ByteLength>5</ByteLength>
-          <Address>SOTTR.exe+B671897</Address>
+          <ID>77</ID>
+          <Description>"Loading"</Description>
+          <LastState Value="0" RealAddress="14355E0C0"/>
+          <Color>0000FF</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>SOTTR.exe+355E0C0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>79</ID>
+          <Description>"Loading"</Description>
+          <LastState Value="1" RealAddress="143588048"/>
+          <Color>0000FF</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>SOTTR.exe+3588048</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>66</ID>
+          <Description>"Loading but it's a dynamic static?!?!"</Description>
+          <LastState Value="0" RealAddress="81AE9634"/>
+          <Color>0000FF</Color>
+          <VariableType>4 Bytes</VariableType>
+          <Address>81AE9634</Address>
         </CheatEntry>
       </CheatEntries>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>49</ID>
-      <Description>"AOB = Array of Byte (For game updates if needed)"</Description>
-      <LastState Value="" RealAddress="00000000"/>
-      <Color>0000FF</Color>
-      <GroupHeader>1</GroupHeader>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>50</ID>
-      <Description>"Code List is for game updates"</Description>
-      <LastState Value="" RealAddress="00000000"/>
-      <Color>0000FF</Color>
-      <GroupHeader>1</GroupHeader>
     </CheatEntry>
   </CheatEntries>
   <CheatCodes>
