@@ -1,9 +1,10 @@
 state("SOTTR")
 {
-  bool Loading    : 0x13E18E0;
-  bool Loading2   : 0x14153D0;
-  bool InCutscene   : 0x141C9F0;
-  // Doesn't remove Deaths at Trial of the Eagle (After Skip Falling down)
+  bool Loading        : 0x14238A0;
+  bool Loading2       : 0x1457370;
+  // BAD LOADING. They should be updated but it would require a pointer which is actually hard to find :/
+  // With the game updating so often, it isn't worth finding it again until updates stop
+  bool InCutscene     : 0x145E930; // Doesn't remove Deaths at Trial of the Eagle (After Skip Falling down)
 }
 
 init

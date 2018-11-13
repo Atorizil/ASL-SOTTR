@@ -2,69 +2,36 @@
 <CheatTable CheatEngineTableVersion="27">
   <CheatEntries>
     <CheatEntry>
-      <ID>60</ID>
+      <ID>81</ID>
       <Description>"Cutscene"</Description>
-      <LastState Value="1" RealAddress="14141C9F0"/>
-      <Color>008000</Color>
+      <LastState Value="1" RealAddress="14145E930"/>
       <VariableType>4 Bytes</VariableType>
-      <Address>SOTTR.exe+141C9F0</Address>
+      <Address>SOTTR.exe+145E930</Address>
     </CheatEntry>
     <CheatEntry>
-      <ID>72</ID>
-      <Description>"Loading (Used In Script)"</Description>
-      <LastState Value="0" RealAddress="1413E18E0"/>
-      <Color>008000</Color>
+      <ID>82</ID>
+      <Description>"Loading"</Description>
+      <LastState Value="0" RealAddress="1414238A0"/>
       <VariableType>4 Bytes</VariableType>
-      <Address>SOTTR.exe+13E18E0</Address>
+      <Address>SOTTR.exe+14238A0</Address>
     </CheatEntry>
     <CheatEntry>
-      <ID>73</ID>
-      <Description>"Loading (Used In Script)"</Description>
-      <LastState Value="0" RealAddress="1414153D0"/>
-      <Color>008000</Color>
+      <ID>83</ID>
+      <Description>"Loading2"</Description>
+      <LastState Value="0" RealAddress="141457370"/>
       <VariableType>4 Bytes</VariableType>
-      <Address>SOTTR.exe+14153D0</Address>
+      <Address>SOTTR.exe+1457370</Address>
     </CheatEntry>
     <CheatEntry>
-      <ID>80</ID>
-      <Description>"Stuff to Ignore"</Description>
-      <Options moHideChildren="1"/>
-      <LastState Value="" RealAddress="00000000"/>
-      <GroupHeader>1</GroupHeader>
-      <CheatEntries>
-        <CheatEntry>
-          <ID>76</ID>
-          <Description>"Loading"</Description>
-          <LastState Value="1" RealAddress="14228FAE8"/>
-          <Color>0000FF</Color>
-          <VariableType>4 Bytes</VariableType>
-          <Address>SOTTR.exe+228FAE8</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>77</ID>
-          <Description>"Loading"</Description>
-          <LastState Value="0" RealAddress="14355E0C0"/>
-          <Color>0000FF</Color>
-          <VariableType>4 Bytes</VariableType>
-          <Address>SOTTR.exe+355E0C0</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>79</ID>
-          <Description>"Loading"</Description>
-          <LastState Value="1" RealAddress="143588048"/>
-          <Color>0000FF</Color>
-          <VariableType>4 Bytes</VariableType>
-          <Address>SOTTR.exe+3588048</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>66</ID>
-          <Description>"Loading but it's a dynamic static?!?!"</Description>
-          <LastState Value="0" RealAddress="81AE9634"/>
-          <Color>0000FF</Color>
-          <VariableType>4 Bytes</VariableType>
-          <Address>81AE9634</Address>
-        </CheatEntry>
-      </CheatEntries>
+      <ID>87</ID>
+      <Description>"Current Area"</Description>
+      <LastState RealAddress="143572AF8"/>
+      <VariableType>String</VariableType>
+      <Length>22</Length>
+      <Unicode>0</Unicode>
+      <CodePage>0</CodePage>
+      <ZeroTerminate>1</ZeroTerminate>
+      <Address>SOTTR.exe+3572AF8</Address>
     </CheatEntry>
   </CheatEntries>
   <CheatCodes>
