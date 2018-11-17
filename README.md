@@ -1,4 +1,4 @@
-# Shadow of the Tomb Raider Load Removal
+# Shadow of the Tomb Raider Load Removal and Auto Splitting
 
 ## 237.7_64
 
@@ -34,9 +34,9 @@ The script will split **if this string CHANGES to something else**
 I have categorized the sub-areas in the respective area (such as Cozumel) so hopefully it is easier to understand. You can always just play around with the options to see which splits you would like to use or just not even use the autosplitting and just use manual splitting.
 
 ### Double Split Prevention
-I recommend you check this option because this prevents accidental splitting if you go back to an area that has already been split. For Example: in Any% Glitched after San Juan the game will split for Paititi even though you have already been there.
+I recommend you check this option because this prevents accidental splitting if you go back to an area that has already been split. For Example: in Any% Glitched after San Juan it will split for Paititi even though you have already been there.
 
-You may actually think this option is useful such as 100% if you wanted to split once you leave a tomb but the route will and splits will have to line up with this.
+You may actually think this option is useful such as 100% if you wanted to split once you leave a tomb but the route and splits will have to line up with this. (You would have to do a specific route)
 
  - "connector" means the part that connects one area to another. Mainly tombs and paititi use this.
 
