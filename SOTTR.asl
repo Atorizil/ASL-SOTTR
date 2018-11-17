@@ -18,108 +18,109 @@ startup
   // === Splits List === //
   // These are for the Areas
   // 1st String = Settting ID and what the script checks for
-  // 2nd String = Description for setting
+  // 2nd String = Tooltip for setting
   // 3rd String (If present) = What its parent is
   List<List<string>> Splits = new List<List<string>>
   {
     // === Cozumel Caves === //
-      new List<string>{"pl_prologue","Beginning Cave", "CoC"},
-      new List<string>{"cine_mayan_runout","Runout Sequence"},
+      new List<string>{"pl_prologue","Split AFTER the PLANE CRASH CUTSCENE", "CoC"}, //Beginning Cave
+      new List<string>{"cine_mayan_runout","Split AT THE BEGINNING of the COLLAPSE SEQUENCE"}, // Runout Sequence
     // === Cozumel === //
-      new List<string>{"dd_day_of_the_dead_010", "Beginning of Cozumel", "Co"},
-      new List<string>{"dd_day_of_the_dead_020", "Skull Cave"},
-      new List<string>{"dd_day_of_the_dead_030", "Underwater Part"},
-      new List<string>{"dd_day_of_the_dead_040", "Temple Puzzle"},
-      new List<string>{"dd_day_of_the_dead_050", "Combat"},
-      new List<string>{"tf_the_flood", "Flood Part"},
+      new List<string>{"dd_day_of_the_dead_010", "Split AT THE BEGINNING of COZUMEL", "Co"}, //Beginning of Cozumel
+      new List<string>{"dd_day_of_the_dead_020", "Split ONCE ENTERING SKULL SAVE"}, //Skull Cave
+      new List<string>{"dd_day_of_the_dead_030", "Split HALFWAY THROUGH THE TUNNEL BEFORE THE UNDERWATER PART"}, //Underwater Part
+      new List<string>{"dd_day_of_the_dead_040", "Split AFTER the UNDERWATER PART (Close to the Tripwire)"}, //Temple Puzzle
+      new List<string>{"dd_day_of_the_dead_050", "Split JUST BEFORE THE BREAKABLE WALL BEFORE THE DIG SITE"}, //Combat
+      new List<string>{"tf_the_flood", "Split at THE BEGINNING of the TSUNAMI SEGMENT"}, //Flood Part
     // === Peruvian Jungle === //
       // Main Areas //
-        new List<string>{"cine_plane_crash", "Plane Crash Cutscene", "PJMA"},
-        new List<string>{"lj_lost_in_the_jungle_v2_01", "Jungle Beginning"},
-        new List<string>{"lj_lost_in_the_jungle_v2_02", "Plane Crash Area"},
-        new List<string>{"lj_lost_in_the_jungle_v2_03", "Jaguar Area"},
-        new List<string>{"lj_lost_in_the_jungle_v2_04", "Before AIRWALKLESS Childhood Skip"},
-        new List<string>{"lj_lost_in_the_jungle_v2_connector_out", "Connector to Kuwaq Yaku"},
+        new List<string>{"cine_plane_crash", "Split AT the PLANE CRASH CUTSCENE \n(BEGINNING of PERUVIAN JUNGLE)", "PJMA"}, //Plane Crash Cutscene
+        new List<string>{"lj_lost_in_the_jungle_v2_01", "Split AFTER the PLANE CRASH CUTSCENE"}, //Jungle Beginning
+        new List<string>{"lj_lost_in_the_jungle_v2_02", "Split AT the SLIDE BEFORE PLANE CRASH SITE"}, //Plane Crash Area
+        new List<string>{"lj_lost_in_the_jungle_v2_03", "Split AFTER CROSSING THE GAP VIA ROPE"}, //Jaguar Area
+        new List<string>{"lj_lost_in_the_jungle_v2_04", "Split AFTER MOVING THE LOG\nAFTER YOU FIND JONAH\nBEFORE CROSSING THE DANGEROUS ROTUE"}, //Before AIRWALKLESS Childhood Skip
+        new List<string>{"lj_lost_in_the_jungle_v2_connector_out", "Split AFTER CROFT MANOR\nAFTER MOVING THE LOG\nBEFORE TRUCK STEALTH PART"}, //Connector to Kuwq Yaku
       // Crypts //
-        new List<string>{"crypt_009","Crypt 009 (Near Crash Area)","PJCR"},
-        new List<string>{"cr_lastbreath","Second Crypt"},
+        new List<string>{"crypt_009","Split JUST BEFORE ENTERING THE CRYPT in the PLANE CRASH SITE","PJCR"}, //Crypt 009 (Near Crash Area)
+        new List<string>{"cr_lastbreath","Split AFTER breaking the BREAKABLE WALL"}, //Second Crypt
       // Tombs //
-        new List<string>{"ct_court_of_death_connector","Court of Death Path", "PJCT"},
-        new List<string>{"ct_court_of_death","Court of Death Puzzle"},
-        new List<string>{"ct_gate_of_xibalba_connector","Gate of Xibalba Path"},
-        new List<string>{"ct_gate_of_xibalba","Gate of Xibilba"},
+        new List<string>{"ct_court_of_death_connector","Split AFTER breaking the BRAKEABLE WALL\n(Judge's Gaze)", "PJCT"}, //Court of Death Path
+        new List<string>{"ct_court_of_death","Split AFTER CROSSING THE BRIDGE\n(Judge's Gaze)"}, //Court of Death Puzzle
+        new List<string>{"ct_gate_of_xibalba_connector","Split AFTER CRAWLING THROUGH the BUSHES / FALLEN TREES \n(Underworld Gate)"}, //Gate of Xiblia Path
+        new List<string>{"ct_gate_of_xibalba","Split AFTER SQEEZING through the GAP AFTER the CAMP\n(Underworld Gate)"}, //Gate of Xibilia
     // === Croft Manor === //
-      new List<string>{"cm_croft_manor", "Croft Manor", "CM"},
+      new List<string>{"cm_croft_manor", "Split AT THE BEGINNING OF CROFT MANOR\n(Beginning of Croft Manor)", "CM"}, //Croft Manor
     // === Kuwaq Yaku === //
       // Main Areas //
-        new List<string>{"hv_hollow_village_v2_01", "Main Village", "KYMA"},
-        new List<string>{"hv_hollow_village_v2_02", "Stealth Part"},
-        new List<string>{"hv_hollow_village_v2_03", "Underground Part / Stealth Part 2"},
-        new List<string>{"hv_hollow_village_v2_connector_out", "Water part to spider trial"},
+        new List<string>{"hv_hollow_village_v2_01", "Split WHEN 'KUWAQ YAKU' APPEARS ONSCREEN\n(Beginning of Kuwaq Yaku)", "KYMA"}, //Main Village
+        new List<string>{"hv_hollow_village_v2_02", "Split AFTER DIVING into the WATER\nAFTER 1st temple cutscene"}, //Stealth Part
+        new List<string>{"hv_hollow_village_v2_03", "Split WHILST GRAPPLING DOWN UNDERGROUND\nAFTER stealth part"}, //Stealth Part 2
+        new List<string>{"hv_hollow_village_v2_connector_out", "Split WHILST DIVING into the water\nAFTER the 2nd temple cutscene"}, //Water part to Spider Trial
       // Crypts //
-        new List<string>{"cr_newfall_01", "cr_newfall_01", "KYCR"},
+        new List<string>{"cr_newfall_01", "Split JUST BEFORE ENTERING the crypt\n(Crypt on the Left Side of the Map)", "KYCR"},
       // Tombs //
-        new List<string>{"ct_xolotl_connector", "ct_xolotl_connector", "KYCT"},
-        new List<string>{"ct_xolotl", "ct_xolotl"},
+        new List<string>{"ct_xolotl_connector", "Split AFTER CLIMBING out of the WATER\nAFTER DIVING DOWN\n(Howling Caves)", "KYCT"},
+        new List<string>{"ct_xolotl", "Split AFTER CROSSING the LOG INTO the TOMB\n(Howling Caves)"},
     // Trial of the Eagle //
-      new List<string>{"ct_citadel_of_wind", "ct_citadel_of_wind" ,"TOTE"},
-      new List<string>{"ct_citadel_of_wind_connector", "ct_citadel_of_wind_connector"},
+      new List<string>{"ct_citadel_of_wind", "Split AFTER the Spider Trial\nBEFORE leaving the cave" ,"TOTE"},
+      new List<string>{"ct_citadel_of_wind_connector", "Split IN THE TUNNEL AFTER COMPLETING THE TRIAL"},
     // === Paititi === //
       // Main Areas //
-        new List<string>{"av_abandonned_village", "av_abandonned_village", "PMA"},
-        new List<string>{"pa_hub_paititi", "pa_hub_paititi"},
-        new List<string>{"pa_hub_paititi_connector_from_cenote", "pa_hub_paititi_connector_from_cenote"},
-        new List<string>{"pa_hub_paititi_middle_island", "pa_hub_paititi_middle_island"},
-        new List<string>{"pa_hub_paititi_return_02", "pa_hub_paititi_return_02"},
-        new List<string>{"pa_hub_paititi_wilderness", "pa_hub_paititi_wilderness"},
+        new List<string>{"av_abandonned_village", "Split AFTER SQUEEZING out of the CAVE", "PMA"},
+        new List<string>{"pa_hub_paititi", "Split ONCE CAPTURED\nOr when you enter the main area of Paititi"},
+        new List<string>{"pa_hub_paititi_connector_from_cenote", "Split AFTER SWIMMING AWAY FROM CENOTE"},
+        new List<string>{"pa_hub_paititi_middle_island", "Split ONCE you ENTER the MARKET\n(Next to where Unuratu is jailed)"},
+        new List<string>{"pa_hub_paititi_return_02", "Split AFTER SQUEEZING THROUGH THE GAP\nFROM THE MARKETPLACE\nTO WHERE UNURATU IS JAILED\n(Split after slowwalk if running glitched)"},
+        new List<string>{"pa_hub_paititi_wilderness", "Split IN the TUNNEL BEFORE entering the wilderness"},
       // Crypts //
-        new List<string>{"sm_spanish_mission_cr04", "sm_spanish_mission_cr04", "PCR"},
-        new List<string>{"cr_nepenthes", "cr_nepenthes"},
-        new List<string>{"cr_el_dorado", "cr_el_dorado"},
-        new List<string>{"pa_hub_paititi_cr02", "pa_hub_paititi_cr02"},
+        new List<string>{"sm_spanish_mission_cr04", "Split AFTER CRAWLING into the Crypt\n(Next to where Unuratu is jailed)", "PCR"},
+        new List<string>{"cr_nepenthes", "Split AS you SLIDE DOWN into the Crypt\n(Next to the Market Place(Next to where Unuratu is jailed))"},
+        new List<string>{"cr_el_dorado", "Split AFTER CRAWLING into the Crypt"},
+        new List<string>{"pa_hub_paititi_cr02", "Split AS you START CRAWLING into the Crypt\n(In Paititi Wilderness)"},
       // Tombs //
-        new List<string>{"ct_serpents_hollow_connector", "ct_serpents_hollow_connector", "PCT"},
-        new List<string>{"ct_serpents_hollow", "ct_serpents_hollow"},
-        new List<string>{"ct_sky_temple_connector", "ct_sky_temple_connector"},
-        new List<string>{"ct_sky_temple_v2", "ct_sky_temple_v2"},
-        new List<string>{"ct_warriors_trial_connector", "ct_warriors_trial_connector"},
-        new List<string>{"ct_warriors_trial", "ct_warriors_trial"},
+        new List<string>{"ct_serpents_hollow_connector", "Split ONCE you DIVE underwater\n(Ancient Aqueduct)", "PCT"},
+        new List<string>{"ct_serpents_hollow", "Split ONCE the CUTSCENE where Lara takes out her Pistol TRIGGERS\n(Ancient Aqueduct)"},
+        new List<string>{"ct_sky_temple_connector", "Split AFTER you SQUEEZE through the BREAKABLE WALL\n(Temple of the Sun)"},
+        new List<string>{"ct_sky_temple_v2", "Split AFTER you CLIMG OVER the WALL taking you into the Tomb\n(Temple of the Sun)"},
+        new List<string>{"ct_warriors_trial_connector", "Split AFTER you SWIM PARTWAY through the LEFT TUNNEL\n(Path of Battle)"},
+        new List<string>{"ct_warriors_trial", "Split AFTER SWINGING into the TOMB(Path of Battle)"},
     // === Mountain Temple === //
-      new List<string>{"pa_hub_paititi_kings_tomb_connector_01", "pa_hub_paititi_kings_tomb_connector_01", "MT"},
-      new List<string>{"pa_hub_paititi_kings_tomb", "pa_hub_paititi_kings_tomb"},
-      new List<string>{"pa_hub_paititi_kings_tomb_to_cenote_connector", "pa_hub_paititi_kings_tomb_to_cenote_connector"},
+      new List<string>{"pa_hub_paititi_kings_tomb_connector_01", "Split AFTER you climb up the wall\nBEFORE ENTERING MOUNTAIN TEMPLE", "MT"},
+      new List<string>{"pa_hub_paititi_kings_tomb", "Split AS you CRAWL into the Tomb Area"},
+      new List<string>{"pa_hub_paititi_kings_tomb_to_cenote_connector", "Split BEFORE SQUEEZING through the GAP in the WALL"},
     // === Cenote === //
       // Main Areas //
-        new List<string>{"ce_010_fall", "ce_010_fall", "CeMA"},
-        new List<string>{"ce_020_camp", "ce_020_camp"},
-        new List<string>{"ce_030_den", "ce_030_den"},
-        new List<string>{"ce_040_tomb", "ce_040_tomb"},
-        new List<string>{"ce_050_exit", "ce_050_exit"},
+        new List<string>{"ce_010_fall", "Split WHILST diving down\n(1st Fall)", "CeMA"},
+        new List<string>{"ce_020_camp", "Split WHILST SWIMMING through into the Main Area of Cenote"},
+        new List<string>{"ce_030_den", "Split AS you SQEEZE through the GAP NEXT to the CAMP"},
+        new List<string>{"ce_040_tomb", "Split BEFORE wall climbling across the gap to get into the Tomb Area"},
+        new List<string>{"ce_050_exit", "Split AFTER the place starts COLLAPSING\n(BEFORE you get chased out)"},
       // Tombs //
-        new List<string>{"ct_spanish_galleon_connector", "ct_spanish_galleon_connector", "CeCT"},
-        new List<string>{"ct_spanish_galleon", "ct_spanish_galleon"},
+        new List<string>{"ct_spanish_galleon_connector", "Split WHILST SWIMMING TOWARDS the Tomb\n(Spanish Galleon)", "CeCT"},
+        new List<string>{"ct_spanish_galleon", "Split ONCE you ENTER the room with the SHIP\n(Spanish Galleon)"},
     // === Belly of the Serpent === //
-      new List<string>{"sp_sacrificial_pit", "sp_sacrificial_pit", "BOTS"},
+      new List<string>{"sp_sacrificial_pit", "Split AS you SQUEEZ through the GAP into Belly of the Serpent\n(Near Camp)", "BOTS"},
     // === Head of the Serpent === //
-      new List<string>{"dm_devils_maw", "dm_devils_maw", "HOTS"},
+      new List<string>{"dm_devils_maw", "Split AS 'Head of the Serpent' appears onscreen", "HOTS"},
     // === Porvenir Oil Fields === //
-      new List<string>{"an_apocalypse_now_v2_01", "an_apocalypse_now_v2_01", "POF"},
-      new List<string>{"an_apocalypse_now_v2_02", "an_apocalypse_now_v2_02"},
-      new List<string>{"an_apocalypse_now_v2_03", "an_apocalypse_now_v2_03"},
-      new List<string>{"an_apocalypse_now_v2_04", "an_apocalypse_now_v2_04"},
+      new List<string>{"an_apocalypse_now_v2_01", "Split AT THE BEGINNING OF THE CUTSCENE where Jonah and Lara are on the boat", "POF"},
+      new List<string>{"an_apocalypse_now_v2_02", "Split AFTER the Camp"},
+      new List<string>{"an_apocalypse_now_v2_03", "Split BEFORE climbing up the 2nd wall before Lara looks at the Oil Plant"},
+      new List<string>{"an_apocalypse_now_v2_04", "Split AS you CROSS THE BRIDGE to the Oil Plant"},
     // === Mission of San Juan === //
       // Main Areas //
-        new List<string>{"sm_spanish_mission_village", "sm_spanish_mission_village", "SJMA"},
-        new List<string>{"sm_spanish_mission_cornfield", "sm_spanish_mission_cornfield"},
-        new List<string>{"ta_010_volcano", "ta_010_volcano"},
+        new List<string>{"sm_spanish_mission_village", "Split at the CUTSCENE at the BEGINNING OF SAN JUAN", "SJMA"},
+        new List<string>{"sm_spanish_mission_cornfield", "Split ONCE you START FIGHTING TRINITY"},
+        new List<string>{"ta_010_volcano", "Split AT THE BEGINNING of the Tsunami segement"},
       // Crypts //
-        new List<string>{"sm_spanish_mission_crypt_003", "sm_spanish_mission_crypt_003", "SJCR"},
+        new List<string>{"sm_spanish_mission_crypt_003", "Split AFTER you DROP down into the Crypt", "SJCR"},
       // Tombs //
-        new List<string>{"ct_tree_of_life_connector", "ct_tree_of_life_connector", "SJCT"},
-        new List<string>{"ct_tree_of_life", "ct_tree_of_life"},
-        new List<string>{"ct_flooded_sanctuary_connector", "ct_flooded_sanctuary_connector"},
+        new List<string>{"ct_tree_of_life_connector", "Split AFTER you drop down into the Tomb FROM the surface\n(Tree of Life)", "SJCT"},
+        new List<string>{"ct_tree_of_life", "Split AFTER grappling down TOWARDS the Tomb\n(Tree of Life)"},
+        new List<string>{"ct_flooded_sanctuary_connector", "Split AFTER swimming TOWARDS the ENTRANCE\n(Thirty Gods)"},
+        new List<string>{"ct_flooded_sanctuary", "Split AFTER CLIMBING up the WALL JUST BEFORE the TOMB\n(Thirty Gods)"},
     // === City of the Serpent === //
-        new List<string>{"ch_chamber_of_heaven", "ch_chamber_of_heaven", "COTS"}
+        new List<string>{"ch_chamber_of_heaven", "Split AFTER the CUTSCENE where they decide what plan to use", "COTS"}
   };
   vars.Splits = Splits;
 
@@ -194,6 +195,7 @@ startup
     // Using the 1st string as the ID...
     // Setting it to off by default
     // Using the 2nd string as the Description
+      settings.SetToolTip(Setting[0], Setting[1]);
   }
 
   List<string> HS = new List<string>(); // New dummy list of strings
