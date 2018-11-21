@@ -1,6 +1,6 @@
 # Shadow of the Tomb Raider Load Removal and Auto Splitting
 
-## 237.7_64
+## 241.0
 
 Load Removal for Shadow of the Tomb Raider
 
