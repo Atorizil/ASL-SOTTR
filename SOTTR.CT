@@ -11,27 +11,27 @@
     <CheatEntry>
       <ID>219</ID>
       <Description>"Loading"</Description>
-      <LastState Value="0" RealAddress="1414228A0"/>
+      <LastState Value="0" RealAddress="1414238A0"/>
       <VariableType>4 Bytes</VariableType>
-      <Address>SOTTR.exe+14228A0</Address>
+      <Address>SOTTR.exe+14238A0</Address>
     </CheatEntry>
     <CheatEntry>
       <ID>83</ID>
       <Description>"Loading2"</Description>
-      <LastState Value="0" RealAddress="141456370"/>
+      <LastState Value="0" RealAddress="141457370"/>
       <VariableType>4 Bytes</VariableType>
-      <Address>SOTTR.exe+1456370</Address>
+      <Address>SOTTR.exe+1457370</Address>
     </CheatEntry>
     <CheatEntry>
       <ID>220</ID>
       <Description>"Current Area"</Description>
-      <LastState RealAddress="143571AF8"/>
+      <LastState RealAddress="143572AF8"/>
       <VariableType>String</VariableType>
       <Length>22</Length>
       <Unicode>0</Unicode>
       <CodePage>0</CodePage>
       <ZeroTerminate>1</ZeroTerminate>
-      <Address>SOTTR.exe+3571AF8</Address>
+      <Address>SOTTR.exe+3572AF8</Address>
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
