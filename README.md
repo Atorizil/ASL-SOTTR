@@ -2,7 +2,7 @@
 
 ## 241.0
 
-Load Removal for Shadow of the Tomb Raider
+Auto spliiting, starting, stopping and Load Removal for Shadow of the Tomb Raider
 
 ## Use
 1. In **LiveSplit**, **Right Click** anywhere and click **Edit Layout**
