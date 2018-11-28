@@ -1,32 +1,35 @@
-state("SOTTR")
+state("SOTTR", "241.0")
 {
   bool Loading        : 0x14238A0;
   bool Loading2       : 0x1457370;
   // BAD LOADING. They should be updated but it would require a pointer which is actually hard to find :/
   // With the game updating so often, it isn't worth finding it again until updates stop
-  bool InCutscene     : 0x145E930; // Doesn't remove Deaths at Trial of the Eagle (After Skip Falling down)
+  bool Cutscene     : 0x145E930; // Doesn't remove Deaths at Trial of the Eagle (After Skip Falling down)
   // ^ That keeps randomly going to 1 (FIX)
   string50 Area  : 0x3572AF8;
 }
 
-/*state("SOTTR", "234.1")
+state("SOTTR", "234.2")
 {
-	bool Loading : 0x??????;
-	bool Loading2 : 0x?????;
-	bool Cutscene : 0x??????;
-	string50 Area : 0x???????;
-}*/
+	bool Loading : 0x13E07E0;
+	bool Loading2 : 0x141B8F0;
+	bool Cutscene : 0x141E770;
+	string50 Area : 0x35260F8;
+}
 
 init // When the game is opened
 {
   timer.IsGameTimePaused = false; // Unpause the timer
-	
-	/*switch(modules.First().ModuleMemorySize)
+
+	switch(modules.First().ModuleMemorySize)
 	{
-		case 0x120489:
-			version = "234.1";
+    case 317921520:
+      version = "241.0";
+      break;
+		case 310804480:
+			version = "234.2";
 			break;
-	}*/
+	}
 }
 
 startup
@@ -228,6 +231,8 @@ startup
 	timer.OnStart += OnStart; // I guess when the timer starts run ^ that?
 }
 
+
+
 start
 {
   /* Both settings CAN be enabled and it would probably still work tbh
@@ -252,7 +257,7 @@ start
 
 isLoading
 {
-    return current.Loading || current.InCutscene || current.Loading2;
+    return current.Loading || current.Cutscene || current.Loading2;
     // These ^ are booleans and isLoading expects a boolean to be returned
     // So that basically means pause the timer if any of those values == 1
     // || = or
@@ -264,6 +269,7 @@ reset
 		if(current.Area == "trx_main_menu") // Check if the current Area is the main menu
 			if(settings["Res"]) // Check if the setting is active
 				return true; // Reset
+}
 
 exit
 {
@@ -271,6 +277,12 @@ exit
     // Pause the timer if the game is shutdown
 }
 
+/*update
+{
+  print(modules.First().ModuleMemorySize.ToString());
+}*/
+// 342.2 - 310804480
+// 241.0 - 317921520
 split
 {
   foreach(var item in vars.Splits)  // for every list in the Splits list
