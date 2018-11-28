@@ -14,7 +14,7 @@ Load Removal for Shadow of the Tomb Raider
 Okay... Let's try to explain this
 
 ## Auto Timer Starting
-You can choose to start the timer at New Game and or Cozumel (12:30 Penalty)
+You can choose to start the timer at New Game and or Cozumel (where the 12:30 Penalty is)
 
 Some issues: (These shouldn't be too bad)
  - Timer will start in the beginning of Cozumel no matter what if enabled
@@ -33,6 +33,8 @@ The script will split **if this string CHANGES to something else**
 
 I have categorized the sub-areas in the respective area (such as Cozumel) so hopefully it is easier to understand. You can always just play around with the options to see which splits you would like to use or just not even use the autosplitting and just use manual splitting.
 
+I have also added **tooltips** so you get some information on where each split will split
+
 ### Double Split Prevention
 I recommend you check this option because this prevents accidental splitting if you go back to an area that has already been split. For Example: in Any% Glitched after San Juan it will split for Paititi even though you have already been there.
 
@@ -45,6 +47,8 @@ You may actually think this option is useful such as 100% if you wanted to split
 
 This will be for splitting for all / each collectible you collectibe for each region. Basically Region Summary. Problem is Misisons and Challenges aren't in the same memory region and I have to figure out where they store progress... Basically I'm too lazy atm c:
 
+<!--Everything but Missions and Challenges could be split-->
+
 ## Problems
 - Cutscenes don't work for everything:
   - Near the end of Trial of the Eagle, Spike Deaths don't remove time
@@ -55,9 +59,9 @@ This will be for splitting for all / each collectible you collectibe for each re
 - Settings:
   - Skippable & Unskippable Cutscenes
     - Improve Cutscene Addresses
--->
 
 ## For Reference (Version Numbers)
 The first number means the game update. So V2 is the next game update after V1 and so on...
 
 The second number after the decimal means the script version for that game update
+-->
