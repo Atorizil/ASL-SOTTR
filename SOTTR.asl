@@ -9,9 +9,24 @@ state("SOTTR")
   string50 Area  : 0x3572AF8;
 }
 
+/*state("SOTTR", "234.1")
+{
+	bool Loading : 0x??????;
+	bool Loading2 : 0x?????;
+	bool Cutscene : 0x??????;
+	string50 Area : 0x???????;
+}*/
+
 init // When the game is opened
 {
   timer.IsGameTimePaused = false; // Unpause the timer
+	
+	/*switch(modules.First().ModuleMemorySize)
+	{
+		case 0x120489:
+			version = "234.1";
+			break;
+	}*/
 }
 
 startup
@@ -134,6 +149,8 @@ startup
       settings.SetToolTip("StCo", "Can use both");
     settings.Add("DSP", true, "Prevent splitting the same split again", "Op");
       settings.SetToolTip("DSP", "Recommended but this can be disabled aslong as you're route and splits will work with it");
+		settings.Add("Res", false, "Reset at Main Menu");
+			settings.SetToolTip("Res", "If you need to go to the Main Menu during the run DONT use this");
 
   settings.Add("AS", true, "Area Splits");
   settings.CurrentDefaultParent = "AS"; // So all of these splits (v) are children of (^)
@@ -240,6 +257,13 @@ isLoading
     // So that basically means pause the timer if any of those values == 1
     // || = or
 }
+
+reset
+{
+	if(current.Area != old.Area) // Check if the Area has changed
+		if(current.Area == "trx_main_menu") // Check if the current Area is the main menu
+			if(settings["Res"]) // Check if the setting is active
+				return true; // Reset
 
 exit
 {
