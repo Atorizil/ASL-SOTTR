@@ -1,12 +1,42 @@
 state("SOTTR", "241.0")
 {
-  bool Loading        : 0x14238A0;
-  bool Loading2       : 0x1457370;
+  bool Loading : 0x14238A0;
+  bool Loading2 : 0x1457370;
   // BAD LOADING. They should be updated but it would require a pointer which is actually hard to find :/
   // With the game updating so often, it isn't worth finding it again until updates stop
-  bool Cutscene     : 0x145E930; // Doesn't remove Deaths at Trial of the Eagle (After Skip Falling down)
+  bool Cutscene : 0x145E930; // Doesn't remove Deaths at Trial of the Eagle (After Skip Falling down)
   // ^ That keeps randomly going to 1 (FIX)
-  string50 Area  : 0x3572AF8;
+  string50 Area : 0x3572AF8;
+}
+
+state("SOTTR", "237.6")
+{
+}
+
+state("SOTTR", "236.1")
+{
+  bool Loading : 0x13E18E0;
+  bool Loading2 : 0x14153D0;
+  bool Cutscene : 0x141C9F0;
+  string50 Area : 0x35271A8;
+}
+
+state("SOTTR", "235.3")
+{
+  bool Loading : 0x13E18E0;
+  bool Loading2 : 0x14153D0;
+  bool Cutscene : 0x141C9F0;
+  string50 Area : 0x3527198;
+}
+
+state("SOTTR", "230.9")
+{
+
+}
+
+state("SOTTR", "230.8")
+{
+
 }
 
 state("SOTTR", "234.2")
@@ -25,6 +55,12 @@ init // When the game is opened
 	{
     case 317921520:
       version = "241.0";
+      break;
+    case 316497920:
+      version = "236.1";
+      break;
+    case 314748928:
+      version = "235.3";
       break;
 		case 310804480:
 			version = "234.2";
@@ -281,8 +317,10 @@ exit
 {
   print(modules.First().ModuleMemorySize.ToString());
 }*/
-// 342.2 - 310804480
+// 234.2 - 310804480
+// 236.1 - 316497920
 // 241.0 - 317921520
+// 235.3 - 314748928
 split
 {
   foreach(var item in vars.Splits)  // for every list in the Splits list
