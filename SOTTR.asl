@@ -11,6 +11,7 @@ state("SOTTR", "241.0")
 
 state("SOTTR", "237.6")
 {
+  // Game keeps crashing on launch
 }
 
 state("SOTTR", "236.1")
@@ -31,15 +32,18 @@ state("SOTTR", "235.3")
 
 state("SOTTR", "230.9")
 {
-
+  bool Loading : 0x13DE7E0;
+  bool Loading2 : 0x14122D0;
+  bool Cutscene : 0x14198F0;
+  string50 Area : 0x3524088;
 }
 
 state("SOTTR", "230.8")
 {
-
+  // Game keeps crashing on launch
 }
 
-state("SOTTR", "234.2")
+state("SOTTR", "234.1")
 {
 	bool Loading : 0x13E07E0;
 	bool Loading2 : 0x141B8F0;
@@ -63,8 +67,11 @@ init // When the game is opened
       version = "235.3";
       break;
 		case 310804480:
-			version = "234.2";
+			version = "234.1";
 			break;
+    case 311508992:
+      version = "230.9";
+      break;
 	}
 }
 
@@ -317,10 +324,11 @@ exit
 {
   print(modules.First().ModuleMemorySize.ToString());
 }*/
-// 234.2 - 310804480
+// 234.1 - 310804480
 // 236.1 - 316497920
 // 241.0 - 317921520
 // 235.3 - 314748928
+// 230.9 - 311508992
 split
 {
   foreach(var item in vars.Splits)  // for every list in the Splits list
