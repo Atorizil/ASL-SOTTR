@@ -1,3 +1,11 @@
+state("SOTTR", "243.0")
+{
+  bool Loading : 0x14298A0;
+  bool Loading2 : 0x145D370;
+  bool Cutscene : 0x1464930;
+  string50 Area : 0x3578F78;
+}
+
 state("SOTTR", "241.0")
 {
   bool Loading : 0x14238A0;
@@ -55,8 +63,15 @@ init // When the game is opened
 {
   timer.IsGameTimePaused = false; // Unpause the timer
 
+  // print the ModuleMemorySize
+  print(modules.First().ModuleMemorySize.ToString());
+
+  // Check the ModuleMemorySize
 	switch(modules.First().ModuleMemorySize)
 	{
+    case 314839040:
+      version = "243.0";
+      break;
     case 317921520:
       version = "241.0";
       break;
@@ -320,15 +335,6 @@ exit
     // Pause the timer if the game is shutdown
 }
 
-/*update
-{
-  print(modules.First().ModuleMemorySize.ToString());
-}*/
-// 234.1 - 310804480
-// 236.1 - 316497920
-// 241.0 - 317921520
-// 235.3 - 314748928
-// 230.9 - 311508992
 split
 {
   foreach(var item in vars.Splits)  // for every list in the Splits list
