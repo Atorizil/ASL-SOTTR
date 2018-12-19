@@ -1,13 +1,18 @@
-state("SOTTR", "243.0")
-{
+state("SOTTR", "247.0"){
+  bool Loading : 0x142F8A0;
+  bool Loading2 : 0x146D830;
+  bool Cutscene : 0x146A930;
+  string50 Area : 0x357F0A8;
+}
+
+state("SOTTR", "243.0"){
   bool Loading : 0x14298A0;
   bool Loading2 : 0x145D370;
   bool Cutscene : 0x1464930;
   string50 Area : 0x3578F78;
 }
 
-state("SOTTR", "241.0")
-{
+state("SOTTR", "241.0"){
   bool Loading : 0x14238A0;
   bool Loading2 : 0x1457370;
   // BAD LOADING. They should be updated but it would require a pointer which is actually hard to find :/
@@ -17,58 +22,55 @@ state("SOTTR", "241.0")
   string50 Area : 0x3572AF8;
 }
 
-state("SOTTR", "237.6")
-{
+state("SOTTR", "237.6"){
   // Game keeps crashing on launch
 }
 
-state("SOTTR", "236.1")
-{
+state("SOTTR", "236.1"){
   bool Loading : 0x13E18E0;
   bool Loading2 : 0x14153D0;
   bool Cutscene : 0x141C9F0;
   string50 Area : 0x35271A8;
 }
 
-state("SOTTR", "235.3")
-{
+state("SOTTR", "235.3"){
   bool Loading : 0x13E18E0;
   bool Loading2 : 0x14153D0;
   bool Cutscene : 0x141C9F0;
   string50 Area : 0x3527198;
 }
 
-state("SOTTR", "230.9")
-{
+state("SOTTR", "230.9"){
   bool Loading : 0x13DE7E0;
   bool Loading2 : 0x14122D0;
   bool Cutscene : 0x14198F0;
   string50 Area : 0x3524088;
 }
 
-state("SOTTR", "230.8")
-{
+state("SOTTR", "230.8"){
   // Game keeps crashing on launch
 }
 
-state("SOTTR", "234.1")
-{
+state("SOTTR", "234.1"){
 	bool Loading : 0x13E07E0;
 	bool Loading2 : 0x14142D0;
 	bool Cutscene : 0x141B8F0;
 	string50 Area : 0x35260F8;
 }
 
-init // When the game is opened
-{
+// When the game is opened
+init{
   timer.IsGameTimePaused = false; // Unpause the timer
+  print(modules.First().ModuleMemorySize.ToString()); // Print the ModuleMemorySize
 
-  // print the ModuleMemorySize
-  print(modules.First().ModuleMemorySize.ToString());
+  // === Check the ModuleMemorySize === //
+  // - 230.8 & 237.6 Missing
 
-  // Check the ModuleMemorySize
 	switch(modules.First().ModuleMemorySize)
 	{
+    case 312098816:
+      version = "247.0";
+      break;
     case 314839040:
       version = "243.0";
       break;
@@ -90,7 +92,7 @@ init // When the game is opened
 	}
 }
 
-startup
+startup // When the script is first loaded
 {
   // === Splits List === //
   // These are for the Areas
@@ -100,10 +102,13 @@ startup
   List<List<string>> Splits = new List<List<string>>
   {
     // === Cozumel Caves === //
-      new List<string>{"pl_prologue","Split AFTER the PLANE CRASH CUTSCENE", "CoC"}, //Beginning Cave
-      new List<string>{"cine_mayan_runout","Split AT THE BEGINNING of the COLLAPSE SEQUENCE"}, // Runout Sequence
+      new List<string>{"pl_prologue",
+      "Split after the plane crash cutscene \n - Pointless split for Game Time", "CoC"},
+      new List<string>{"cine_mayan_runout",
+      "Split at the beginning of the collapse sequence"},
     // === Cozumel === //
-      new List<string>{"dd_day_of_the_dead_010", "Split AT THE BEGINNING of COZUMEL", "Co"}, //Beginning of Cozumel
+      new List<string>{"dd_day_of_the_dead_010",
+      "Split at the beginning of cozumel \n - End of Cozumel Caves \n  - (Only if starting from New Game)", "Co"}, //Beginning of Cozumel
       new List<string>{"dd_day_of_the_dead_020", "Split ONCE ENTERING SKULL SAVE"}, //Skull Cave
       new List<string>{"dd_day_of_the_dead_030", "Split HALFWAY THROUGH THE TUNNEL BEFORE THE UNDERWATER PART"}, //Underwater Part
       new List<string>{"dd_day_of_the_dead_040", "Split AFTER the UNDERWATER PART (Close to the Tripwire)"}, //Temple Puzzle
