@@ -31,6 +31,9 @@ state("SOTTR", "236.1"){
   bool Loading2 : 0x14153D0;
   bool Cutscene : 0x141C9F0;
   string50 Area : 0x35271A8;
+  float X : 0x1E99B30;
+  float Y : 0x1E99B34;
+  float Z : 0x1E99B38;
 }
 
 state("SOTTR", "235.3"){
@@ -38,6 +41,9 @@ state("SOTTR", "235.3"){
   bool Loading2 : 0x14153D0;
   bool Cutscene : 0x141C9F0;
   string50 Area : 0x3527198;
+  float X : 0x1E99B30;
+  float Y : 0x1E99B34;
+  float Z : 0x1E99B38;
 }
 
 state("SOTTR", "230.9"){
@@ -45,6 +51,9 @@ state("SOTTR", "230.9"){
   bool Loading2 : 0x14122D0;
   bool Cutscene : 0x14198F0;
   string50 Area : 0x3524088;
+  float X : 0x1E969F0;
+  float Y : 0x1E969F4;
+  float Z : 0x1E969F8;
 }
 
 state("SOTTR", "230.8"){
@@ -56,6 +65,9 @@ state("SOTTR", "234.1"){
 	bool Loading2 : 0x14142D0;
 	bool Cutscene : 0x141B8F0;
 	string50 Area : 0x35260F8;
+  float X : 0x1E98A70;
+  float Y : 0x1E98A74;
+  float Z : 0x1E98A78;
 }
 
 // When the game is opened
@@ -256,6 +268,9 @@ startup // When the script is first loaded
 
   settings.CurrentDefaultParent = null; // So these (v) aren't part of "Area Splits"
 
+  settings.Add("End", true, "Amaru Death Cutscene");
+    settings.SetToolTip("End", "This will split at the final cutscene where the timer will normally end\nPlease note that this may split at inconsistent times due to the XYZ being inconsistent");
+
   // === Collectibles === //
   /*  So... All the REQUIRED collectibles for each area are right next to eachother in memory
       However, Missions and Challenges are not and I haven't looked for where they are :/
@@ -369,4 +384,30 @@ split
           {
             return true; // Just split
           }
+
+  // End Split
+  if(current.Area == "ch_chamber_of_heaven" && current.Cutscene && (int)current.X == (int)20576.99f && (int)current.Y == (int)9293.358f && (int)current.Z == (int)3704.113f)
+    if(settings["End"]) // If the setting to split at the end is active
+      if(settings["DSP"]) // If Double Split Prevention is active
+      {
+        if(vars.HasSplit.Count == 0)  // Check if the "HasSplit" list is empty
+        {
+          vars.HasSplit.Add("end"); // Add end to the "HasSplit" list
+          return true;  // Split
+        }
+        else
+        {
+          foreach(var item in vars.HasSplit) // For every string in HasSplit
+          {
+            if(item == "end") // Check if "end" is in the list
+              return false; // Don't split and start the loop again
+          }
+          vars.HasSplit.Add("end"); // Add "end" to the list to prevent it splitting again
+          return true; // Split
+        }
+      }
+      else
+      {
+        return true;
+      }
 }
