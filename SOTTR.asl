@@ -120,8 +120,7 @@ startup // When the script is first loaded
   // 1st String = Settting ID and what the script checks for
   // 2nd String = Tooltip for setting
   // 3rd String (If present) = What its parent is
-  List<List<string>> Splits = new List<List<string>>
-  {
+  List<List<string>> Splits = new List<List<string>>{
     // === Cozumel Caves === //
       new List<string>{"pl_prologue",
       "Split after the plane crash cutscene \n - Pointless split for Game Time", "CoC"},
@@ -227,6 +226,88 @@ startup // When the script is first loaded
   };
   vars.Splits = Splits;
 
+  // relics
+  // Documents
+  // Survival caches
+  // murals
+  // monoliths
+  // crypts
+  // strongboxes
+
+  // Collectible Name, Offset from Pointer, Max Number
+  vars.Collectibles = new Dictionary<string, Dictionary<string, List<int>>>{
+    {"Cozumel", new Dictionary<string, List<int>>{
+        {"Strongboxes", new List<int>{0x5E8, 1}},
+        {"Relics", new List<int>{0x5C8, 2}},
+        {"Documents", new List<int>{0x5CC, 1}},
+        {"Murals", new List<int>{0x5D4, 2}},
+        {"Survival Caches", new List<int>{0x5D0, 3}}
+      }
+    },
+    {"Peruvian Jungle", new Dictionary<string, List<int>>{
+        {"Strongboxes", new List<int>{0xC48, 1}},
+        {"Crypts", new List<int>{0xC40, 2}},
+        {"Relics", new List<int>{0xC28, 9}},
+        {"Documents", new List<int>{0xC2C, 13}},
+        {"Murals", new List<int>{0xC34, 7}},
+        {"Survival Caches", new List<int>{0xC30, 9}},
+        {"Monoliths", new List<int>{0xC38, 1}}
+      }
+    },
+    {"Kuaq Yaku", new Dictionary<string, List<int>>{
+        {"Strongboxes", new List<int>{0x3C8, 2}},
+        {"Crypts", new List<int>{0x3C0, 2}},
+        {"Relics", new List<int>{0x3A8, 4}},
+        {"Documents", new List<int>{0x3AC, 18}},
+        {"Murals", new List<int>{0x3B4, 10}},
+        {"Survival Caches", new List<int>{0x3B0, 14}},
+        {"Monoliths", new List<int>{0x3B8, 3}}
+      }
+    },
+    {"Trial of the Eagle", new Dictionary<string, List<int>>{
+        {"Documents", new List<int>{0xE4C, 1}},
+        {"Murals", new List<int>{0xE54, 2}},
+        {"Survival Caches", new List<int>{0xE50, 1}}
+      }
+    },
+    {"Paititi", new Dictionary<string, List<int>>{
+        {"Strongboxes", new List<int>{0x2B8, 3}},
+        {"Crypts", new List<int>{0x2B0, 5}},
+        {"Relics", new List<int>{0x298, 28}},
+        {"Documents", new List<int>{0x29C, 42}},
+        {"Murals", new List<int>{0x2A4, 23}},
+        {"Survival Caches", new List<int>{0x2A0, 34}},
+        {"Monoliths", new List<int>{0x2A8, 7}}
+      }
+    },
+    {"Head of the Serpent", new Dictionary<string, List<int>>{
+        {"Murals", new List<int>{0x1184, 1}}
+      }
+    },
+    {"Cenote", new Dictionary<string, List<int>>{
+        {"Relics", new List<int>{0x8F8, 5}},
+        {"Documents", new List<int>{0x8FC, 6}},
+        {"Survival Caches", new List<int>{0x900, 8}}
+      }
+    },
+    {"Porvenir Oil Fields", new Dictionary<string, List<int>>{
+        {"Relics", new List<int>{0x4B8, 1}},
+        {"Documents", new List<int>{0x4BC, 4}},
+        {"Murals", new List<int>{0x4C4, 1}}
+      }
+    },
+    {"Mission of San Juan", new Dictionary<string, List<int>>{
+        {"Strongboxes", new List<int>{0xA28, 1}},
+        {"Crypts", new List<int>{0xA20, 1}},
+        {"Relics", new List<int>{0xA08, 9}},
+        {"Documents", new List<int>{0xA0C, 27}},
+        {"Murals", new List<int>{0xA14, 4}},
+        {"Survival Caches", new List<int>{0xA10, 8}},
+        {"Monoliths", new List<int>{0xA18, 1}}
+      }
+    }
+  };
+
   // === Settings === //
   // - Options - //
   settings.Add("Op", true, "Options");
@@ -290,8 +371,7 @@ startup // When the script is first loaded
       distance between the areas in memory...
       and I... am too lazy rn :D
   */
-  settings.Add("Coll", false, "Collectibles");
-    settings.Add("tbc", false, "I can make this but it will take time (NOT WORKING)", "Coll");
+  settings.Add("COL", false, "Collectibles");
 
   // === Split Settings === //
   foreach(var Setting in Splits) // For every list in the "Splits" list
@@ -306,6 +386,19 @@ startup // When the script is first loaded
       settings.SetToolTip(Setting[0], Setting[1]);
   }
 
+  // === Collectible === //
+  vars.Watchers = new MemoryWatcherList();
+
+  foreach(var item in vars.Collectibles){
+    settings.Add(item.Key, false, item.Key, "COL");
+    foreach(var item2 in item.Value){
+      settings.Add(item.Key + item2.Key + "Each", false, item2.Key + " (Each)", item.Key);
+      settings.Add(item.Key + item2.Key + "All", false, item2.Key + " (All)", item.Key);
+      settings.SetToolTip(item.Key + item2.Key + "All", item.Key + item2.Key + "All");
+      vars.Watchers.Add(new MemoryWatcher<int>(new DeepPointer(0x36607A8, item2.Value[0])){Name = item.Key + item2.Key});
+    }
+  }
+
   List<string> HS = new List<string>(); // New dummy list of strings
   vars.HasSplit = HS; // Use livesplit variables so no errors c:
 
@@ -316,6 +409,15 @@ startup // When the script is first loaded
 		vars.HasSplit.Clear(); // Clear the HasSplit list to stop splits in this list from splitting again
 	};
 	timer.OnStart += OnStart; // I guess when the timer starts run ^ that?
+}
+
+update{
+  // Memory Watchers won't work without this
+  vars.Watchers.UpdateAll(game);
+  /*foreach(var item in vars.Watchers)
+  {
+    print(item.Name + item.Current.ToString());
+  }*/
 }
 
 
@@ -397,17 +499,13 @@ split
   // End Split
   if(current.Area == "ch_chamber_of_heaven" && current.Cutscene && (int)current.X == (int)20576.99f && (int)current.Y == (int)9293.358f && (int)current.Z == (int)3704.113f)
     if(settings["End"]) // If the setting to split at the end is active
-      if(settings["DSP"]) // If Double Split Prevention is active
-      {
-        if(vars.HasSplit.Count == 0)  // Check if the "HasSplit" list is empty
-        {
+      if(settings["DSP"]){ // If Double Split Prevention is active
+        if(vars.HasSplit.Count == 0){ // Check if the "HasSplit" list is empty
           vars.HasSplit.Add("end"); // Add end to the "HasSplit" list
           return true;  // Split
         }
-        else
-        {
-          foreach(var item in vars.HasSplit) // For every string in HasSplit
-          {
+        else{
+          foreach(var item in vars.HasSplit){ // For every string in HasSplit
             if(item == "end") // Check if "end" is in the list
               return false; // Don't split and start the loop again
           }
@@ -415,8 +513,23 @@ split
           return true; // Split
         }
       }
-      else
-      {
+      else{
         return true;
       }
+
+  foreach(var item in vars.Collectibles){
+    foreach(var item2 in item.Value){
+      var V = vars.Watchers[item.Key + item2.Key];
+      if(V.Current != V.Old){
+        if(settings[item.Key + item2.Key + "All"])
+          if(V.Current == item2.Value[1]){
+            return true;
+          }
+          else
+            return false;
+        if(settings[item.Key + item2.Key + "Each"])
+          return true;
+      }
+    }
+  }
 }
