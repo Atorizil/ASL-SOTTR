@@ -10,6 +10,9 @@ state("SOTTR", "243.0"){
   bool Loading2 : 0x145D370;
   bool Cutscene : 0x1464930;
   string50 Area : 0x3578F78;
+  float X : 0x1EEB870;
+  float Y : 0x1EEB874;
+  float Z : 0x1EEB878;
 }
 
 state("SOTTR", "241.0"){
