@@ -87,7 +87,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>241</ID>
-      <Description>"241.0"</Description>
+      <Description>"241.0 -"</Description>
       <Options moHideChildren="1"/>
       <LastState Value="" RealAddress="00000000"/>
       <Color>FF8000</Color>
@@ -110,7 +110,7 @@
         <CheatEntry>
           <ID>218</ID>
           <Description>"Cutscene"</Description>
-          <LastState Value="0" RealAddress="14145E930"/>
+          <LastState Value="1" RealAddress="14145E930"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+145E930</Address>
         </CheatEntry>
@@ -124,6 +124,27 @@
           <CodePage>0</CodePage>
           <ZeroTerminate>1</ZeroTerminate>
           <Address>SOTTR.exe+3572AF8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>278</ID>
+          <Description>"X"</Description>
+          <LastState Value="20563.66211" RealAddress="141EE53F0"/>
+          <VariableType>Float</VariableType>
+          <Address>SOTTR.exe+1EE53F0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>277</ID>
+          <Description>"Y"</Description>
+          <LastState Value="9293.938477" RealAddress="141EE53F4"/>
+          <VariableType>Float</VariableType>
+          <Address>SOTTR.exe+1EE53F4</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>276</ID>
+          <Description>"Z"</Description>
+          <LastState Value="3698.559814" RealAddress="141EE53F8"/>
+          <VariableType>Float</VariableType>
+          <Address>SOTTR.exe+1EE53F8</Address>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>

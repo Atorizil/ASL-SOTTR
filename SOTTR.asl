@@ -20,6 +20,9 @@ state("SOTTR", "241.0"){
   bool Cutscene : 0x145E930; // Doesn't remove Deaths at Trial of the Eagle (After Skip Falling down)
   // ^ That keeps randomly going to 1 (FIX)
   string50 Area : 0x3572AF8;
+  float X : 0x1EE53F0;
+  float Y : 0x1EE53F4;
+  float Z : 0x1EE53F8;
 }
 
 state("SOTTR", "237.6"){
@@ -86,7 +89,7 @@ init{
     case 314839040:
       version = "243.0";
       break;
-    case 317921520:
+    case 317931520:
       version = "241.0";
       break;
     case 316497920:
