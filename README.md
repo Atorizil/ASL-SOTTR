@@ -1,67 +1,60 @@
 # Shadow of the Tomb Raider Load Removal and Auto Splitting
 
-## 243.0
+## 247.0
 
 Auto spliiting, starting, stopping and Load Removal for Shadow of the Tomb Raider
 
 ## Use
+
+This script can be used in Livesplit by activating it in the split editor once you have chosen `Shadow of the Tomb Raider` as a game
+
+### Manual use
 1. In **LiveSplit**, **Right Click** anywhere and click **Edit Layout**
 2. **Click +**, **Control, Scriptable Auto Splitter**
 3. **Browse** and choose the **.asl  File Downloaded**
 4. Make sure you're comparing against **Game Time** for **splits** and **timer**
 
-# **Auto Splitting**
-Okay... Let's try to explain this
-
+# Auto Splitting
 ## Auto Timer Starting
 You can choose to start the timer at New Game and or Cozumel (where the 12:30 Penalty is)
 
-Some issues: (These shouldn't be too bad)
- - Timer will start in the beginning of Cozumel no matter what if enabled
- - The Plane Crash cutscene has the same area for the beginning of Peruvian Jungle and the beginning of the game. So if the timer isn't running and you go to the cutscene at the beginning of Peruvian Jungle, the timer will start
- - You cannot stop the timer if you're in that area. It will just start again
+The Timer can be started automatically at:
+ - New game
+ - Cozumel Save (12:30 Penalty)
 
-
- I can make the timer start when the game is loading but that won't fully fix it and tbh it wasn't working like that anyway
+Some issues:
+ - The `Plane Crash Cutscene` is in the **same area** at `New Game` **and after** `Cozumel`
+   - This means that the Timer will Auto Start in both of these areas
+ - The script only checks if you are in the corresponding area to start the timer
+   - This means that the timer will start constantly if you're in that area (So you can't really reset the timer)
+   
+## Auto Restarting
+This script can reset the Timer if you exit to Main Menu at any point during the run. Be careful if you want to use this option because it will stop the Timer without the usual `Update Times` prompt you would normally get. (It will automatically update Best Times). **If the game crashes, it will reset the Timer as you go to the Main Menu.**
 
 ## Auto Splitting
-Okay, so there is a string in memory that contains to current area in game. This string usually looks something like "dd_day_of_the_dead_010".
+There is a `string` in memory that contains the `Current Area`. The script detects when this variable **changes** and then splits if the corresponding setting is active.
 
-I think of it as "(Short Area Name)-(Full Area Name)-(Part)"
+`"connector" is the area which connects one area to another. Mainly used in Paititi and Tombs. Experiment with these to see if you want to use them`
 
-The script will split **if this string CHANGES to something else**
+The setting names in the script are the actual names of the areas used in the game. They have been organised into more recognisable areas such as Paititi. They also have tooltips that specify where they will split. `It isn't exactly accurate but it gives you an idea of where they will split`
 
-I have categorized the sub-areas in the respective area (such as Cozumel) so hopefully it is easier to understand. You can always just play around with the options to see which splits you would like to use or just not even use the autosplitting and just use manual splitting.
-
-I have also added **tooltips** so you get some information on where each split will split
+The script isn't linear so you can use these splits to split in any order you want.
 
 ### Double Split Prevention
-I recommend you check this option because this prevents accidental splitting if you go back to an area that has already been split. For Example: in Any% Glitched after San Juan it will split for Paititi even though you have already been there.
+This is recommended because you revisit multiple areas numeorus times and if this option is not selected it will split again when you reach these areas.
 
-You may actually think this option is useful such as 100% if you wanted to split once you leave a tomb but the route and splits will have to line up with this. (You would have to do a specific route)
-
- - "connector" means the part that connects one area to another. Mainly tombs and paititi use this.
+You can disable this option but just make sure your route and splits will work with it.
 
 ### 100% Autosplitting
-**WIP**
+This script allows you to Autosplit for each collectible in every area of the game. There are two options for each collectible, **All** or **Each**.
+ - **Each** will split for every collectible you pick up
+ - **All** will split when you collect all of the given type of collectible in the given area
+ 
+Choosing both will cause it to split twice once all collectibles of the given type and area have been acquired
 
-This will be for splitting for all / each collectible you collectibe for each region. Basically Region Summary. Problem is Misisons and Challenges aren't in the same memory region and I have to figure out where they store progress... Basically I'm too lazy atm c:
-
-<!--Everything but Missions and Challenges could be split-->
+**Missions, Challenges and Tombs cannot be split for**
+ - This is due to them not being near the other collectibles in Memory
 
 ## Problems
 - Cutscenes don't work for everything:
   - Near the end of Trial of the Eagle, Spike Deaths don't remove time
-
-<!--
-# Todo
--  Make this a Auto Splitter as well as Load Removal
-- Settings:
-  - Skippable & Unskippable Cutscenes
-    - Improve Cutscene Addresses
-
-## For Reference (Version Numbers)
-The first number means the game update. So V2 is the next game update after V1 and so on...
-
-The second number after the decimal means the script version for that game update
--->
