@@ -79,40 +79,6 @@ state("SOTTR", "234.1"){
   float Z : 0x1E98A78;
 }
 
-// When the game is opened
-init{
-  timer.IsGameTimePaused = false; // Unpause the timer
-  print(modules.First().ModuleMemorySize.ToString()); // Print the ModuleMemorySize
-
-  // === Check the ModuleMemorySize === //
-  // - 230.8 & 237.6 Missing
-
-	switch(modules.First().ModuleMemorySize)
-	{
-    case 312098816:
-      version = "247.0";
-      break;
-    case 314839040:
-      version = "243.0";
-      break;
-    case 317931520:
-      version = "241.0";
-      break;
-    case 316497920:
-      version = "236.1";
-      break;
-    case 314748928:
-      version = "235.3";
-      break;
-		case 310804480:
-			version = "234.1";
-			break;
-    case 311508992:
-      version = "230.9";
-      break;
-	}
-}
-
 startup // When the script is first loaded
 {
   // === Splits List === //
@@ -361,16 +327,6 @@ startup // When the script is first loaded
   settings.Add("End", true, "Amaru Death Cutscene");
     settings.SetToolTip("End", "This will split at the final cutscene where the timer will normally end\nPlease note that this may split at inconsistent times due to the XYZ being inconsistent");
 
-  // === Collectibles === //
-  /*  So... All the REQUIRED collectibles for each area are right next to eachother in memory
-      However, Missions and Challenges are not and I haven't looked for where they are :/
-      We could add all of the addresses to a MemoryWatcherList() by using ONE pointer -
-      and a loop to increment them by an offset for each address
-      Since the Areas are also next to each other this may be harder than that because -
-      we will have to specify how many collectibles are in each area and work out the -
-      distance between the areas in memory...
-      and I... am too lazy rn :D
-  */
   settings.Add("COL", false, "Collectibles");
 
   // === Split Settings === //
@@ -379,10 +335,10 @@ startup // When the script is first loaded
     if(Setting.Count == 3) // Check if it has a 3rd string
       settings.CurrentDefaultParent = Setting[2]; // Set the CurrentDefaultParent to the 3rd string
       // So we don't have to repeat the parent argument in settings.Add()
-    settings.Add(Setting[0], false, Setting[0]); // Add the setting...-
-    // Using the 1st string as the ID...
-    // Setting it to off by default
-    // Using the 2nd string as the Description
+      settings.Add(Setting[0], false, Setting[0]); // Add the setting...
+      // Using the 1st string as the ID...
+      // Setting it to off by default
+      // Using the 2nd string as the Description
       settings.SetToolTip(Setting[0], Setting[1]);
   }
 
@@ -394,22 +350,70 @@ startup // When the script is first loaded
     foreach(var item2 in item.Value){
       settings.Add(item.Key + item2.Key + "Each", false, item2.Key + " (Each)", item.Key);
       settings.Add(item.Key + item2.Key + "All", false, item2.Key + " (All)", item.Key);
-      settings.SetToolTip(item.Key + item2.Key + "All", item.Key + item2.Key + "All");
-      vars.Watchers.Add(new MemoryWatcher<int>(new DeepPointer(0x36607A8, item2.Value[0])){Name = item.Key + item2.Key});
     }
   }
 
   List<string> HS = new List<string>(); // New dummy list of strings
   vars.HasSplit = HS; // Use livesplit variables so no errors c:
 
-  /* Not gonna lie idk what exactly this does
-  I copied this from the ROTTR script so thanks Leemyy!*/
+  // Cleat the HasSplit list when the timer starts or else it will never split again
   EventHandler OnStart = (s, e) =>
 	{
-		vars.HasSplit.Clear(); // Clear the HasSplit list to stop splits in this list from splitting again
+		vars.HasSplit.Clear();
 	};
 	timer.OnStart += OnStart; // I guess when the timer starts run ^ that?
 }
+
+// When the game is opened
+init{
+  timer.IsGameTimePaused = false; // Unpause the timer
+  print(modules.First().ModuleMemorySize.ToString()); // Print the ModuleMemorySize
+
+  // === Check the ModuleMemorySize === //
+  // - 230.8 & 237.6 Missing
+  int CollectibleBase = 0;
+	switch(modules.First().ModuleMemorySize)
+	{
+    case 312098816:
+      version = "247.0";
+      CollectibleBase = 0x36607A8;
+      break;
+    case 314839040:
+      version = "243.0";
+      CollectibleBase = 0x365A758;
+      break;
+    case 317931520:
+      version = "241.0";
+      CollectibleBase = 0x36541E0;
+      break;
+    case 316497920:
+      version = "236.1";
+      CollectibleBase = 0x3608758;
+      break;
+    case 314748928:
+      version = "235.3";
+      CollectibleBase = 0x3608730;
+      break;
+		case 310804480:
+			version = "234.1";
+      CollectibleBase = 0x36076E0;
+			break;
+    case 311508992:
+      version = "230.9";
+      CollectibleBase = 0x3605660;
+      break;
+	}
+
+  // The MemoryWatchers have to be added here as CollectibleBase won't work in the "vars." format
+
+  foreach(var item in vars.Collectibles){
+    foreach(var item2 in item.Value){
+      vars.Watchers.Add(new MemoryWatcher<int>(new DeepPointer(CollectibleBase, item2.Value[0])){Name = item.Key + item2.Key});
+    }
+  }
+}
+
+
 
 update{
   // Memory Watchers won't work without this
