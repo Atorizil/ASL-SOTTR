@@ -520,6 +520,7 @@ init{
 update{
   // Memory Watchers won't work without this
   vars.Watchers.UpdateAll(game);
+  //print(timer.CurrentAttemptDuration.ToString());
 }
 //</editor-fold>
 
@@ -539,15 +540,34 @@ start
   Like reloading would start the timer if in that area */
   //</editor-fold>
 
-  if(current.Area != old.Area)  // Check if the Area has changed
+    if(current.X == 0 && current.Y == 0 && current.Z == 0 && current.Loading && current.Loading2)
+    {  // Check if the Area has changed
     if(settings["StNG"])  // If "Start timer at New Game" setting is enabled...
       if(current.Area == "cine_plane_crash")  // Check if it is equal to opening cutscene
         return true;  // Start the timer
     if(settings["StCo"])  // If "Start timer at Cozumel" setting is enabled...
       if(current.Area == "dd_day_of_the_dead_010")  // Check if it is equal to Cozumel Area
         return true;  // Start the timer
+    }
 }
 //</editor-fold>
+
+gameTime{
+  print(old.Area + "\n" + current.Area);
+  if(current.X == 0 && current.Y == 0 && current.Z == 0 && current.Loading && current.Loading2)
+  {
+    if(settings["StNG"]){
+      if(current.Area == "cine_plane_crash"){
+        return TimeSpan.FromSeconds(0);
+      }
+    }
+    if(settings["StCo"]){
+      if(current.Area == "dd_day_of_the_dead_010"){
+        return TimeSpan.FromSeconds(320);
+      }
+    }
+  }
+}
 
 isLoading
 {
