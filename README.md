@@ -20,13 +20,9 @@ You can choose to start the timer at New Game and or Cozumel (where the 12:30 Pe
 
 The Timer can be started automatically at:
  - New game
- - Cozumel Save (12:30 Penalty)
-
-Some issues:
- - The `Plane Crash Cutscene` is in the **same area** at `New Game` **and after** `Cozumel`
-   - This means that the Timer will Auto Start in both of these areas
- - The script only checks if you are in the corresponding area to start the timer
-   - This means that the timer will start constantly if you're in that area (So you can't really reset the timer)
+ - Cozumel Save (12:30 RT Penalty / 5:20 IGT Penalty)
+ 
+ If the Timer starts at the Cozumel Save, the IGT timer will automatically be set to 5:20
    
 ## Auto Restarting
 This script can reset the Timer if you exit to Main Menu at any point during the run. Be careful if you want to use this option because it will stop the Timer without the usual `Update Times` prompt you would normally get. (It will automatically update Best Times). **If the game crashes, it will reset the Timer as you go to the Main Menu.**
