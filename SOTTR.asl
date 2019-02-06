@@ -1,9 +1,4 @@
-//<editor-fold> Best way to read this script
-// Use Atom and the "custom-folds" package
-//</editor-fold>
-
-//<editor-fold> State Descriptors
-
+// === State Descriptors === //
 state("SOTTR", "260.0"){
   bool Loading : 0x1448910;
   bool Loading2 : 0x147C490;
@@ -11,9 +6,7 @@ state("SOTTR", "260.0"){
   string50 Area : 0x359A2A8;
   float X : 0x1F0B180;
   float Y : 0x1F0B184;
-  float Z : 0x1F0B188;
-}
-
+  float Z : 0x1F0B188;}
 state("SOTTR", "247.0"){
   bool Loading : 0x142F8A0;
   bool Loading2 : 0x146D830;
@@ -21,9 +14,7 @@ state("SOTTR", "247.0"){
   string50 Area : 0x357F0A8;
   float X : 0x1EF1980;
   float Y : 0x1EF1984;
-  float Z : 0x1EF1988;
-}
-
+  float Z : 0x1EF1988;}
 state("SOTTR", "243.0"){
   bool Loading : 0x14298A0;
   bool Loading2 : 0x145D370;
@@ -31,9 +22,7 @@ state("SOTTR", "243.0"){
   string50 Area : 0x3578F78;
   float X : 0x1EEB870;
   float Y : 0x1EEB874;
-  float Z : 0x1EEB878;
-}
-
+  float Z : 0x1EEB878;}
 state("SOTTR", "241.0"){
   bool Loading : 0x14238A0;
   bool Loading2 : 0x1457370;
@@ -44,13 +33,8 @@ state("SOTTR", "241.0"){
   string50 Area : 0x3572AF8;
   float X : 0x1EE53F0;
   float Y : 0x1EE53F4;
-  float Z : 0x1EE53F8;
-}
-
-state("SOTTR", "237.6"){
-  // Game keeps crashing on launch
-}
-
+  float Z : 0x1EE53F8;}
+//state("SOTTR", "237.6")
 state("SOTTR", "236.1"){
   bool Loading : 0x13E18E0;
   bool Loading2 : 0x14153D0;
@@ -58,9 +42,7 @@ state("SOTTR", "236.1"){
   string50 Area : 0x35271A8;
   float X : 0x1E99B30;
   float Y : 0x1E99B34;
-  float Z : 0x1E99B38;
-}
-
+  float Z : 0x1E99B38;}
 state("SOTTR", "235.3"){
   bool Loading : 0x13E18E0;
   bool Loading2 : 0x14153D0;
@@ -68,9 +50,7 @@ state("SOTTR", "235.3"){
   string50 Area : 0x3527198;
   float X : 0x1E99B30;
   float Y : 0x1E99B34;
-  float Z : 0x1E99B38;
-}
-
+  float Z : 0x1E99B38;}
 state("SOTTR", "230.9"){
   bool Loading : 0x13DE7E0;
   bool Loading2 : 0x14122D0;
@@ -78,13 +58,8 @@ state("SOTTR", "230.9"){
   string50 Area : 0x3524088;
   float X : 0x1E969F0;
   float Y : 0x1E969F4;
-  float Z : 0x1E969F8;
-}
-
-state("SOTTR", "230.8"){
-  // Game keeps crashing on launch
-}
-
+  float Z : 0x1E969F8;}
+//state("SOTTR", "230.8")
 state("SOTTR", "234.1"){
 	bool Loading : 0x13E07E0;
 	bool Loading2 : 0x14142D0;
@@ -92,22 +67,17 @@ state("SOTTR", "234.1"){
 	string50 Area : 0x35260F8;
   float X : 0x1E98A70;
   float Y : 0x1E98A74;
-  float Z : 0x1E98A78;
-}
-// </editor-fold>
+  float Z : 0x1E98A78;}
 
-//<editor-fold> Startup (When the Script is loaded)
-
+// === Startup (When the Script is loaded) === //
 startup{
-  //<editor-fold> Area Splits List
+  // === Area Splits List === //
 
-    //<editor-fold> Description
-    //This List contains the information for the Area Splits
-    // - The 1st String is the Setting ID and what the game uses for that area
-    // - The 2nd String is the Tooltip for that setting
-    // - \n = New Line
-    // - The 3rd String (if present) is the Parent
-    //</editor-fold>
+    // This List contains the information for the Area Splits:
+    //  - The 1st String is the Setting ID and what the game uses for that area
+    //  - The 2nd String is the Tooltip for that setting
+    //  - \n = New Line
+    //  - The 3rd String (if present) is the Parent
 
     List<List<string>> Splits = new List<List<string>>{
       // === Cozumel Caves === //
@@ -211,25 +181,20 @@ startup{
           new List<string>{"ct_flooded_sanctuary_connector", "Split AFTER swimming TOWARDS the ENTRANCE\n(Thirty Gods)"},
           new List<string>{"ct_flooded_sanctuary", "Split AFTER CLIMBING up the WALL JUST BEFORE the TOMB\n(Thirty Gods)"},
       // === City of the Serpent === //
-          new List<string>{"ch_chamber_of_heaven", "Split AFTER the CUTSCENE where they decide what plan to use", "COTS"}
-    };
+          new List<string>{"ch_chamber_of_heaven", "Split AFTER the CUTSCENE where they decide what plan to use", "COTS"}};
     vars.Splits = Splits;
 
-  //</editor-fold>
+    // === Collectibles Dictionary === //
 
-  //<editor-fold> Collectibles Dictionary
+    // Order in Memory:
+    //  - Relics
+    //  - Documents
+    //  - Survival Caches
+    //  - Murals
+    //  - Monoliths
+    //  - Crypts
+    //  - Strongboxes
 
-    //<editor-fold> Order in Memory
-    // Relics
-    // Documents
-    // Survival Caches
-    // Murals
-    // Monoliths
-    // Crypts
-    // Strongboxes
-    //</editor-fold>
-
-    //<editor-fold> Description
     // This Dictionary contains multiple Dictionaries for each Area:
     //  - The String is for the Area
     //  - This Dictionary only contains areas with collectibles
@@ -238,7 +203,6 @@ startup{
     //  - A List of Integers
     //   - The 1st int is the offset from the Pointer
     //   - The 2nd int is the complete amount of the collectible
-    //</editor-fold>
 
     vars.Collectibles = new Dictionary<string, Dictionary<string, List<int>>>{
       {"Cozumel", new Dictionary<string, List<int>>{
@@ -310,13 +274,10 @@ startup{
           {"Survival Caches", new List<int>{0xA10, 8}},
           {"Monoliths", new List<int>{0xA18, 1}}
         }
-      }
-    };
-  //</editor-fold>
+      }};
 
-  //<editor-fold> Settings
-
-    //<editor-fold> Options
+  // === Settings === //
+    // === Options === //
       settings.Add("Op", true, "Options");
         settings.Add("StNG", true, "Start timer at New Game", "Op");
           settings.SetToolTip("StNG", "Can use both");
@@ -326,82 +287,71 @@ startup{
           settings.SetToolTip("DSP", "Recommended but this can be disabled aslong as you're route and splits will work with it");
     		settings.Add("Res", false, "Reset at Main Menu");
     			settings.SetToolTip("Res", "If you need to go to the Main Menu during the run DONT use this");
-    //</editor-fold>
 
-    //<editor-fold> Parents
+    // === Parents === //
 
-      //<editor-fold> Description
-        // These are the Containers for each area
-        // If there is a 4th argument:
-        //  - It is child of the setting that the ID corresponds to
-      //</editor-fold>
+      // These are the Containers for each area:
+      // If there is a 4th argument
+      //  - It is child of the setting that the ID corresponds to
 
-    settings.Add("AS", true, "Area Splits"); // Parent for the Area Splits
-      settings.CurrentDefaultParent = "AS";
+      settings.Add("AS", true, "Area Splits"); // Parent for the Area Splits
+          settings.CurrentDefaultParent = "AS";
+        settings.Add("CoC",false,"Cozumel Caves");
+        settings.Add("Co",false,"Cozumel");
+        settings.Add("PJ",false,"Peruvian Jungle");
+          settings.Add("PJMA", false, "Main Areas", "PJ");
+          settings.Add("PJCR", false, "Crypts", "PJ");
+          settings.Add("PJCT", false, "Tombs", "PJ");
+        settings.Add("CM",false,"Croft Manor");
+        settings.Add("KY",false,"Kuwaq Yaku");
+          settings.Add("KYMA", false, "Main Areas", "KY");
+          settings.Add("KYCR", false, "Crypts", "KY");
+          settings.Add("KYCT", false, "Tombs", "KY");
+        settings.Add("TOTE",false,"Trial of the Eagle");
+        settings.Add("P",false,"Paititi");
+          settings.Add("PMA", false, "Main Areas", "P");
+          settings.Add("PCR", false, "Crypts", "P");
+          settings.Add("PCT", false, "Tombs", "P");
+        settings.Add("BOTS",false,"Belly of the Serpent");
+        settings.Add("HOTS",false,"Head of the Serpent");
+        settings.Add("MT",false,"Moutain Temple");
+        settings.Add("Ce",false,"Cenote");
+          settings.Add("CeMA", false, "Main Areas", "Ce");
+          settings.Add("CeCT", false, "Tombs", "Ce");
+        settings.Add("POF",false,"Porvenir Oil Fields");
+        settings.Add("SJ",false,"San Juan");
+          settings.Add("SJMA", false, "Main Areas", "SJ");
+          settings.Add("SJCR", false, "Crypts", "SJ");
+          settings.Add("SJCT", false, "Tombs", "SJ");
+        settings.Add("COTS",false,"City of the Serpent");
 
-    settings.Add("CoC",false,"Cozumel Caves");
-    settings.Add("Co",false,"Cozumel");
-    settings.Add("PJ",false,"Peruvian Jungle");
-      settings.Add("PJMA", false, "Main Areas", "PJ");
-      settings.Add("PJCR", false, "Crypts", "PJ");
-      settings.Add("PJCT", false, "Tombs", "PJ");
-    settings.Add("CM",false,"Croft Manor");
-    settings.Add("KY",false,"Kuwaq Yaku");
-      settings.Add("KYMA", false, "Main Areas", "KY");
-      settings.Add("KYCR", false, "Crypts", "KY");
-      settings.Add("KYCT", false, "Tombs", "KY");
-    settings.Add("TOTE",false,"Trial of the Eagle");
-    settings.Add("P",false,"Paititi");
-      settings.Add("PMA", false, "Main Areas", "P");
-      settings.Add("PCR", false, "Crypts", "P");
-      settings.Add("PCT", false, "Tombs", "P");
-    settings.Add("BOTS",false,"Belly of the Serpent");
-    settings.Add("HOTS",false,"Head of the Serpent");
-    settings.Add("MT",false,"Moutain Temple");
-    settings.Add("Ce",false,"Cenote");
-      settings.Add("CeMA", false, "Main Areas", "Ce");
-      settings.Add("CeCT", false, "Tombs", "Ce");
-    settings.Add("POF",false,"Porvenir Oil Fields");
-    settings.Add("SJ",false,"San Juan");
-      settings.Add("SJMA", false, "Main Areas", "SJ");
-      settings.Add("SJCR", false, "Crypts", "SJ");
-      settings.Add("SJCT", false, "Tombs", "SJ");
-    settings.Add("COTS",false,"City of the Serpent");
+      settings.CurrentDefaultParent = null; // So these (v) aren't part of "Area Splits"
 
-    settings.CurrentDefaultParent = null;
-    // So these (v) aren't part of "Area Splits"
+      settings.Add("End", true, "Amaru Death Cutscene");
+        settings.SetToolTip("End", "This will split at the final cutscene where the timer will normally end\nPlease note that this may split at inconsistent times due to the XYZ being inconsistent");
+      settings.Add("COL", false, "Collectibles");
 
-    settings.Add("End", true, "Amaru Death Cutscene");
-      settings.SetToolTip("End", "This will split at the final cutscene where the timer will normally end\nPlease note that this may split at inconsistent times due to the XYZ being inconsistent");
-    settings.Add("COL", false, "Collectibles");
-    //</editor-fold>
+  // === Area Splits === //
 
-    //<editor-fold> Area Splits
-
-      //<editor-fold> Description
-      // This creates settings for each split defined in the List "Splits"
-      // It checks if it has a third string
-      //  - If it does, it overwrites the default Parent
-      // It then adds the Setting:
-      //  - Using the 1st string as the ID
-      //  - Setting it to "off" by default
-      //  - And reusing the 1st string for the Display Name
-      // Then it sets the tooltip for the setting:
-      //  - Using the 2nd String as the tooltip
-      //</editor-fold>
+    // This creates settings for each split defined in the List "Splits":
+    // It checks if it has a third string
+    //  - If it does, it overwrites the default Parent
+    // It then adds the Setting:
+    //  - Using the 1st string as the ID
+    //  - Setting it to "off" by default
+    //  - And reusing the 1st string for the Display Name
+    // Then it sets the tooltip for the setting:
+    //  - Using the 2nd String as the tooltip
 
     foreach(var Setting in Splits){
       if(Setting.Count == 3)
         settings.CurrentDefaultParent = Setting[2];
       settings.Add(Setting[0], false, Setting[0]);
-      settings.SetToolTip(Setting[0], Setting[1]);
-    }
-    //</editor-fold>
+      settings.SetToolTip(Setting[0], Setting[1]);}
 
-    //<editor-fold> Collectible Splits
+    // === Collectible Splits === //
 
-      //<editor-fold> Description
-      // This adds all the settings to do with collectibles
+      // This adds all the settings to do with collectibles:
       // It adds a setting with:
       //  - The ID as the item.Key which is the Area Name
       //  - It set to "off" by default
@@ -412,40 +362,30 @@ startup{
       //  - It set to "off" by default
       //  - The Collectible Type and the Mode as the Display Name
       //  - It's Parent being the Area Name Setting
-      //</editor-fold>
 
-    foreach(var item in vars.Collectibles){
-      settings.Add(item.Key, false, item.Key, "COL");
-      foreach(var item2 in item.Value){
-        settings.Add(item.Key + item2.Key + "Each", false, item2.Key + " (Each)", item.Key);
-        settings.Add(item.Key + item2.Key + "All", false, item2.Key + " (All)", item.Key);
-      }
-    }
-    // </editor-fold>
+      foreach(var item in vars.Collectibles){
+        settings.Add(item.Key, false, item.Key, "COL");
+        foreach(var item2 in item.Value){
+          settings.Add(item.Key + item2.Key + "Each", false, item2.Key + " (Each)", item.Key);
+          settings.Add(item.Key + item2.Key + "All", false, item2.Key + " (All)", item.Key);}}
 
-  //</editor-fold>
+      List<string> HS = new List<string>(); // New dummy list of strings
+      vars.HasSplit = HS; // Use livesplit variables so no errors c:
 
-  List<string> HS = new List<string>(); // New dummy list of strings
-  vars.HasSplit = HS; // Use livesplit variables so no errors c:
+      // Cleat the HasSplit list when the timer starts or else it will never split again
+      EventHandler OnStart = (s, e) => {
+    		vars.HasSplit.Clear();
+      };
+    	timer.OnStart += OnStart; // I guess when the timer starts run ^ that?}
 
-  // Cleat the HasSplit list when the timer starts or else it will never split again
-  EventHandler OnStart = (s, e) =>
-	{
-		vars.HasSplit.Clear();
-	};
-	timer.OnStart += OnStart; // I guess when the timer starts run ^ that?
-}
-//</editor-fold>
-
-//<editor-fold> Init (When the Game is launched)
+// === Init (When the Game is launched) === //
 init{
   timer.IsGameTimePaused = false; // Unpause the timer
   print(modules.First().ModuleMemorySize.ToString()); // Print the ModuleMemorySize
 
-  //<editor-fold> Version Check
+  // === Version Check === //
 
-    //<editor-fold> Description
-    // This will detect the game version
+    // This will detect the game version:
     // CollectibleBase is the Pointer to the Base Address for all Collectibles
     //  - It will change based on the Version
     // By using the ModuleMemorySize of the Game we can determine the Version
@@ -453,12 +393,10 @@ init{
     // Missing Versions (Crash on launch):
     //  - 230.8
     //  - 237.6
-    //</editor-fold>
 
     int CollectibleBase = 0;
 
-  	switch(modules.First().ModuleMemorySize)
-  	{
+  	switch(modules.First().ModuleMemorySize){
       case 313040896:
         version = "260.0";
         CollectibleBase = 0x367B9C8;
@@ -490,70 +428,44 @@ init{
       case 311508992:
         version = "230.9";
         CollectibleBase = 0x3605660;
-        break;
-  	}
-  //</editor-fold>
+        break;}
 
-  //<editor-fold> MemoryWatchers
+  // === MemoryWatchers === //
 
-    //<editor-fold> Description
-    // MemoryWatchers have to be added here as CollectibleBase won't work in the "vars." format
+    // MemoryWatchers have to be added here as CollectibleBase won't work in the "vars." format:
     // The loop goes through the list and adds a MemoryWatcher to the list based on it
     // Since the Collectible Addresses are 4-Byte, the MemoryWatcher is a <int>
     // DeepPointer is just a Pointer (Pointer, Offset)
     //  - The Default module is the exe ("SOTTR")
     //   - DeepPointer("Module", Pointer, Offset(,s))
-    //</editor-fold>
 
     vars.Watchers = new MemoryWatcherList();
 
     foreach(var item in vars.Collectibles){
       foreach(var item2 in item.Value){
-        vars.Watchers.Add(new MemoryWatcher<int>(new DeepPointer(CollectibleBase, item2.Value[0])){Name = item.Key + item2.Key});
-      }
-    }
-  //</editor-fold>
-}
-//</editor-fold>
+        vars.Watchers.Add(new MemoryWatcher<int>(new DeepPointer(CollectibleBase, item2.Value[0])){Name = item.Key + item2.Key});}}}
 
-//<editor-fold> Update (Top Priority and runs a lot)
+// === Update (Top Priority and runs a lot) === //
 update{
   // Memory Watchers won't work without this
   vars.Watchers.UpdateAll(game);
   //print(timer.CurrentAttemptDuration.ToString());
 }
-//</editor-fold>
 
-//<editor-fold> Start (Auto Timer Start)
-start
-{
-  //<editor-fold> Description
-/*Both settings CAN be enabled and it would probably still work tbh
-  The only issue is that the "cine_plane_crash" cutscene is shared-
-  between the opening cutscene and the plane crash cutscene at the-
-  beginning of Peruvian Jungle so if a save is loaded there, it will-
-  start the timer :/
-
-  A check for if it is loading sorta would work so the timer doesn't start -
-  if you're in the beginning of cozumel constantly
-  This doesn't fully solve a perfecting starting system though...
-  Like reloading would start the timer if in that area */
-  //</editor-fold>
-
-    if(current.X == 0 && current.Y == 0 && current.Z == 0 && current.Loading && current.Loading2)
-    {  // Check if the Area has changed
+// === Start (Auto Timer Start) === //
+start{
+  // When going from the Main Menu to the Game, XYZ is equal to 0:
+  if(current.X == 0 && current.Y == 0 && current.Z == 0 && current.Loading && current.Loading2){
     if(settings["StNG"])  // If "Start timer at New Game" setting is enabled...
       if(current.Area == "cine_plane_crash")  // Check if it is equal to opening cutscene
         return true;  // Start the timer
     if(settings["StCo"])  // If "Start timer at Cozumel" setting is enabled...
       if(current.Area == "dd_day_of_the_dead_010")  // Check if it is equal to Cozumel Area
         return true;  // Start the timer
-    }
+      }
 }
-//</editor-fold>
 
 gameTime{
-  print(old.Area + "\n" + current.Area);
   if(current.X == 0 && current.Y == 0 && current.Z == 0 && current.Loading && current.Loading2)
   {
     if(settings["StNG"]){
