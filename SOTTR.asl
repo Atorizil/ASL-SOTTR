@@ -51,6 +51,14 @@ state("SOTTR", "235.3"){
   float X : 0x1E99B30;
   float Y : 0x1E99B34;
   float Z : 0x1E99B38;}
+state("SOTTR", "234.1"){
+	bool Loading : 0x13E07E0;
+	bool Loading2 : 0x14142D0;
+	bool Cutscene : 0x141B8F0;
+	string50 Area : 0x35260F8;
+  float X : 0x1E98A70;
+  float Y : 0x1E98A74;
+  float Z : 0x1E98A78;}
 state("SOTTR", "230.9"){
   bool Loading : 0x13DE7E0;
   bool Loading2 : 0x14122D0;
@@ -60,25 +68,14 @@ state("SOTTR", "230.9"){
   float Y : 0x1E969F4;
   float Z : 0x1E969F8;}
 //state("SOTTR", "230.8")
-state("SOTTR", "234.1"){
-	bool Loading : 0x13E07E0;
-	bool Loading2 : 0x14142D0;
-	bool Cutscene : 0x141B8F0;
-	string50 Area : 0x35260F8;
-  float X : 0x1E98A70;
-  float Y : 0x1E98A74;
-  float Z : 0x1E98A78;}
 
-// === Startup (When the Script is loaded) === //
-startup{
-  // === Area Splits List === //
-
-    // This List contains the information for the Area Splits:
-    //  - The 1st String is the Setting ID and what the game uses for that area
-    //  - The 2nd String is the Tooltip for that setting
-    //  - \n = New Line
-    //  - The 3rd String (if present) is the Parent
-
+startup{ // When the script first runs
+  /* === Area Splits List ===
+  This List contains the information for the Area Splits:
+    - The 1st String is the Setting ID and what the game uses for that area
+    - The 2nd String is the Tooltip for that setting
+    - \n = New Line
+    - The 3rd String (if present) is the Parent */
     List<List<string>> Splits = new List<List<string>>{
       // === Cozumel Caves === //
         new List<string>{"pl_prologue",
@@ -184,26 +181,23 @@ startup{
           new List<string>{"ch_chamber_of_heaven", "Split AFTER the CUTSCENE where they decide what plan to use", "COTS"}};
     vars.Splits = Splits;
 
-    // === Collectibles Dictionary === //
-
-    // Order in Memory:
-    //  - Relics
-    //  - Documents
-    //  - Survival Caches
-    //  - Murals
-    //  - Monoliths
-    //  - Crypts
-    //  - Strongboxes
-
-    // This Dictionary contains multiple Dictionaries for each Area:
-    //  - The String is for the Area
-    //  - This Dictionary only contains areas with collectibles
-    // The Dictionary then contains:
-    //  - A String for the type of collectible
-    //  - A List of Integers
-    //   - The 1st int is the offset from the Pointer
-    //   - The 2nd int is the complete amount of the collectible
-
+    /* === Collectibles Dictionary ===
+    This Dictionary contains multiple Dictionaries for each Area:
+      - The String is for the Area
+      - This Dictionary only contains areas with collectibles
+    The Dictionary then contains:
+      - A String for the type of collectible
+      - A List of Integers:
+        - The 1st int is the offset from the Pointer
+        - The 2nd int is the complete amount of the collectible
+     Order in Memory:
+      - Relics
+      - Documents
+      - Survival Caches
+      - Murals
+      - Monoliths
+      - Crypts
+      - Strongboxes */
     vars.Collectibles = new Dictionary<string, Dictionary<string, List<int>>>{
       {"Cozumel", new Dictionary<string, List<int>>{
           {"Strongboxes", new List<int>{0x5E8, 1}},
@@ -288,12 +282,10 @@ startup{
     		settings.Add("Res", false, "Reset at Main Menu");
     			settings.SetToolTip("Res", "If you need to go to the Main Menu during the run DONT use this");
 
-    // === Parents === //
-
-      // These are the Containers for each area:
-      // If there is a 4th argument
-      //  - It is child of the setting that the ID corresponds to
-
+    /* === Parents ===
+    These are the Containers for each area:
+      - If there is a 4th argument
+        - It is child of the setting that the ID corresponds to */
       settings.Add("AS", true, "Area Splits"); // Parent for the Area Splits
           settings.CurrentDefaultParent = "AS";
         settings.Add("CoC",false,"Cozumel Caves");
@@ -331,38 +323,34 @@ startup{
         settings.SetToolTip("End", "This will split at the final cutscene where the timer will normally end\nPlease note that this may split at inconsistent times due to the XYZ being inconsistent");
       settings.Add("COL", false, "Collectibles");
 
-  // === Area Splits === //
-
-    // This creates settings for each split defined in the List "Splits":
-    // It checks if it has a third string
-    //  - If it does, it overwrites the default Parent
-    // It then adds the Setting:
-    //  - Using the 1st string as the ID
-    //  - Setting it to "off" by default
-    //  - And reusing the 1st string for the Display Name
-    // Then it sets the tooltip for the setting:
-    //  - Using the 2nd String as the tooltip
-
+  /* === Area Splits ===
+  This creates settings for each split defined in the List "Splits":
+    It checks if it has a third string
+      - If it does, it overwrites the default Parent
+    It then adds the Setting:
+      - Using the 1st string as the ID
+      - Setting it to "off" by default
+      - And reusing the 1st string for the Display Name
+    Then it sets the tooltip for the setting:
+      - Using the 2nd String as the tooltip */
     foreach(var Setting in Splits){
       if(Setting.Count == 3)
         settings.CurrentDefaultParent = Setting[2];
       settings.Add(Setting[0], false, Setting[0]);
       settings.SetToolTip(Setting[0], Setting[1]);}
 
-    // === Collectible Splits === //
-
-      // This adds all the settings to do with collectibles:
-      // It adds a setting with:
-      //  - The ID as the item.Key which is the Area Name
-      //  - It set to "off" by default
-      //  - The Area Name as the Display Name
-      //  - It's parent being "Collectibles"
-      // Then adds two settings with:
-      //  - The Area Name, Collectible Type and the Mode as the ID
-      //  - It set to "off" by default
-      //  - The Collectible Type and the Mode as the Display Name
-      //  - It's Parent being the Area Name Setting
-
+    /* === Collectible Splits ===
+    This adds all the settings to do with collectibles:
+      It adds a setting with:
+        - The ID as the item.Key which is the Area Name
+        - It set to "off" by default
+        - The Area Name as the Display Name
+        - It's parent being "Collectibles"
+      Then adds two settings with:
+        - The Area Name, Collectible Type and the Mode as the ID
+        - It set to "off" by default
+        - The Collectible Type and the Mode as the Display Name
+        - It's Parent being the Area Name Setting */
       foreach(var item in vars.Collectibles){
         settings.Add(item.Key, false, item.Key, "COL");
         foreach(var item2 in item.Value){
@@ -372,29 +360,26 @@ startup{
       List<string> HS = new List<string>(); // New dummy list of strings
       vars.HasSplit = HS; // Use livesplit variables so no errors c:
 
-      // Cleat the HasSplit list when the timer starts or else it will never split again
+      // Clear the HasSplit list when the timer starts or else it will never split again
       EventHandler OnStart = (s, e) => {
     		vars.HasSplit.Clear();
       };
-    	timer.OnStart += OnStart; // I guess when the timer starts run ^ that?}
+    	timer.OnStart += OnStart; // When the Timer starts, run (^)
+}
 
-// === Init (When the Game is launched) === //
-init{
+init{ // When the game is launched
   timer.IsGameTimePaused = false; // Unpause the timer
   print(modules.First().ModuleMemorySize.ToString()); // Print the ModuleMemorySize
 
-  // === Version Check === //
-
-    // This will detect the game version:
-    // CollectibleBase is the Pointer to the Base Address for all Collectibles
-    //  - It will change based on the Version
-    // By using the ModuleMemorySize of the Game we can determine the Version
-    //
-    // Missing Versions (Crash on launch):
-    //  - 230.8
-    //  - 237.6
-
-    int CollectibleBase = 0;
+  /* === Version Check ===
+  This will detect the game version:
+    CollectibleBase is the Pointer to the Base Address for all Collectibles
+      - It will change based on the Version
+    By using the ModuleMemorySize of the Game we can determine the Version
+  Missing Versions (Crash on launch):
+    - 230.8
+    - 237.6 */
+    int CollectibleBase = 0; // Depending on the version this will be changed to the correct address
 
   	switch(modules.First().ModuleMemorySize){
       case 313040896:
@@ -428,32 +413,30 @@ init{
       case 311508992:
         version = "230.9";
         CollectibleBase = 0x3605660;
-        break;}
+        break;
+      }
 
-  // === MemoryWatchers === //
-
-    // MemoryWatchers have to be added here as CollectibleBase won't work in the "vars." format:
-    // The loop goes through the list and adds a MemoryWatcher to the list based on it
-    // Since the Collectible Addresses are 4-Byte, the MemoryWatcher is a <int>
-    // DeepPointer is just a Pointer (Pointer, Offset)
-    //  - The Default module is the exe ("SOTTR")
-    //   - DeepPointer("Module", Pointer, Offset(,s))
-
+  /* === MemoryWatchers ===
+    MemoryWatchers have to be added here as CollectibleBase won't work in the "vars." format:
+      The loop goes through the list and adds a MemoryWatcher to the list based on it
+      Since the Collectible Addresses are 4-Byte, the MemoryWatcher is a <int>
+    DeepPointer is just a Pointer (Pointer, Offset)
+      - The Default module is the exe ("SOTTR")
+        - DeepPointer("Module", Pointer, Offset(,s)) */
     vars.Watchers = new MemoryWatcherList();
 
     foreach(var item in vars.Collectibles){
       foreach(var item2 in item.Value){
-        vars.Watchers.Add(new MemoryWatcher<int>(new DeepPointer(CollectibleBase, item2.Value[0])){Name = item.Key + item2.Key});}}}
-
-// === Update (Top Priority and runs a lot) === //
-update{
-  // Memory Watchers won't work without this
-  vars.Watchers.UpdateAll(game);
-  //print(timer.CurrentAttemptDuration.ToString());
+        vars.Watchers.Add(new MemoryWatcher<int>(new DeepPointer(CollectibleBase, item2.Value[0])){Name = item.Key + item2.Key});}}
 }
 
-// === Start (Auto Timer Start) === //
-start{
+update{ // Top priority & runs a lot
+  // Memory Watchers won't work without this
+  vars.Watchers.UpdateAll(game);
+  //print(timer.CurrentAttemptDuration.ToString()); // If you want to print the Current Real Time
+}
+
+start{ // Automatic Timer Starting
   // When going from the Main Menu to the Game, XYZ is equal to 0:
   if(current.X == 0 && current.Y == 0 && current.Z == 0 && current.Loading && current.Loading2){
     if(settings["StNG"])  // If "Start timer at New Game" setting is enabled...
@@ -465,61 +448,50 @@ start{
       }
 }
 
-gameTime{
-  if(current.X == 0 && current.Y == 0 && current.Z == 0 && current.Loading && current.Loading2)
-  {
-    if(settings["StNG"]){
-      if(current.Area == "cine_plane_crash"){
-        return TimeSpan.FromSeconds(0);
-      }
-    }
-    if(settings["StCo"]){
-      if(current.Area == "dd_day_of_the_dead_010"){
-        return TimeSpan.FromSeconds(320);
-      }
-    }
+gameTime{ // For setting the Game Timer
+  // Basically a clone of the Start Action except it sets the Game Timer
+  if(current.X == 0 && current.Y == 0 && current.Z == 0 && current.Loading && current.Loading2){
+    if(settings["StNG"])
+      if(current.Area == "cine_plane_crash")
+        return TimeSpan.FromSeconds(0); // 00:00
+    if(settings["StCo"])
+      if(current.Area == "dd_day_of_the_dead_010")
+        return TimeSpan.FromSeconds(320); // 05:20 (5 * 60 + 20)
   }
 }
 
-isLoading
-{
+isLoading{ // For Pausing the Game Timer
     return current.Loading || current.Cutscene || current.Loading2;
     // These ^ are booleans and isLoading expects a boolean to be returned
     // So that basically means pause the timer if any of those values == 1
     // || = or
 }
 
-reset
-{
+reset{ // Automatic Restarting
 	if(current.Area != old.Area) // Check if the Area has changed
 		if(current.Area == "trx_main_menu") // Check if the current Area is the main menu
 			if(settings["Res"]) // Check if the setting is active
 				return true; // Reset
 }
 
-exit
-{
-    timer.IsGameTimePaused = true;
-    // Pause the timer if the game is shutdown
+exit{ // When the game closes
+    timer.IsGameTimePaused = true; // Pause the timer
 }
 
-split
-{
-  foreach(var item in vars.Splits)  // for every list in the Splits list
-    if(current.Area != old.Area)  // Check if the Area has changed
+split{ // Automatic Splitting
+  /* === Area Splitting ===
+  */
+  foreach(var item in vars.Splits){ // for every list in the Splits list
+    if(current.Area != old.Area) // Check if the Area has changed
       if(current.Area == item[0]) // Check if it is equal to the 1st string in the current list
         if(settings[item[0]]) // Check if the corresponding setting is active
-          if(settings["DSP"]) // If the "Double Split Prevention" setting is activated
-          {
-            if(vars.HasSplit.Count == 0)  // Check if the "HasSplit" list is empty
-            {
+          if(settings["DSP"]){ // If the "Double Split Prevention" setting is activated
+            if(vars.HasSplit.Count == 0){ // Check if the "HasSplit" list is empty
               vars.HasSplit.Add(item[0]); // Add the current split to the "HasSplit" list
-              return true;  // Split
+              return true; // Split
             }
-            else // If the list is not empty (every time except the 1st)
-            {
-              foreach(var item2 in vars.HasSplit) // For every string in "HasSplit"
-              {
+            else{ // If the list is not empty (every time except the 1st)
+              foreach(var item2 in vars.HasSplit){ // For every string in "HasSplit"
                 if(item2 == item[0]) // Check if it is in the "HasSplit" list
                   return false; // Don't split & restart the loop
               }
@@ -528,12 +500,13 @@ split
               return true; // Split
             }
           }
-          else // If "Double Split Prevention" is NOT activated
-          {
+          else{ // If "Double Split Prevention" is NOT activated
             return true; // Just split
           }
+        }
 
-  // End Split
+  /* === End Split ===
+  */
   if(current.Area == "ch_chamber_of_heaven" && current.Cutscene && (int)current.X == (int)20576.99f && (int)current.Y == (int)9293.358f && (int)current.Z == (int)3704.113f)
     if(settings["End"]) // If the setting to split at the end is active
       if(settings["DSP"]){ // If Double Split Prevention is active
@@ -554,6 +527,7 @@ split
         return true;
       }
 
+  /* === Collectible Splitting === */
   foreach(var item in vars.Collectibles){
     foreach(var item2 in item.Value){
       var V = vars.Watchers[item.Key + item2.Key];
