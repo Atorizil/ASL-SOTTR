@@ -54,3 +54,24 @@ Choosing both will cause it to split twice once all collectibles of the given ty
 ## Problems
 - Cutscenes don't work for everything:
   - Near the end of Trial of the Eagle, Spike Deaths don't remove time
+
+# Finding Addresses
+Just a reference for when this needs updating
+ - *Loading* = Search for 1064680971 when Loading, 0 when not in "SOTTR.exe"
+ - *Cutscene* = Search for 3 when Skippable, 4 if Unskippable, 0 when neither (Can be found with one cutscene)
+   - Search 0, then 3 / 4, then go to main menu, 0, and there should be one address
+ - *Area* = Load 1st save, search `dd_day_of_the_dead_010`, bottom address
+ - *X, Y, Z* = Z is Y in this game (vertical axis)
+  - So find Z by doing unknown float, ascend, inc, descend, dec, repeat
+  - Will be a few addresses
+  - Go to 1st save and when loading search for those that are 0, top one is the address
+  - Then copy and paste with an offset of -4
+## Collectible Base
+ - Find one collectible address in the region summary
+   - Make sure it is the one that changes the disply in the map screen
+ - Find out what accesses the address
+    - Pick up another collectible of the same type in the same area
+ - Double click on each result until there is an "easy guess" similar to 8xxxxxxx
+ - Copy that address and add it the cheat table (Add Address Manually)
+ - Do a pointer scan for that address at 1 level
+  - 3 Results should appear, us the one that has an offset of 0

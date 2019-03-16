@@ -1,4 +1,19 @@
 // === State Descriptors === //
+state("SOTTR", "270.0"){
+  // Should be 1064680971 when Loading
+  bool Loading : 0x357D2C0;
+  bool Loading2 : 0x357D2C0;
+  // 3 when Skippable, 4 when not
+  bool Cutscene : 0x1487A58;
+  string50 Area : 0x359E328;
+  float X : 0x1F0F200;
+  float Y : 0x1F0F204;
+  float Z : 0x1F0F208;
+  // Finding X Y Z
+  // Find a bunch of Z addresses ("SOTTR.exe", Z = Y in this game)
+  // Few should go to 0 when the game loads a save
+  // Pick the top one
+}
 state("SOTTR", "260.0"){
   bool Loading : 0x1448910;
   bool Loading2 : 0x147C490;
@@ -382,6 +397,10 @@ init{ // When the game is launched
     int CollectibleBase = 0; // Depending on the version this will be changed to the correct address
 
   	switch(modules.First().ModuleMemorySize){
+      case 308297728:
+        version = "270.0";
+        CollectibleBase = 0x367FA50;
+        break;
       case 313040896:
         version = "260.0";
         CollectibleBase = 0x367B9C8;
@@ -461,10 +480,10 @@ gameTime{ // For setting the Game Timer
 }
 
 isLoading{ // For Pausing the Game Timer
-    return current.Loading || current.Cutscene || current.Loading2;
-    // These ^ are booleans and isLoading expects a boolean to be returned
-    // So that basically means pause the timer if any of those values == 1
-    // || = or
+      return current.Loading || current.Cutscene || current.Loading2;
+      // These ^ are booleans and isLoading expects a boolean to be returned
+      // So that basically means pause the timer if any of those values == 1
+      // || = or
 }
 
 reset{ // Automatic Restarting
