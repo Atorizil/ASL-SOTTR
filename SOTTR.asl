@@ -1,18 +1,21 @@
 // === State Descriptors === //
+state("SOTTR", "279.0"){
+  bool Loading : 0x3586540;
+  bool Loading2 : 0x3586540;
+  bool Cutscene : 0x1490A58;
+  string50 Area : 0x35A75A8;
+  float X : 0x1F18480;
+  float Y : 0x1F18484;
+  float Z : 0x1F18484;
+}
 state("SOTTR", "270.0"){
-  // Should be 1064680971 when Loading
   bool Loading : 0x357D2C0;
   bool Loading2 : 0x357D2C0;
-  // 3 when Skippable, 4 when not
   bool Cutscene : 0x1487A58;
   string50 Area : 0x359E328;
   float X : 0x1F0F200;
   float Y : 0x1F0F204;
   float Z : 0x1F0F208;
-  // Finding X Y Z
-  // Find a bunch of Z addresses ("SOTTR.exe", Z = Y in this game)
-  // Few should go to 0 when the game loads a save
-  // Pick the top one
 }
 state("SOTTR", "260.0"){
   bool Loading : 0x1448910;
@@ -397,6 +400,10 @@ init{ // When the game is launched
     int CollectibleBase = 0; // Depending on the version this will be changed to the correct address
 
   	switch(modules.First().ModuleMemorySize){
+      case 311033856:
+        version = "279.0";
+        CollectibleBase = 0x3688D20;
+        break;
       case 308297728:
         version = "270.0";
         CollectibleBase = 0x367FA50;
