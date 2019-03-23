@@ -2,6 +2,65 @@
 <CheatTable CheatEngineTableVersion="28">
   <CheatEntries>
     <CheatEntry>
+      <ID>411</ID>
+      <Description>"280.0"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" Activated="1" RealAddress="00000000"/>
+      <Color>FF8000</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>412</ID>
+          <Description>"Loading"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>SOTTR.exe+358D8C0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>413</ID>
+          <Description>"Cutscene"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>SOTTR.exe+1497BD8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>414</ID>
+          <Description>"Area"</Description>
+          <VariableType>String</VariableType>
+          <Length>16</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>SOTTR.exe+35AE928</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>415</ID>
+          <Description>"Z"</Description>
+          <VariableType>Float</VariableType>
+          <Address>SOTTR.exe+1F1F608</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>416</ID>
+          <Description>"Y"</Description>
+          <VariableType>Float</VariableType>
+          <Address>141F1F604</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>417</ID>
+          <Description>"X"</Description>
+          <VariableType>Float</VariableType>
+          <Address>141F1F600</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>420</ID>
+          <Description>"Collectible Base"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>"SOTTR.exe"+036900A0</Address>
+          <Offsets>
+            <Offset>0</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
       <ID>400</ID>
       <Description>"279.9"</Description>
       <Options moHideChildren="1"/>
