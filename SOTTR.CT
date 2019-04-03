@@ -2,6 +2,72 @@
 <CheatTable CheatEngineTableVersion="28">
   <CheatEntries>
     <CheatEntry>
+      <ID>421</ID>
+      <Description>"286.0"</Description>
+      <Options moHideChildren="1"/>
+      <LastState Value="" Activated="1" RealAddress="00000000"/>
+      <Color>FF8000</Color>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>422</ID>
+          <Description>"Loading"</Description>
+          <LastState Value="0" RealAddress="143587640"/>
+          <VariableType>4 Bytes</VariableType>
+          <Address>SOTTR.exe+3587640</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>423</ID>
+          <Description>"Cutscene"</Description>
+          <LastState Value="0" RealAddress="141491BD8"/>
+          <VariableType>4 Bytes</VariableType>
+          <Address>SOTTR.exe+1491BD8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>424</ID>
+          <Description>"Area"</Description>
+          <LastState RealAddress="1435A86A8"/>
+          <VariableType>String</VariableType>
+          <Length>16</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>SOTTR.exe+35A86A8</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>425</ID>
+          <Description>"Z"</Description>
+          <LastState Value="-2783.840088" RealAddress="141F19388"/>
+          <VariableType>Float</VariableType>
+          <Address>SOTTR.exe+1F19388</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>426</ID>
+          <Description>"Y"</Description>
+          <LastState Value="-4386.48584" RealAddress="141F19384"/>
+          <VariableType>Float</VariableType>
+          <Address>SOTTR.exe+1F19384</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>427</ID>
+          <Description>"X"</Description>
+          <LastState Value="12636.34766" RealAddress="141F19380"/>
+          <VariableType>Float</VariableType>
+          <Address>SOTTR.exe+1F19380</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>434</ID>
+          <Description>"Collectible Base"</Description>
+          <LastState Value="3316845787" RealAddress="9088A920"/>
+          <VariableType>4 Bytes</VariableType>
+          <Address>"SOTTR.exe"+03689E20</Address>
+          <Offsets>
+            <Offset>0</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
       <ID>411</ID>
       <Description>"280.0"</Description>
       <Options moHideChildren="1"/>
@@ -12,18 +78,21 @@
         <CheatEntry>
           <ID>412</ID>
           <Description>"Loading"</Description>
+          <LastState Value="0" RealAddress="14358D8C0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+358D8C0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>413</ID>
           <Description>"Cutscene"</Description>
+          <LastState Value="1081529168" RealAddress="141497BD8"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+1497BD8</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>414</ID>
           <Description>"Area"</Description>
+          <LastState RealAddress="1435AE928"/>
           <VariableType>String</VariableType>
           <Length>16</Length>
           <Unicode>0</Unicode>
@@ -34,18 +103,21 @@
         <CheatEntry>
           <ID>415</ID>
           <Description>"Z"</Description>
+          <LastState Value="0" RealAddress="141F1F608"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1F1F608</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>416</ID>
           <Description>"Y"</Description>
+          <LastState Value="0" RealAddress="141F1F604"/>
           <VariableType>Float</VariableType>
           <Address>141F1F604</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>417</ID>
           <Description>"X"</Description>
+          <LastState Value="0" RealAddress="141F1F600"/>
           <VariableType>Float</VariableType>
           <Address>141F1F600</Address>
         </CheatEntry>
@@ -71,12 +143,14 @@
         <CheatEntry>
           <ID>404</ID>
           <Description>"Loading"</Description>
+          <LastState Value="0" RealAddress="143586540"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+3586540</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>401</ID>
           <Description>"Area"</Description>
+          <LastState RealAddress="1435A75A8"/>
           <VariableType>String</VariableType>
           <Length>22</Length>
           <Unicode>0</Unicode>
@@ -87,24 +161,28 @@
         <CheatEntry>
           <ID>402</ID>
           <Description>"Cutscene"</Description>
+          <LastState Value="1095305872" RealAddress="141490A58"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+1490A58</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>405</ID>
           <Description>"Z"</Description>
+          <LastState Value="0" RealAddress="141F18488"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1F18488</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>406</ID>
           <Description>"Y"</Description>
+          <LastState Value="0" RealAddress="141F18484"/>
           <VariableType>Float</VariableType>
           <Address>141F18484</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>407</ID>
           <Description>"X"</Description>
+          <LastState Value="0" RealAddress="141F18480"/>
           <VariableType>Float</VariableType>
           <Address>141F18480</Address>
         </CheatEntry>
@@ -130,6 +208,7 @@
         <CheatEntry>
           <ID>391</ID>
           <Description>"Area"</Description>
+          <LastState RealAddress="14359E328"/>
           <VariableType>String</VariableType>
           <Length>22</Length>
           <Unicode>0</Unicode>
@@ -140,36 +219,42 @@
         <CheatEntry>
           <ID>392</ID>
           <Description>"Loading"</Description>
+          <LastState Value="0" RealAddress="14357D2C0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+357D2C0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>393</ID>
           <Description>"Cutscene"</Description>
+          <LastState Value="0" RealAddress="141487A58"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+1487A58</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>394</ID>
           <Description>"Z"</Description>
+          <LastState Value="0" RealAddress="141F0F208"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1F0F208</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>395</ID>
           <Description>"Y"</Description>
+          <LastState Value="0" RealAddress="141F0F204"/>
           <VariableType>Float</VariableType>
           <Address>141F0F204</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>396</ID>
           <Description>"X"</Description>
+          <LastState Value="0" RealAddress="141F0F200"/>
           <VariableType>Float</VariableType>
           <Address>141F0F200</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>399</ID>
           <Description>"Collectible Base"</Description>
+          <LastState Value="1130887792" RealAddress="14367FA60"/>
           <VariableType>4 Bytes</VariableType>
           <Address>"SOTTR.exe"+0367FA50</Address>
           <Offsets>
@@ -189,24 +274,28 @@
         <CheatEntry>
           <ID>381</ID>
           <Description>"Loading"</Description>
+          <LastState Value="0" RealAddress="141448910"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+1448910</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>386</ID>
           <Description>"Loading2"</Description>
+          <LastState Value="4278190080" RealAddress="14147C490"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+147C490</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>364</ID>
           <Description>"Cutscene"</Description>
+          <LastState Value="0" RealAddress="141483A70"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+1483A70</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>382</ID>
           <Description>"Area"</Description>
+          <LastState RealAddress="14359A2A8"/>
           <VariableType>String</VariableType>
           <Length>22</Length>
           <Unicode>0</Unicode>
@@ -217,24 +306,28 @@
         <CheatEntry>
           <ID>385</ID>
           <Description>"X"</Description>
+          <LastState Value="0" RealAddress="141F0B180"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1F0B180</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>384</ID>
           <Description>"Y"</Description>
+          <LastState Value="0" RealAddress="141F0B184"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1F0B184</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>383</ID>
           <Description>"Z"</Description>
+          <LastState Value="0" RealAddress="141F0B188"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1F0B188</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>389</ID>
           <Description>"Collectible Base"</Description>
+          <LastState Value="1130871232" RealAddress="143669D20"/>
           <VariableType>4 Bytes</VariableType>
           <Address>"SOTTR.exe"+0367B9C8</Address>
           <Offsets>
@@ -741,24 +834,28 @@
         <CheatEntry>
           <ID>261</ID>
           <Description>"Loading"</Description>
+          <LastState Value="713742" RealAddress="14142F8A0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+142F8A0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>262</ID>
           <Description>"Loading2"</Description>
+          <LastState Value="0" RealAddress="14146D830"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+146D830</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>258</ID>
           <Description>"Cutscene"</Description>
+          <LastState Value="0" RealAddress="14146A930"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+146A930</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>257</ID>
           <Description>"Area"</Description>
+          <LastState RealAddress="14357F0A8"/>
           <VariableType>String</VariableType>
           <Length>22</Length>
           <Unicode>0</Unicode>
@@ -769,18 +866,21 @@
         <CheatEntry>
           <ID>284</ID>
           <Description>"X"</Description>
+          <LastState Value="0" RealAddress="141EF1980"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1EF1980</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>283</ID>
           <Description>"Y"</Description>
+          <LastState Value="0" RealAddress="141EF1984"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1EF1984</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>282</ID>
           <Description>"Z"</Description>
+          <LastState Value="0" RealAddress="141EF1988"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1EF1988</Address>
         </CheatEntry>
@@ -806,24 +906,28 @@
         <CheatEntry>
           <ID>253</ID>
           <Description>"Loading"</Description>
+          <LastState Value="1139755" RealAddress="1414298A0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+14298A0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>254</ID>
           <Description>"Loading2"</Description>
+          <LastState Value="4278190080" RealAddress="14145D370"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+145D370</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>255</ID>
           <Description>"Cutscene"</Description>
+          <LastState Value="0" RealAddress="141464930"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+1464930</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>251</ID>
           <Description>"Area"</Description>
+          <LastState RealAddress="143578F78"/>
           <VariableType>String</VariableType>
           <Length>22</Length>
           <Unicode>0</Unicode>
@@ -834,24 +938,28 @@
         <CheatEntry>
           <ID>281</ID>
           <Description>"X"</Description>
+          <LastState Value="0" RealAddress="141EEB870"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1EEB870</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>280</ID>
           <Description>"Y"</Description>
+          <LastState Value="0" RealAddress="141EEB874"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1EEB874</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>279</ID>
           <Description>"Z"</Description>
+          <LastState Value="0" RealAddress="141EEB878"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1EEB878</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>347</ID>
           <Description>"Collectible Base"</Description>
+          <LastState Value="1130735528" RealAddress="14365A780"/>
           <VariableType>4 Bytes</VariableType>
           <Address>"SOTTR.exe"+0365A758</Address>
           <Offsets>
@@ -871,24 +979,28 @@
         <CheatEntry>
           <ID>219</ID>
           <Description>"Loading"</Description>
+          <LastState Value="33" RealAddress="1414238A0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+14238A0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>83</ID>
           <Description>"Loading2"</Description>
+          <LastState Value="1090861920" RealAddress="141457370"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+1457370</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>218</ID>
           <Description>"Cutscene"</Description>
+          <LastState Value="4290756543" RealAddress="14145E930"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+145E930</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>220</ID>
           <Description>"Area"</Description>
+          <LastState RealAddress="143572AF8"/>
           <VariableType>String</VariableType>
           <Length>22</Length>
           <Unicode>0</Unicode>
@@ -899,18 +1011,21 @@
         <CheatEntry>
           <ID>278</ID>
           <Description>"X"</Description>
+          <LastState Value="0" RealAddress="141EE53F0"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1EE53F0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>277</ID>
           <Description>"Y"</Description>
+          <LastState Value="0" RealAddress="141EE53F4"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1EE53F4</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>276</ID>
           <Description>"Z"</Description>
+          <LastState Value="0" RealAddress="141EE53F8"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1EE53F8</Address>
         </CheatEntry>
@@ -936,24 +1051,28 @@
         <CheatEntry>
           <ID>227</ID>
           <Description>"Loading"</Description>
+          <LastState Value="71119632" RealAddress="1413E18E0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+13E18E0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>232</ID>
           <Description>"Loading2"</Description>
+          <LastState Value="1088" RealAddress="1414153D0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+14153D0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>230</ID>
           <Description>"Cutscene"</Description>
+          <LastState Value="289848608" RealAddress="14141C9F0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+141C9F0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>226</ID>
           <Description>"Area"</Description>
+          <LastState RealAddress="1435271A8"/>
           <VariableType>String</VariableType>
           <Length>22</Length>
           <Unicode>0</Unicode>
@@ -964,18 +1083,21 @@
         <CheatEntry>
           <ID>275</ID>
           <Description>"X"</Description>
+          <LastState Value="-1.528024673" RealAddress="141E99B30"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1E99B30</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>274</ID>
           <Description>"Y"</Description>
+          <LastState Value="0" RealAddress="141E99B34"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1E99B34</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>273</ID>
           <Description>"Z"</Description>
+          <LastState Value="-1.481238139E-21" RealAddress="141E99B38"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1E99B38</Address>
         </CheatEntry>
@@ -1001,24 +1123,28 @@
         <CheatEntry>
           <ID>238</ID>
           <Description>"Loading"</Description>
+          <LastState Value="71119632" RealAddress="1413E18E0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+13E18E0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>239</ID>
           <Description>"Loading2"</Description>
+          <LastState Value="1088" RealAddress="1414153D0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+14153D0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>240</ID>
           <Description>"Cutscene"</Description>
+          <LastState Value="289848608" RealAddress="14141C9F0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+141C9F0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>233</ID>
           <Description>"Area"</Description>
+          <LastState RealAddress="143527198"/>
           <VariableType>String</VariableType>
           <Length>22</Length>
           <Unicode>0</Unicode>
@@ -1029,18 +1155,21 @@
         <CheatEntry>
           <ID>272</ID>
           <Description>"X"</Description>
+          <LastState Value="-1.528024673" RealAddress="141E99B30"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1E99B30</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>271</ID>
           <Description>"Y"</Description>
+          <LastState Value="0" RealAddress="141E99B34"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1E99B34</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>270</ID>
           <Description>"Z"</Description>
+          <LastState Value="-1.481238139E-21" RealAddress="141E99B38"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1E99B38</Address>
         </CheatEntry>
@@ -1066,24 +1195,28 @@
         <CheatEntry>
           <ID>222</ID>
           <Description>"Loading"</Description>
+          <LastState Value="746501" RealAddress="1413E07E0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+13E07E0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>266</ID>
           <Description>"Loading2"</Description>
+          <LastState Value="284115205" RealAddress="1414142D0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>"SOTTR.exe"+14142D0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>224</ID>
           <Description>"Cutscene"</Description>
+          <LastState Value="553989" RealAddress="14141B8F0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+141B8F0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>221</ID>
           <Description>"Area"</Description>
+          <LastState RealAddress="1435260F8"/>
           <VariableType>String</VariableType>
           <Length>50</Length>
           <Unicode>0</Unicode>
@@ -1094,18 +1227,21 @@
         <CheatEntry>
           <ID>263</ID>
           <Description>"X"</Description>
+          <LastState Value="-6.554187203E12" RealAddress="141E98A70"/>
           <VariableType>Float</VariableType>
           <Address>"SOTTR.exe"+1E98A70</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>264</ID>
           <Description>"Y"</Description>
+          <LastState Value="0" RealAddress="141E98A74"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1E98A74</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>265</ID>
           <Description>"Z"</Description>
+          <LastState Value="-4.137575448E-25" RealAddress="141E98A78"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1E98A78</Address>
         </CheatEntry>
@@ -1131,24 +1267,28 @@
         <CheatEntry>
           <ID>242</ID>
           <Description>"Loading"</Description>
+          <LastState Value="20834200" RealAddress="1413DE7E0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+13DE7E0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>243</ID>
           <Description>"Loading2"</Description>
+          <LastState Value="268065" RealAddress="1414122D0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+14122D0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>244</ID>
           <Description>"Cutscene"</Description>
+          <LastState Value="1455108" RealAddress="1414198F0"/>
           <VariableType>4 Bytes</VariableType>
           <Address>SOTTR.exe+14198F0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>245</ID>
           <Description>"Area"</Description>
+          <LastState RealAddress="143524088"/>
           <VariableType>String</VariableType>
           <Length>22</Length>
           <Unicode>0</Unicode>
@@ -1159,18 +1299,21 @@
         <CheatEntry>
           <ID>269</ID>
           <Description>"X"</Description>
+          <LastState Value="-5.155124675E11" RealAddress="141E969F0"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1E969F0</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>268</ID>
           <Description>"Y"</Description>
+          <LastState Value="0" RealAddress="141E969F4"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1E969F4</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>267</ID>
           <Description>"Z"</Description>
+          <LastState Value="-1.009416773E-19" RealAddress="141E969F8"/>
           <VariableType>Float</VariableType>
           <Address>SOTTR.exe+1E969F8</Address>
         </CheatEntry>
