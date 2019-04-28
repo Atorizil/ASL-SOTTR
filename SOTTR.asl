@@ -1,4 +1,13 @@
 // === State Descriptors === //
+state("SOTTR", "292.0"){
+  bool Loading : 0x35885C0;
+  bool Loading2 : 0x35885C0;
+  bool Cutscene : 0x1492B58;
+  string50 Area : 0x35A9628;
+  float X : 0x1F1A300;
+  float Y : 0x1F1A304;
+  float Z : 0x1F1A308;
+}
 state("SOTTR", "286.0"){
   bool Loading : 0x3587640;
   bool Loading2 : 0x3587640;
@@ -418,6 +427,10 @@ init{ // When the game is launched
     int CollectibleBase = 0; // Depending on the version this will be changed to the correct address
 
   	switch(modules.First().ModuleMemorySize){
+      case 313888768:
+        version = "292.0";
+        CollectibleBase = 0x368AD90;
+        break;
       case 306704384:
         version = "286.0";
         CollectibleBase = 0x3689E20;

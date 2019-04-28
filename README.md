@@ -1,6 +1,6 @@
 # Shadow of the Tomb Raider Load Removal and Auto Splitting
 
-## 286.0
+## 292.0
 
 Auto spliiting, starting, stopping and Load Removal for Shadow of the Tomb Raider
 
@@ -57,7 +57,6 @@ Choosing both will cause it to split twice once all collectibles of the given ty
 
 # Finding Addresses
 Just a reference for when this needs updating
-|Loading|Cutscene|Area|X, Y, Z|Area
 #### Loading
 - Search for 1064680971 when Loading, 0 when not in "SOTTR.exe"
 #### Cutscene
