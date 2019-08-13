@@ -16,7 +16,7 @@ state("SOTTR", "292.0")
 state("SOTTR", "286.0")
 {
   bool Loading : 0x3587640;
-  bool Cutscene : 0x1491BD8;
+  uint Cutscene : 0x03690880, 0x68, 0x688, 0x90, 0x10, 0x294;
   string50 Area : 0x35A86A8;
   float X : 0x1F19388; float Y : 0x1F19384; float Z : 0x1F19380;
 }
@@ -517,12 +517,14 @@ gameTime{ // For setting the Game Timer
 isLoading{ // For Pausing the Game Timer
   print(current.Cutscene.ToString());
   if(current.Cutscene != 0 && (
-    !(current.Cutscene == 3221496410 && current.Area == "dd_day_of_the_dead_050") || // Cutscene after leaving the temple tomb
-    !(current.Cutscene == 894107814 && current.Area == "cm_croft_manor") || // At the top of croft manor
-    !(current.Cutscene == 969044434 && current.Area == "lj_lost_in_the_jungle_v2_02") || // After standing up from camp (Broken the first time, works after a reload)
+    !(current.Cutscene == 3221496410 && current.Area == "dd_day_of_the_dead_050") && // Cutscene after leaving the temple tomb
+    !(current.Cutscene == 894107814 && current.Area == "cm_croft_manor") && // At the top of croft manor
+    !(current.Cutscene == 969044434 && current.Area == "lj_lost_in_the_jungle_v2_02") && // After standing up from camp (Broken the first time, works after a reload)
     !(current.Cutscene == 3528814387 && current.Area == "lj_lost_in_the_jungle_v2_connector_out") // Crawling under the truck
     ))
+    {
       return true;
+    }
   
   return current.Loading;
 }
