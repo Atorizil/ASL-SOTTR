@@ -23,7 +23,7 @@ state("SOTTR", "286.0")
 state("SOTTR", "280.0")
 {
   bool Loading : 0x358D8C0;
-  bool Cutscene : 0x1497BD8;
+  uint Cutscene : 0x03696B08, 0x0, 0x628, 0x40, 0x484;
   string50 Area : 0x35AE928;
   float X : 0x1F1F600; float Y : 0x1F1F604; float Z : 0x1F1F608;
 }
