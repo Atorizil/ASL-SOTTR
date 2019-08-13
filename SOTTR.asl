@@ -1,126 +1,113 @@
-// === State Descriptors === //
-state("SOTTR", "292.0"){
+/* #region State Descriptors */
+state("SOTTR", "294.0")
+{
   bool Loading : 0x35885C0;
-  bool Loading2 : 0x35885C0;
-  bool Cutscene : 0x1492B58;
+  uint Cutscene : 0x03691808, 0x0, 0x330, 0x40, 0x294;
   string50 Area : 0x35A9628;
-  float X : 0x1F1A300;
-  float Y : 0x1F1A304;
-  float Z : 0x1F1A308;
+  float X : 0x1F1A300; float Y : 0x1F1A304; float Z : 0x1F1A308;
 }
-state("SOTTR", "286.0"){
+state("SOTTR", "292.0")
+{
+  bool Loading : 0x35885C0;
+  uint Cutscene : 0x03691808, 0x0, 0x330, 0x40, 0x294;
+  string50 Area : 0x35A9628;
+  float X : 0x1F1A300; float Y : 0x1F1A304; float Z : 0x1F1A308;
+}
+state("SOTTR", "286.0")
+{
   bool Loading : 0x3587640;
-  bool Loading2 : 0x3587640;
   bool Cutscene : 0x1491BD8;
   string50 Area : 0x35A86A8;
-  float X : 0x1F19388;
-  float Y : 0x1F19384;
-  float Z : 0x1F19380;
+  float X : 0x1F19388; float Y : 0x1F19384; float Z : 0x1F19380;
 }
-state("SOTTR", "280.0"){
+state("SOTTR", "280.0")
+{
   bool Loading : 0x358D8C0;
-  bool Loading2 : 0x358D8C0;
   bool Cutscene : 0x1497BD8;
   string50 Area : 0x35AE928;
-  float X : 0x1F1F600;
-  float Y : 0x1F1F604;
-  float Z : 0x1F1F608;
+  float X : 0x1F1F600; float Y : 0x1F1F604; float Z : 0x1F1F608;
 }
-state("SOTTR", "279.0"){
+state("SOTTR", "279.0")
+{
   bool Loading : 0x3586540;
-  bool Loading2 : 0x3586540;
   bool Cutscene : 0x1490A58;
   string50 Area : 0x35A75A8;
-  float X : 0x1F18480;
-  float Y : 0x1F18484;
-  float Z : 0x1F18484;
+  float X : 0x1F18480; float Y : 0x1F18484; float Z : 0x1F18484;
 }
-state("SOTTR", "270.0"){
+state("SOTTR", "270.0")
+{
   bool Loading : 0x357D2C0;
-  bool Loading2 : 0x357D2C0;
   bool Cutscene : 0x1487A58;
   string50 Area : 0x359E328;
-  float X : 0x1F0F200;
-  float Y : 0x1F0F204;
-  float Z : 0x1F0F208;
+  float X : 0x1F0F200; float Y : 0x1F0F204; float Z : 0x1F0F208;
 }
-state("SOTTR", "260.0"){
+state("SOTTR", "260.0")
+{
   bool Loading : 0x1448910;
-  bool Loading2 : 0x147C490;
   bool Cutscene : 0x1483A70;
   string50 Area : 0x359A2A8;
-  float X : 0x1F0B180;
-  float Y : 0x1F0B184;
-  float Z : 0x1F0B188;}
+  float X : 0x1F0B180; float Y : 0x1F0B184; float Z : 0x1F0B188;
+}
 state("SOTTR", "247.0"){
   bool Loading : 0x142F8A0;
-  bool Loading2 : 0x146D830;
   bool Cutscene : 0x146A930;
   string50 Area : 0x357F0A8;
-  float X : 0x1EF1980;
-  float Y : 0x1EF1984;
-  float Z : 0x1EF1988;}
+  float X : 0x1EF1980; float Y : 0x1EF1984; float Z : 0x1EF1988;
+}
 state("SOTTR", "243.0"){
   bool Loading : 0x14298A0;
-  bool Loading2 : 0x145D370;
   bool Cutscene : 0x1464930;
   string50 Area : 0x3578F78;
-  float X : 0x1EEB870;
-  float Y : 0x1EEB874;
-  float Z : 0x1EEB878;}
+  float X : 0x1EEB870; float Y : 0x1EEB874; float Z : 0x1EEB878;
+}
 state("SOTTR", "241.0"){
   bool Loading : 0x14238A0;
-  bool Loading2 : 0x1457370;
-  // BAD LOADING. They should be updated but it would require a pointer which is actually hard to find :/
-  // With the game updating so often, it isn't worth finding it again until updates stop
-  bool Cutscene : 0x145E930; // Doesn't remove Deaths at Trial of the Eagle (After Skip Falling down)
-  // ^ That keeps randomly going to 1 (FIX)
+  bool Cutscene : 0x145E930;
   string50 Area : 0x3572AF8;
-  float X : 0x1EE53F0;
-  float Y : 0x1EE53F4;
-  float Z : 0x1EE53F8;}
-//state("SOTTR", "237.6")
+  float X : 0x1EE53F0; float Y : 0x1EE53F4; float Z : 0x1EE53F8;
+}
+state("SOTTR", "237.6")
+{
+
+}
 state("SOTTR", "236.1"){
   bool Loading : 0x13E18E0;
-  bool Loading2 : 0x14153D0;
   bool Cutscene : 0x141C9F0;
   string50 Area : 0x35271A8;
-  float X : 0x1E99B30;
-  float Y : 0x1E99B34;
-  float Z : 0x1E99B38;}
+  float X : 0x1E99B30; float Y : 0x1E99B34; float Z : 0x1E99B38;
+}
 state("SOTTR", "235.3"){
   bool Loading : 0x13E18E0;
-  bool Loading2 : 0x14153D0;
   bool Cutscene : 0x141C9F0;
   string50 Area : 0x3527198;
-  float X : 0x1E99B30;
-  float Y : 0x1E99B34;
-  float Z : 0x1E99B38;}
+  float X : 0x1E99B30; float Y : 0x1E99B34; float Z : 0x1E99B38;
+}
 state("SOTTR", "234.1"){
 	bool Loading : 0x13E07E0;
-	bool Loading2 : 0x14142D0;
 	bool Cutscene : 0x141B8F0;
 	string50 Area : 0x35260F8;
-  float X : 0x1E98A70;
-  float Y : 0x1E98A74;
-  float Z : 0x1E98A78;}
+  float X : 0x1E98A70; float Y : 0x1E98A74; float Z : 0x1E98A78;
+}
 state("SOTTR", "230.9"){
   bool Loading : 0x13DE7E0;
-  bool Loading2 : 0x14122D0;
   bool Cutscene : 0x14198F0;
   string50 Area : 0x3524088;
-  float X : 0x1E969F0;
-  float Y : 0x1E969F4;
-  float Z : 0x1E969F8;}
-//state("SOTTR", "230.8")
+  float X : 0x1E969F0; float Y : 0x1E969F4; float Z : 0x1E969F8;
+}
+state("SOTTR", "230.8")
+{
+
+}
+
+/* #endregion */
 
 startup{ // When the script first runs
-  /* === Area Splits List ===
-  This List contains the information for the Area Splits:
-    - The 1st String is the Setting ID and what the game uses for that area
-    - The 2nd String is the Tooltip for that setting
-    - \n = New Line
-    - The 3rd String (if present) is the Parent */
+  /* #region Area Splits List */
+  // This List contains the information for the Area Splits:
+  //   - The 1st String is the Setting ID and what the game uses for that area
+  //   - The 2nd String is the Tooltip for that setting
+  //   - \n = New Line
+  //   - The 3rd String (if present) is the Parent
     List<List<string>> Splits = new List<List<string>>{
       // === Cozumel Caves === //
         new List<string>{"pl_prologue",
@@ -225,24 +212,25 @@ startup{ // When the script first runs
       // === City of the Serpent === //
           new List<string>{"ch_chamber_of_heaven", "Split AFTER the CUTSCENE where they decide what plan to use", "COTS"}};
     vars.Splits = Splits;
+  /* #endregion */
 
-    /* === Collectibles Dictionary ===
-    This Dictionary contains multiple Dictionaries for each Area:
-      - The String is for the Area
-      - This Dictionary only contains areas with collectibles
-    The Dictionary then contains:
-      - A String for the type of collectible
-      - A List of Integers:
-        - The 1st int is the offset from the Pointer
-        - The 2nd int is the complete amount of the collectible
-     Order in Memory:
-      - Relics
-      - Documents
-      - Survival Caches
-      - Murals
-      - Monoliths
-      - Crypts
-      - Strongboxes */
+  /* #region Collectibles Dictionary */
+    // This Dictionary contains multiple Dictionaries for each Area:
+    //   - The String is for the Area
+    //   - This Dictionary only contains areas with collectibles
+    // The Dictionary then contains:
+    //   - A String for the type of collectible
+    //   - A List of Integers:
+    //     - The 1st int is the offset from the Pointer
+    //     - The 2nd int is the complete amount of the collectible
+    //  Order in Memory:
+    //   - Relics
+    //   - Documents
+    //   - Survival Caches
+    //   - Murals
+    //   - Monoliths
+    //   - Crypts
+    //   - Strongboxes 
     vars.Collectibles = new Dictionary<string, Dictionary<string, List<int>>>{
       {"Cozumel", new Dictionary<string, List<int>>{
           {"Strongboxes", new List<int>{0x5E8, 1}},
@@ -314,23 +302,25 @@ startup{ // When the script first runs
           {"Monoliths", new List<int>{0xA18, 1}}
         }
       }};
+    /* #endregion */
 
-  // === Settings === //
-    // === Options === //
-      settings.Add("Op", true, "Options");
-        settings.Add("StNG", true, "Start timer at New Game", "Op");
-          settings.SetToolTip("StNG", "Can use both");
-        settings.Add("StCo", true, "Start timer at Cozumel", "Op");
-          settings.SetToolTip("StCo", "Can use both");
-        settings.Add("DSP", true, "Prevent splitting the same split again", "Op");
-          settings.SetToolTip("DSP", "Recommended but this can be disabled aslong as you're route and splits will work with it");
-    		settings.Add("Res", false, "Reset at Main Menu");
-    			settings.SetToolTip("Res", "If you need to go to the Main Menu during the run DONT use this");
+  /* #region Settings */
+    /* #region Options */
+    settings.Add("Op", true, "Options");
+      settings.Add("StNG", true, "Start timer at New Game", "Op");
+        settings.SetToolTip("StNG", "Can use both");
+      settings.Add("StCo", true, "Start timer at Cozumel", "Op");
+        settings.SetToolTip("StCo", "Can use both");
+      settings.Add("DSP", true, "Prevent splitting the same split again", "Op");
+        settings.SetToolTip("DSP", "Recommended but this can be disabled aslong as you're route and splits will work with it");
+      settings.Add("Res", false, "Reset at Main Menu");
+        settings.SetToolTip("Res", "If you need to go to the Main Menu during the run DONT use this");
+    /* #endregion */
 
-    /* === Parents ===
-    These are the Containers for each area:
-      - If there is a 4th argument
-        - It is child of the setting that the ID corresponds to */
+    /* #region Parents */
+    // These are the Containers for each area:
+    //   - If there is a 4th argument
+    //     - It is child of the setting that the ID corresponds to
       settings.Add("AS", true, "Area Splits"); // Parent for the Area Splits
           settings.CurrentDefaultParent = "AS";
         settings.Add("CoC",false,"Cozumel Caves");
@@ -367,57 +357,56 @@ startup{ // When the script first runs
       settings.Add("End", true, "Amaru Death Cutscene");
         settings.SetToolTip("End", "This will split at the final cutscene where the timer will normally end\nPlease note that this may split at inconsistent times due to the XYZ being inconsistent");
       settings.Add("COL", false, "Collectibles");
+    /* #endregion */
 
-  /* === Area Splits ===
-  This creates settings for each split defined in the List "Splits":
-    It checks if it has a third string
-      - If it does, it overwrites the default Parent
-    It then adds the Setting:
-      - Using the 1st string as the ID
-      - Setting it to "off" by default
-      - And reusing the 1st string for the Display Name
-    Then it sets the tooltip for the setting:
-      - Using the 2nd String as the tooltip */
+    /* #region Area Splits */
+  // This creates settings for each split defined in the List "Splits":
+  //   It checks if it has a third string
+  //     - If it does, it overwrites the default Parent
+  //   It then adds the Setting:
+  //     - Using the 1st string as the ID
+  //     - Setting it to "off" by default
+  //     - And reusing the 1st string for the Display Name
+  //   Then it sets the tooltip for the setting:
+  //     - Using the 2nd String as the tooltip
     foreach(var Setting in Splits){
       if(Setting.Count == 3)
         settings.CurrentDefaultParent = Setting[2];
       settings.Add(Setting[0], false, Setting[0]);
       settings.SetToolTip(Setting[0], Setting[1]);}
+  /* #endregion */
 
-    /* === Collectible Splits ===
-    This adds all the settings to do with collectibles:
-      It adds a setting with:
-        - The ID as the item.Key which is the Area Name
-        - It set to "off" by default
-        - The Area Name as the Display Name
-        - It's parent being "Collectibles"
-      Then adds two settings with:
-        - The Area Name, Collectible Type and the Mode as the ID
-        - It set to "off" by default
-        - The Collectible Type and the Mode as the Display Name
-        - It's Parent being the Area Name Setting */
+    /* #region Collectible Splits */
+    // This adds all the settings to do with collectibles:
+    //   It adds a setting with:
+    //     - The ID as the item.Key which is the Area Name
+    //     - It set to "off" by default
+    //     - The Area Name as the Display Name
+    //     - It's parent being "Collectibles"
+    //   Then adds two settings with:
+    //     - The Area Name, Collectible Type and the Mode as the ID
+    //     - It set to "off" by default
+    //     - The Collectible Type and the Mode as the Display Name
+    //     - It's Parent being the Area Name Setting
       foreach(var item in vars.Collectibles){
         settings.Add(item.Key, false, item.Key, "COL");
         foreach(var item2 in item.Value){
           settings.Add(item.Key + item2.Key + "Each", false, item2.Key + " (Each)", item.Key);
           settings.Add(item.Key + item2.Key + "All", false, item2.Key + " (All)", item.Key);}}
+    /* #endregion */
+  /* #endregion */
 
-      List<string> HS = new List<string>(); // New dummy list of strings
-      vars.HasSplit = HS; // Use livesplit variables so no errors c:
-
-      // Clear the HasSplit list when the timer starts or else it will never split again
-      EventHandler OnStart = (s, e) => {
-    		vars.HasSplit.Clear();
-      };
-    	timer.OnStart += OnStart; // When the Timer starts, run (^)
+  vars.HasSplit = new List<string>(); // New dummy list of strings
+  EventHandler OnStart = (s, e) => { vars.HasSplit.Clear(); }; // Clear the HasSplit list when the timer starts or else it will never split again
+  timer.OnStart += OnStart; // When the Timer starts, run (^)
 }
 
 init{ // When the game is launched
   timer.IsGameTimePaused = false; // Unpause the timer
   print(modules.First().ModuleMemorySize.ToString()); // Print the ModuleMemorySize
 
-  /* === Version Check ===
-  This will detect the game version:
+  /* #region Version Detection */
+    /*  This will detect the game version:
     CollectibleBase is the Pointer to the Base Address for all Collectibles
       - It will change based on the Version
     By using the ModuleMemorySize of the Game we can determine the Version
@@ -425,7 +414,6 @@ init{ // When the game is launched
     - 230.8
     - 237.6 */
     int CollectibleBase = 0; // Depending on the version this will be changed to the correct address
-
   	switch(modules.First().ModuleMemorySize){
       case 313888768:
         version = "292.0";
@@ -480,30 +468,31 @@ init{ // When the game is launched
         CollectibleBase = 0x3605660;
         break;
       }
+  	/* #endregion */
 
-  /* === MemoryWatchers ===
-    MemoryWatchers have to be added here as CollectibleBase won't work in the "vars." format:
-      The loop goes through the list and adds a MemoryWatcher to the list based on it
-      Since the Collectible Addresses are 4-Byte, the MemoryWatcher is a <int>
-    DeepPointer is just a Pointer (Pointer, Offset)
-      - The Default module is the exe ("SOTTR")
-        - DeepPointer("Module", Pointer, Offset(,s)) */
+  /* #region Create Memory Watchers */
+    // MemoryWatchers have to be added here as CollectibleBase won't work in the "vars." format:
+    //   The loop goes through the list and adds a MemoryWatcher to the list based on it
+    //   Since the Collectible Addresses are 4-Byte, the MemoryWatcher is a <int>
+    // DeepPointer is just a Pointer (Pointer, Offset)
+    //   - The Default module is the exe ("SOTTR")
+    //     - DeepPointer("Module", Pointer, Offset(,s))
     vars.Watchers = new MemoryWatcherList();
 
     foreach(var item in vars.Collectibles){
       foreach(var item2 in item.Value){
         vars.Watchers.Add(new MemoryWatcher<int>(new DeepPointer(CollectibleBase, item2.Value[0])){Name = item.Key + item2.Key});}}
+    /* #endregion */
 }
 
 update{ // Top priority & runs a lot
-  // Memory Watchers won't work without this
-  vars.Watchers.UpdateAll(game);
+  vars.Watchers.UpdateAll(game); // Update the Memory Watchers
   //print(timer.CurrentAttemptDuration.ToString()); // If you want to print the Current Real Time
 }
 
 start{ // Automatic Timer Starting
   // When going from the Main Menu to the Game, XYZ is equal to 0:
-  if(current.X == 0 && current.Y == 0 && current.Z == 0 && current.Loading && current.Loading2){
+  if(current.X == 0 && current.Y == 0 && current.Z == 0 && current.Loading){
     if(settings["StNG"])  // If "Start timer at New Game" setting is enabled...
       if(current.Area == "cine_plane_crash")  // Check if it is equal to opening cutscene
         return true;  // Start the timer
@@ -515,7 +504,7 @@ start{ // Automatic Timer Starting
 
 gameTime{ // For setting the Game Timer
   // Basically a clone of the Start Action except it sets the Game Timer
-  if(current.X == 0 && current.Y == 0 && current.Z == 0 && current.Loading && current.Loading2){
+  if(current.X == 0 && current.Y == 0 && current.Z == 0 && current.Loading){
     if(settings["StNG"])
       if(current.Area == "cine_plane_crash")
         return TimeSpan.FromSeconds(0); // 00:00
@@ -526,10 +515,16 @@ gameTime{ // For setting the Game Timer
 }
 
 isLoading{ // For Pausing the Game Timer
-      return current.Loading || current.Cutscene || current.Loading2;
-      // These ^ are booleans and isLoading expects a boolean to be returned
-      // So that basically means pause the timer if any of those values == 1
-      // || = or
+  print(current.Cutscene.ToString());
+  if(current.Cutscene != 0 && (
+    !(current.Cutscene == 3221496410 && current.Area == "dd_day_of_the_dead_050") || // Cutscene after leaving the temple tomb
+    !(current.Cutscene == 894107814 && current.Area == "cm_croft_manor") || // At the top of croft manor
+    !(current.Cutscene == 969044434 && current.Area == "lj_lost_in_the_jungle_v2_02") || // After standing up from camp (Broken the first time, works after a reload)
+    !(current.Cutscene == 3528814387 && current.Area == "lj_lost_in_the_jungle_v2_connector_out") // Crawling under the truck
+    ))
+      return true;
+  
+  return current.Loading;
 }
 
 reset{ // Automatic Restarting
