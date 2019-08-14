@@ -298,6 +298,16 @@ startup{ // When the script first runs
     /* #endregion */
 
   /* #region Settings */
+  /* Logging Messages:
+      
+      Entered Cutscene with id: <current.Cutscene> at: <current.Area>
+      Ingoring Entered Cutscene with id: <current.Cutscene> at: <current.Area>
+
+      Module Memory Size = <modules.First().ModuleMemorySize> (version: <version [unknown if not detected]>)
+
+
+
+       */
     settings.Add("Debug Logging", false);
       settings.SetToolTip("Debug Logging", "Log debug information in Dbgview");
     settings.Add("Cutscenes", false, "Cutscenes","Debug Logging");
@@ -402,8 +412,6 @@ startup{ // When the script first runs
 
 init{ // When the game is launched
   timer.IsGameTimePaused = false; // Unpause the timer
-  print(modules.First().ModuleMemorySize.ToString()); // Print the ModuleMemorySize
-
   /* #region Version Detection */
     /*  This will detect the game version:
     CollectibleBase is the Pointer to the Base Address for all Collectibles
@@ -413,7 +421,12 @@ init{ // When the game is launched
     - 230.8
     - 237.6 */
     int CollectibleBase = 0; // Depending on the version this will be changed to the correct address
-  	switch(modules.First().ModuleMemorySize){
+  	switch(modules.First().ModuleMemorySize)
+    {
+      case 314028032:
+        version = "294.0";
+        CollectibleBase = 0x368AD90;
+        break;
       case 313888768:
         version = "292.0";
         CollectibleBase = 0x368AD90;
@@ -467,6 +480,7 @@ init{ // When the game is launched
         CollectibleBase = 0x3605660;
         break;
       }
+      print("Module Memory Size = " + modules.First().ModuleMemorySize.ToString() + " (Version: " + ((version != "") ? version : "unknown") + ")");
   	/* #endregion */
 
   /* #region Create Memory Watchers */
@@ -486,60 +500,55 @@ init{ // When the game is launched
 
 update{ // Top priority & runs a lot
   vars.Watchers.UpdateAll(game); // Update the Memory Watchers
-  //print(timer.CurrentAttemptDuration.ToString()); // If you want to print the Current Real Time
 }
 
-start{ // Automatic Timer Starting
-  // When going from the Main Menu to the Game, XYZ is equal to 0:
-  if(current.Loading){
-    if(settings["StNG"])  // If "Start timer at New Game" setting is enabled...
-      if(current.Area == "cine_plane_crash")  // Check if it is equal to opening cutscene
-        return true;  // Start the timer
-    if(settings["StCo"])  // If "Start timer at Cozumel" setting is enabled...
-      if(current.Area == "dd_day_of_the_dead_010")  // Check if it is equal to Cozumel Area
-        return true;  // Start the timer
-      }
-}
-
-gameTime{ // For setting the Game Timer
-  // Basically a clone of the Start Action except it sets the Game Timer
-  if(current.Loading){
-    if(settings["StNG"])
-      if(current.Area == "cine_plane_crash")
-        return TimeSpan.FromSeconds(0); // 00:00
-    if(settings["StCo"])
-      if(current.Area == "dd_day_of_the_dead_010")
-        return TimeSpan.FromSeconds(320); // 05:20 (5 * 60 + 20)
+start // Automatic Timer Starting
+{
+  if(current.Loading)
+  {
+    if(settings["StNG"] && current.Area == "cine_plane_crash")
+      return true;
+    if(settings["StCo"] && current.Area == "dd_day_of_the_dead_010")
+      return true;
   }
 }
 
-isLoading{ // For Pausing the Game Timer
-  print(current.Cutscene.ToString());
+gameTime // For setting the Game Timer
+{
+  if(current.Loading)
+  {
+    if(settings["StNG"] && current.Area == "cine_plane_crash")
+      return TimeSpan.FromSeconds(0); // 00:00
+    if(settings["StCo"] && current.Area == "dd_day_of_the_dead_010")
+      return TimeSpan.FromSeconds(320); // 05:20 (5 * 60 + 20)
+  }
+}
+
+isLoading{
+  if(settings["Cutscenes"] && current.Cutscene != old.Cutscene)
+    print("Entered Cutscene, id: " + current.Cutscene.ToString());
+
   if(current.Cutscene != 0 && (
     !(current.Cutscene == 3221496410 && current.Area == "dd_day_of_the_dead_050") && // Cutscene after leaving the temple tomb
     !(current.Cutscene == 894107814 && current.Area == "cm_croft_manor") && // At the top of croft manor
     !(current.Cutscene == 969044434 && current.Area == "lj_lost_in_the_jungle_v2_02") && // After standing up from camp (Broken the first time, works after a reload)
     !(current.Cutscene == 3528814387 && current.Area == "lj_lost_in_the_jungle_v2_connector_out") // Crawling under the truck
     ))
-    {
       return true;
-    }
   
   return current.Loading;
 }
 
-reset{ // Automatic Restarting
-	if(current.Area != old.Area) // Check if the Area has changed
-		if(current.Area == "trx_main_menu") // Check if the current Area is the main menu
-			if(settings["Res"]) // Check if the setting is active
-				return true; // Reset
+reset{
+	if(current.Area != old.Area && current.Area == "trx_main_menu" && settings["Res"])
+    return true;
 }
 
-exit{ // When the game closes
-    timer.IsGameTimePaused = true; // Pause the timer
+exit{
+    timer.IsGameTimePaused = true;
 }
 
-split{ // Automatic Splitting
+split{
   /* === Area Splitting ===
   */
   foreach(var item in vars.Splits){ // for every list in the Splits list
@@ -568,7 +577,7 @@ split{ // Automatic Splitting
 
   /* === End Split ===
   */
-  if(current.Area == "ch_chamber_of_heaven" && current.Cutscene)
+  if(current.Area == "ch_chamber_of_heaven" && current.Cutscene == 4048785033)
     if(settings["End"]) // If the setting to split at the end is active
       if(settings["DSP"]){ // If Double Split Prevention is active
         if(vars.HasSplit.Count == 0){ // Check if the "HasSplit" list is empty
