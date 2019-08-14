@@ -37,64 +37,71 @@ state("SOTTR", "279.0")
 state("SOTTR", "270.0")
 {
   bool Loading : 0x357D2C0;
-  bool Cutscene : 0x1487A58;
+  uint Cutscene : 0x036864B8, 0x0, 0x628, 0x40, 0x3F4;
   string50 Area : 0x359E328;
   float X : 0x1F0F200; float Y : 0x1F0F204; float Z : 0x1F0F208;
 }
-state("SOTTR", "260.0")
+state("SOTTR", "260.0")//
 {
   bool Loading : 0x1448910;
   bool Cutscene : 0x1483A70;
   string50 Area : 0x359A2A8;
   float X : 0x1F0B180; float Y : 0x1F0B184; float Z : 0x1F0B188;
 }
-state("SOTTR", "247.0"){
+state("SOTTR", "247.0")//
+{
   bool Loading : 0x142F8A0;
   bool Cutscene : 0x146A930;
   string50 Area : 0x357F0A8;
   float X : 0x1EF1980; float Y : 0x1EF1984; float Z : 0x1EF1988;
 }
-state("SOTTR", "243.0"){
+state("SOTTR", "243.0")//
+{
   bool Loading : 0x14298A0;
   bool Cutscene : 0x1464930;
   string50 Area : 0x3578F78;
   float X : 0x1EEB870; float Y : 0x1EEB874; float Z : 0x1EEB878;
 }
-state("SOTTR", "241.0"){
+state("SOTTR", "241.0")//
+{
   bool Loading : 0x14238A0;
   bool Cutscene : 0x145E930;
   string50 Area : 0x3572AF8;
   float X : 0x1EE53F0; float Y : 0x1EE53F4; float Z : 0x1EE53F8;
 }
-state("SOTTR", "237.6")
+state("SOTTR", "237.6")//
 {
 
 }
-state("SOTTR", "236.1"){
+state("SOTTR", "236.1")//
+{
   bool Loading : 0x13E18E0;
   bool Cutscene : 0x141C9F0;
   string50 Area : 0x35271A8;
   float X : 0x1E99B30; float Y : 0x1E99B34; float Z : 0x1E99B38;
 }
-state("SOTTR", "235.3"){
+state("SOTTR", "235.3")//
+{
   bool Loading : 0x13E18E0;
   bool Cutscene : 0x141C9F0;
   string50 Area : 0x3527198;
   float X : 0x1E99B30; float Y : 0x1E99B34; float Z : 0x1E99B38;
 }
-state("SOTTR", "234.1"){
+state("SOTTR", "234.1")//
+{
 	bool Loading : 0x13E07E0;
 	bool Cutscene : 0x141B8F0;
 	string50 Area : 0x35260F8;
   float X : 0x1E98A70; float Y : 0x1E98A74; float Z : 0x1E98A78;
 }
-state("SOTTR", "230.9"){
+state("SOTTR", "230.9")//
+{
   bool Loading : 0x13DE7E0;
   bool Cutscene : 0x14198F0;
   string50 Area : 0x3524088;
   float X : 0x1E969F0; float Y : 0x1E969F4; float Z : 0x1E969F8;
 }
-state("SOTTR", "230.8")
+state("SOTTR", "230.8")//
 {
 
 }
