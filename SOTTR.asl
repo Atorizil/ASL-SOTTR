@@ -4,70 +4,60 @@ state("SOTTR", "294.0")
   bool Loading : 0x35885C0;
   uint Cutscene : 0x03691808, 0x0, 0x330, 0x40, 0x294;
   string50 Area : 0x35A9628;
-  float X : 0x1F1A300; float Y : 0x1F1A304; float Z : 0x1F1A308;
 }
 state("SOTTR", "292.0")
 {
   bool Loading : 0x35885C0;
   uint Cutscene : 0x03691808, 0x0, 0x330, 0x40, 0x294;
   string50 Area : 0x35A9628;
-  float X : 0x1F1A300; float Y : 0x1F1A304; float Z : 0x1F1A308;
 }
 state("SOTTR", "286.0")
 {
   bool Loading : 0x3587640;
   uint Cutscene : 0x03690880, 0x68, 0x688, 0x90, 0x10, 0x294;
   string50 Area : 0x35A86A8;
-  float X : 0x1F19388; float Y : 0x1F19384; float Z : 0x1F19380;
 }
 state("SOTTR", "280.0")
 {
   bool Loading : 0x358D8C0;
   uint Cutscene : 0x03696B08, 0x0, 0x628, 0x40, 0x484;
   string50 Area : 0x35AE928;
-  float X : 0x1F1F600; float Y : 0x1F1F604; float Z : 0x1F1F608;
 }
 state("SOTTR", "279.0")
 {
   bool Loading : 0x3586540;
   uint Cutscene : 0x0368F700, 0x0, 0x120, 0x10, 0x334;
   string50 Area : 0x35A75A8;
-  float X : 0x1F18480; float Y : 0x1F18484; float Z : 0x1F18484;
 }
 state("SOTTR", "270.0")
 {
   bool Loading : 0x357D2C0;
   uint Cutscene : 0x036864B8, 0x0, 0x628, 0x40, 0x3F4;
   string50 Area : 0x359E328;
-  float X : 0x1F0F200; float Y : 0x1F0F204; float Z : 0x1F0F208;
 }
 state("SOTTR", "260.0")
 {
   bool Loading : 0x3579240;
   uint Cutscene : 0x03682438, 0x0, 0x458, 0x8, 0x130, 0x144;
   string50 Area : 0x359A2A8;
-  float X : 0x1F0B180; float Y : 0x1F0B184; float Z : 0x1F0B188;
 }
 state("SOTTR", "247.0")
 {
   bool Loading : 0x142F8A0;
   bool Cutscene : 0x146A930;
   string50 Area : 0x357F0A8;
-  float X : 0x1EF1980; float Y : 0x1EF1984; float Z : 0x1EF1988;
 }
 state("SOTTR", "243.0")//
 {
   bool Loading : 0x14298A0;
   bool Cutscene : 0x1464930;
   string50 Area : 0x3578F78;
-  float X : 0x1EEB870; float Y : 0x1EEB874; float Z : 0x1EEB878;
 }
 state("SOTTR", "241.0")//
 {
   bool Loading : 0x14238A0;
   bool Cutscene : 0x145E930;
   string50 Area : 0x3572AF8;
-  float X : 0x1EE53F0; float Y : 0x1EE53F4; float Z : 0x1EE53F8;
 }
 state("SOTTR", "237.6")//
 {
@@ -78,28 +68,24 @@ state("SOTTR", "236.1")//
   bool Loading : 0x13E18E0;
   bool Cutscene : 0x141C9F0;
   string50 Area : 0x35271A8;
-  float X : 0x1E99B30; float Y : 0x1E99B34; float Z : 0x1E99B38;
 }
 state("SOTTR", "235.3")//
 {
   bool Loading : 0x13E18E0;
   bool Cutscene : 0x141C9F0;
   string50 Area : 0x3527198;
-  float X : 0x1E99B30; float Y : 0x1E99B34; float Z : 0x1E99B38;
 }
 state("SOTTR", "234.1")//
 {
 	bool Loading : 0x13E07E0;
 	bool Cutscene : 0x141B8F0;
 	string50 Area : 0x35260F8;
-  float X : 0x1E98A70; float Y : 0x1E98A74; float Z : 0x1E98A78;
 }
 state("SOTTR", "230.9")//
 {
   bool Loading : 0x13DE7E0;
   bool Cutscene : 0x14198F0;
   string50 Area : 0x3524088;
-  float X : 0x1E969F0; float Y : 0x1E969F4; float Z : 0x1E969F8;
 }
 state("SOTTR", "230.8")//
 {
@@ -505,7 +491,7 @@ update{ // Top priority & runs a lot
 
 start{ // Automatic Timer Starting
   // When going from the Main Menu to the Game, XYZ is equal to 0:
-  if(current.X == 0 && current.Y == 0 && current.Z == 0 && current.Loading){
+  if(current.Loading){
     if(settings["StNG"])  // If "Start timer at New Game" setting is enabled...
       if(current.Area == "cine_plane_crash")  // Check if it is equal to opening cutscene
         return true;  // Start the timer
@@ -517,7 +503,7 @@ start{ // Automatic Timer Starting
 
 gameTime{ // For setting the Game Timer
   // Basically a clone of the Start Action except it sets the Game Timer
-  if(current.X == 0 && current.Y == 0 && current.Z == 0 && current.Loading){
+  if(current.Loading){
     if(settings["StNG"])
       if(current.Area == "cine_plane_crash")
         return TimeSpan.FromSeconds(0); // 00:00
@@ -582,7 +568,7 @@ split{ // Automatic Splitting
 
   /* === End Split ===
   */
-  if(current.Area == "ch_chamber_of_heaven" && current.Cutscene && (int)current.X == (int)20576.99f && (int)current.Y == (int)9293.358f && (int)current.Z == (int)3704.113f)
+  if(current.Area == "ch_chamber_of_heaven" && current.Cutscene)
     if(settings["End"]) // If the setting to split at the end is active
       if(settings["DSP"]){ // If Double Split Prevention is active
         if(vars.HasSplit.Count == 0){ // Check if the "HasSplit" list is empty
