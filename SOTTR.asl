@@ -48,7 +48,7 @@ state("SOTTR", "260.0")
   string50 Area : 0x359A2A8;
   float X : 0x1F0B180; float Y : 0x1F0B184; float Z : 0x1F0B188;
 }
-state("SOTTR", "247.0")//
+state("SOTTR", "247.0")
 {
   bool Loading : 0x142F8A0;
   bool Cutscene : 0x146A930;
@@ -312,6 +312,10 @@ startup{ // When the script first runs
     /* #endregion */
 
   /* #region Settings */
+    settings.Add("Debug Logging", false);
+      settings.SetToolTip("Debug Logging", "Log debug information in Dbgview");
+    settings.Add("Cutscenes", false, "Cutscenes","Debug Logging");
+      settings.SetToolTip("Cutscenes", "Log information related to cutscenes \n - id's \n - When cutscenes are encountered");
     /* #region Options */
     settings.Add("Op", true, "Options");
       settings.Add("StNG", true, "Start timer at New Game", "Op");
@@ -362,7 +366,7 @@ startup{ // When the script first runs
       settings.CurrentDefaultParent = null; // So these (v) aren't part of "Area Splits"
 
       settings.Add("End", true, "Amaru Death Cutscene");
-        settings.SetToolTip("End", "This will split at the final cutscene where the timer will normally end\nPlease note that this may split at inconsistent times due to the XYZ being inconsistent");
+        settings.SetToolTip("End", "This will split at the final cutscene where the timer will normally end\nPlease note that this may split at inconsistent times due to the XYZ being inconsistent, or not at all");
       settings.Add("COL", false, "Collectibles");
     /* #endregion */
 
@@ -376,11 +380,13 @@ startup{ // When the script first runs
   //     - And reusing the 1st string for the Display Name
   //   Then it sets the tooltip for the setting:
   //     - Using the 2nd String as the tooltip
-    foreach(var Setting in Splits){
+    foreach(var Setting in Splits)
+    {
       if(Setting.Count == 3)
         settings.CurrentDefaultParent = Setting[2];
       settings.Add(Setting[0], false, Setting[0]);
-      settings.SetToolTip(Setting[0], Setting[1]);}
+      settings.SetToolTip(Setting[0], Setting[1]);
+    }
   /* #endregion */
 
     /* #region Collectible Splits */
