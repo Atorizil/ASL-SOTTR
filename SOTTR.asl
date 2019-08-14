@@ -41,10 +41,10 @@ state("SOTTR", "270.0")
   string50 Area : 0x359E328;
   float X : 0x1F0F200; float Y : 0x1F0F204; float Z : 0x1F0F208;
 }
-state("SOTTR", "260.0")//
+state("SOTTR", "260.0")
 {
-  bool Loading : 0x1448910;
-  bool Cutscene : 0x1483A70;
+  bool Loading : 0x3579240;
+  uint Cutscene : 0x03682438, 0x0, 0x458, 0x8, 0x130, 0x144;
   string50 Area : 0x359A2A8;
   float X : 0x1F0B180; float Y : 0x1F0B184; float Z : 0x1F0B188;
 }
