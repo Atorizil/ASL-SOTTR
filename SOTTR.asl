@@ -43,20 +43,20 @@ state("SOTTR", "260.0")
 }
 state("SOTTR", "247.0")
 {
-  bool Loading : 0x142F8A0;
-  bool Cutscene : 0x146A930;
+  bool Loading : 0x355E050;
+  uint Cutscene : 0x036671B0, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x357F0A8;
 }
 state("SOTTR", "243.0")//
 {
-  bool Loading : 0x14298A0;
-  bool Cutscene : 0x1464930;
+  bool Loading : 0x3557F10;
+  uint Cutscene : 0x03661060, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x3578F78;
 }
 state("SOTTR", "241.0")//
 {
-  bool Loading : 0x14238A0;
-  bool Cutscene : 0x145E930;
+  bool Loading : 0x3551A90;
+  bool Cutscene : 0x0365ABD0, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x3572AF8;
 }
 state("SOTTR", "237.6")//
@@ -566,7 +566,8 @@ isLoading{
     !(current.Cutscene == 969044434 && current.Area == "lj_lost_in_the_jungle_v2_02") && // After standing up from camp (Broken the first time, works after a reload)
     !(current.Cutscene == 3528814387 && current.Area == "lj_lost_in_the_jungle_v2_connector_out") && // Crawling under the truck
     !(current.Cutscene == 1233757502 && current.Area == "pa_hub_paititi") && // Another broken cutscene
-    !(current.Cutscene == 1233757502 && current.Area == "sp_sacrificial_pit") // (^) persists throughout this whole segment
+    !(current.Cutscene == 1233757502 && current.Area == "sp_sacrificial_pit") && // (^) persists throughout this whole segment
+    !(current.Cutscene == 1692137511 && current.Area == "sm_spanish_mission_village") // another broken cutscene
     ))
       return true;
   
