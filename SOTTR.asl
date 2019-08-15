@@ -89,7 +89,9 @@ state("SOTTR", "230.9")//
 }
 state("SOTTR", "230.8")//
 {
-
+  bool Loading : 0x3500F70;
+  uint Cutscene : 0x03609F80, 0x0, 0x120, 0x10, 0x1D4;
+  string50 Area : 0x3521FB8;
 }
 state("SOTTR", "224.2") // First Release
 {
@@ -480,6 +482,10 @@ init{ // When the game is launched
       case 311508992:
         version = "230.9";
         CollectibleBase = 0x3605660;
+        break;
+      case 313163776:
+        version = "230.8";
+        CollectibleBase = 0x3603688;
         break;
       case 315301888:
         version = "224.2";
