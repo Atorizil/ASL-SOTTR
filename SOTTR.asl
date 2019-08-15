@@ -65,8 +65,8 @@ state("SOTTR", "237.6")//
 }
 state("SOTTR", "236.1")//
 {
-  bool Loading : 0x13E18E0;
-  bool Cutscene : 0x141C9F0;
+  bool Loading : 0x3506150;
+  uint Cutscene : 0x0360F150, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x35271A8;
 }
 state("SOTTR", "235.3")//
