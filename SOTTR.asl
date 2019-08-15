@@ -91,6 +91,12 @@ state("SOTTR", "230.8")//
 {
 
 }
+state("SOTTR", "224.2") // First Release
+{
+  bool Loading : 0x34F7270;
+  uint Cutscene : 0x03600250, 0x0, 0x120, 0x10, 0x1D4;
+  string50 Area : 0x35182A8;
+}
 
 /* #endregion */
 
@@ -474,6 +480,10 @@ init{ // When the game is launched
       case 311508992:
         version = "230.9";
         CollectibleBase = 0x3605660;
+        break;
+      case 315301888:
+        version = "224.2";
+        CollectibleBase = 0x35F9948;
         break;
       }
       vars.DebugPrint("Module Memory Size = " + modules.First().ModuleMemorySize.ToString() + " (Version: " + ((version != "") ? version : "unknown") + ").");
