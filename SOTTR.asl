@@ -298,20 +298,6 @@ startup{ // When the script first runs
     /* #endregion */
 
   /* #region Settings */
-  /* Logging Messages:
-      
-      Entered Cutscene with id: <current.Cutscene> at: <current.Area>
-      Ingoring Entered Cutscene with id: <current.Cutscene> at: <current.Area>
-
-      Module Memory Size = <modules.First().ModuleMemorySize> (version: <version [unknown if not detected]>)
-
-
-
-       */
-    settings.Add("Debug Logging", false);
-      settings.SetToolTip("Debug Logging", "Log debug information in Dbgview");
-    settings.Add("Cutscenes", false, "Cutscenes","Debug Logging");
-      settings.SetToolTip("Cutscenes", "Log information related to cutscenes \n - id's \n - When cutscenes are encountered");
     /* #region Options */
     settings.Add("Op", true, "Options");
       settings.Add("StNG", true, "Start timer at New Game", "Op");
@@ -406,8 +392,18 @@ startup{ // When the script first runs
   /* #endregion */
 
   vars.HasSplit = new List<string>(); // New dummy list of strings
-  EventHandler OnStart = (s, e) => { vars.HasSplit.Clear(); }; // Clear the HasSplit list when the timer starts or else it will never split again
+  EventHandler OnStart = (s, e) => 
+  { 
+    vars.HasSplit.Clear();
+    vars.GameTimeSet = false;
+  }; // Clear the HasSplit list when the timer starts or else it will never split again
   timer.OnStart += OnStart; // When the Timer starts, run (^)
+
+  Action<string> DebugPrint = (text) =>
+  {
+      print("[SOTTR Autosplitter] " + text);
+  };
+  vars.DebugPrint = DebugPrint;
 }
 
 init{ // When the game is launched
@@ -480,7 +476,7 @@ init{ // When the game is launched
         CollectibleBase = 0x3605660;
         break;
       }
-      print("Module Memory Size = " + modules.First().ModuleMemorySize.ToString() + " (Version: " + ((version != "") ? version : "unknown") + ")");
+      vars.DebugPrint("Module Memory Size = " + modules.First().ModuleMemorySize.ToString() + " (Version: " + ((version != "") ? version : "unknown") + ").");
   	/* #endregion */
 
   /* #region Create Memory Watchers */
@@ -496,6 +492,39 @@ init{ // When the game is launched
       foreach(var item2 in item.Value){
         vars.Watchers.Add(new MemoryWatcher<int>(new DeepPointer(CollectibleBase, item2.Value[0])){Name = item.Key + item2.Key});}}
     /* #endregion */
+
+  Func<string, bool> TrySplit = (id) => 
+  {
+    vars.DebugPrint("Trying to split for '" + id + "'...");
+    if(!settings[id])
+    {
+      vars.DebugPrint("Setting '" + id + "' is disabled.");
+      return false;
+    }
+
+    if(!settings["DSP"])
+    {
+      vars.DebugPrint("'Double Split Prevention' is disabled, splitting for '" + id +"'");
+      return true;
+    }
+    else
+    {
+      vars.DebugPrint("'Double Split Prevntion' is enabled...");
+      if(!vars.HasSplit.Contains(id))
+      {
+        vars.DebugPrint("Adding '" + id + "' to the 'HasSplit' list");
+        vars.HasSplit.Add(id);
+        vars.DebugPrint("Successfully split for '" + id + "'");
+        return true;
+      }
+      vars.DebugPrint("'" + id + "' has split before, skipping split.");
+      return false;
+    }
+    return false;
+  };
+  vars.TrySplit = TrySplit;
+
+  vars.GameTimeSet = false;
 }
 
 update{ // Top priority & runs a lot
@@ -507,26 +536,29 @@ start // Automatic Timer Starting
   if(current.Loading)
   {
     if(settings["StNG"] && current.Area == "cine_plane_crash")
+    {
+      vars.DebugPrint("Started timer at 'New Game' (Timer started at 00:00 IGT).");
       return true;
+    }
     if(settings["StCo"] && current.Area == "dd_day_of_the_dead_010")
+    {
+      vars.DebugPrint("Started timer at 'dd_day_of_the_dead_010' (Timer started at 05:20).");
       return true;
+    }
   }
 }
 
 gameTime // For setting the Game Timer
 {
-  if(current.Loading)
+  if(current.Loading && settings["StCo"] && current.Area == "dd_day_of_the_dead_010" && !vars.GameTimeSet)
   {
-    if(settings["StNG"] && current.Area == "cine_plane_crash")
-      return TimeSpan.FromSeconds(0); // 00:00
-    if(settings["StCo"] && current.Area == "dd_day_of_the_dead_010")
-      return TimeSpan.FromSeconds(320); // 05:20 (5 * 60 + 20)
+    vars.GameTimeSet = true;
+    return TimeSpan.FromSeconds(320); // 05:20 (5 * 60 + 20)
   }
 }
-
 isLoading{
-  if(settings["Cutscenes"] && current.Cutscene != old.Cutscene)
-    print("Entered Cutscene, id: " + current.Cutscene.ToString());
+  if(current.Cutscene != old.Cutscene && current.Cutscene != 0)
+    vars.DebugPrint("Entered Cutscene, id: " + current.Cutscene.ToString() + " at: " + current.Area);
 
   if(current.Cutscene != 0 && (
     !(current.Cutscene == 3221496410 && current.Area == "dd_day_of_the_dead_050") && // Cutscene after leaving the temple tomb
@@ -536,80 +568,64 @@ isLoading{
     ))
       return true;
   
+  if(current.Loading != old.Loading)
+    vars.DebugPrint("The game is " + ((!current.Loading) ? "finished loading." : "now loading."));
+
   return current.Loading;
 }
 
 reset{
 	if(current.Area != old.Area && current.Area == "trx_main_menu" && settings["Res"])
+  {
+    vars.DebugPrint("Reset at Main Menu.");
     return true;
+  }
 }
 
 exit{
     timer.IsGameTimePaused = true;
 }
 
-split{
-  /* === Area Splitting ===
-  */
-  foreach(var item in vars.Splits){ // for every list in the Splits list
-    if(current.Area != old.Area) // Check if the Area has changed
-      if(current.Area == item[0]) // Check if it is equal to the 1st string in the current list
-        if(settings[item[0]]) // Check if the corresponding setting is active
-          if(settings["DSP"]){ // If the "Double Split Prevention" setting is activated
-            if(vars.HasSplit.Count == 0){ // Check if the "HasSplit" list is empty
-              vars.HasSplit.Add(item[0]); // Add the current split to the "HasSplit" list
-              return true; // Split
-            }
-            else{ // If the list is not empty (every time except the 1st)
-              foreach(var item2 in vars.HasSplit){ // For every string in "HasSplit"
-                if(item2 == item[0]) // Check if it is in the "HasSplit" list
-                  return false; // Don't split & restart the loop
-              }
-              // This v runs if the foreach loop didn't return false //
-              vars.HasSplit.Add(item[0]); //Add the current split to the list
-              return true; // Split
-            }
-          }
-          else{ // If "Double Split Prevention" is NOT activated
-            return true; // Just split
-          }
-        }
+split
+{
+  /* #region Area Splits */
+  foreach(var item in vars.Splits)
+  {
+    if(current.Area != old.Area && current.Area == item[0] && settings[item[0]] && vars.TrySplit(item[0])) // Check if the Area has changed &  Check if it is equal to the 1st string in the current list & Check if the corresponding setting is active
+      return true;
+  }
+  /* #endregion */
 
-  /* === End Split ===
-  */
-  if(current.Area == "ch_chamber_of_heaven" && current.Cutscene == 4048785033)
-    if(settings["End"]) // If the setting to split at the end is active
-      if(settings["DSP"]){ // If Double Split Prevention is active
-        if(vars.HasSplit.Count == 0){ // Check if the "HasSplit" list is empty
-          vars.HasSplit.Add("end"); // Add end to the "HasSplit" list
-          return true;  // Split
-        }
-        else{
-          foreach(var item in vars.HasSplit){ // For every string in HasSplit
-            if(item == "end") // Check if "end" is in the list
-              return false; // Don't split and start the loop again
-          }
-          vars.HasSplit.Add("end"); // Add "end" to the list to prevent it splitting again
-          return true; // Split
-        }
-      }
-      else{
-        return true;
-      }
+  /* #region Amaru Death Split */
+  if(current.Area == "ch_chamber_of_heaven" && (current.Cutscene != old.Cutscene) && current.Cutscene == 4048785033 && settings["End"])
+  {
+    vars.DebugPrint("Split at End Cutscene, id: " + current.Cutscene.ToString() + " at: " + current.Area);
+    return true;
+  }
+  /* #endregion */
+    
 
-  /* === Collectible Splitting === */
-  foreach(var item in vars.Collectibles){
-    foreach(var item2 in item.Value){
+  /* #region Collectible Splits */
+  foreach(var item in vars.Collectibles)
+  {
+    foreach(var item2 in item.Value)
+    {
       var V = vars.Watchers[item.Key + item2.Key];
-      if(V.Current != V.Old){
+      if(V.Current != V.Old)
+      {
         if(settings[item.Key + item2.Key + "All"])
-          if(V.Current == item2.Value[1]){
+          if(V.Current == item2.Value[1])
+          {
+            vars.DebugPrint("Collected all collectibles of type '" + item2.Key + "' in '" + item.Key + "'");
             return true;
           }
           else
             return false;
         if(settings[item.Key + item2.Key + "Each"])
+        {
+          vars.DebugPrint("Collected collectible of type '" + item2.Key + "' in '" + item.Key + "'");
           return true;
+        }
       }
     }
   }
