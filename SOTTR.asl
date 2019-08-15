@@ -564,7 +564,9 @@ isLoading{
     !(current.Cutscene == 3221496410 && current.Area == "dd_day_of_the_dead_050") && // Cutscene after leaving the temple tomb
     !(current.Cutscene == 894107814 && current.Area == "cm_croft_manor") && // At the top of croft manor
     !(current.Cutscene == 969044434 && current.Area == "lj_lost_in_the_jungle_v2_02") && // After standing up from camp (Broken the first time, works after a reload)
-    !(current.Cutscene == 3528814387 && current.Area == "lj_lost_in_the_jungle_v2_connector_out") // Crawling under the truck
+    !(current.Cutscene == 3528814387 && current.Area == "lj_lost_in_the_jungle_v2_connector_out") && // Crawling under the truck
+    !(current.Cutscene == 1233757502 && current.Area == "pa_hub_paititi") && // Another broken cutscene
+    !(current.Cutscene == 1233757502 && current.Area == "sp_sacrificial_pit") // (^) persists throughout this whole segment
     ))
       return true;
   
