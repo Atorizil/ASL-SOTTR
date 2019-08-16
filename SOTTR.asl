@@ -47,47 +47,49 @@ state("SOTTR", "247.0")
   uint Cutscene : 0x036671B0, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x357F0A8;
 }
-state("SOTTR", "243.0")//
+state("SOTTR", "243.0")
 {
   bool Loading : 0x3557F10;
   uint Cutscene : 0x03661060, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x3578F78;
 }
-state("SOTTR", "241.0")//
+state("SOTTR", "241.0")
 {
   bool Loading : 0x3551A90;
   bool Cutscene : 0x0365ABD0, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x3572AF8;
 }
-state("SOTTR", "237.6")//
+state("SOTTR", "237.6")
 {
-
+  bool Loading : 0x3550A90;
+  uint Cutscene : 0x03659BD0, 0x0, 0x120, 0x10, 0x1D4;
+  string50 Area : 0x3571AF8;
 }
-state("SOTTR", "236.1")//
+state("SOTTR", "236.1")
 {
   bool Loading : 0x3506150;
   uint Cutscene : 0x0360F150, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x35271A8;
 }
-state("SOTTR", "235.3")//
+state("SOTTR", "235.3")
 {
-  bool Loading : 0x13E18E0;
-  bool Cutscene : 0x141C9F0;
+  bool Loading : 0x3506140;
+  uint Cutscene : 0x0360F130, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x3527198;
 }
-state("SOTTR", "234.1")//
+state("SOTTR", "234.1")
 {
 	bool Loading : 0x35050C0;
 	uint Cutscene : 0x0360E0D0, 0x0, 0x120, 0x10, 0x1D4;
 	string50 Area : 0x35260F8;
 }
-state("SOTTR", "230.9")//
+state("SOTTR", "230.9")
 {
   bool Loading : 0x3503040;
   uint Cutscene : 0x0360C060, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x3524088;
 }
-state("SOTTR", "230.8")//
+state("SOTTR", "230.8")
 {
   bool Loading : 0x3500F70;
   uint Cutscene : 0x03609F80, 0x0, 0x120, 0x10, 0x1D4;
@@ -466,6 +468,10 @@ init{ // When the game is launched
       case 317931520:
         version = "241.0";
         CollectibleBase = 0x36541E0;
+        break;
+      case 316542976:
+        version = "237.6";
+        CollectibleBase = 0x36531E0;
         break;
       case 316497920:
         version = "236.1";
