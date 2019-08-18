@@ -589,6 +589,7 @@ isLoading{
     !(current.Cutscene == 3528814387 && current.Area == "lj_lost_in_the_jungle_v2_connector_out") && // Crawling under the truck
     !(current.Cutscene == 1233757502 && current.Area == "pa_hub_paititi") && // Another broken cutscene
     !(current.Cutscene == 1233757502 && current.Area == "sp_sacrificial_pit") && // (^) persists throughout this whole segment
+    !(current.Cutscene == 1233757502 && current.Area == "dm_devils_maw") &&
     !(current.Cutscene == 1692137511 && current.Area == "sm_spanish_mission_village") // another broken cutscene
     ))
       return true;
