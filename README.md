@@ -56,7 +56,7 @@ Just a reference for when this needs updating
 
 **Loading** = Search for `1064680971` when Loading, 0 when not in `"SOTTR.exe"`
 
-**Cutscene** = Search for `1285745313` in `1st Cozumel Cutscene (Slow walk talking with Jonah before gate)` and `2018288263` in `First cutscene in the save provided on sr.com` 
+**Cutscene** = Search for `1285745313` in `1st Cozumel Cutscene (Slow walk talking with Jonah before gate)` and `2018288263` in `First cutscene in the save provided on sr.com`. It should be one of the bottom addresses. 
 
 **Area** = Load 1st save, search `dd_day_of_the_dead_010`, bottom address
 #### Collectible Base
