@@ -1,4 +1,16 @@
 /* #region State Descriptors */
+state("SOTTR", "298.0")
+{
+  bool Loading : 0x358ACC0;
+  uint Cutscene : 0x03693F10, 0x68, 0x2C0, 0xA8, 0x22C;
+  string50 Area : 0x35ABD28;
+}
+state("SOTTR", "296.0")
+{
+  bool Loading : 0x358ACC0;
+  uint Cutscene : 0x03693F10, 0x68, 0x2C0, 0xA8, 0x22C;
+  string50 Area : 0x35ABD28;
+}
 state("SOTTR", "294.0")
 {
   bool Loading : 0x35885C0;
@@ -429,6 +441,14 @@ init{ // When the game is launched
     int CollectibleBase = 0; // Depending on the version this will be changed to the correct address
   	switch(modules.First().ModuleMemorySize)
     {
+      case 310468608:
+        version = "298.0";
+        CollectibleBase = 0x368D4B0;
+        break;
+      case 308834304:
+        version = "296.0";
+        CollectibleBase = 0x368D4B0;
+        break;
       case 314028032:
         version = "294.0";
         CollectibleBase = 0x368AD90;

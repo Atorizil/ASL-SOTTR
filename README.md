@@ -1,6 +1,6 @@
 # Shadow of the Tomb Raider Load Removal and Auto Splitting
 
-## 294.0
+## 298.0
 
 Auto spliiting, starting, stopping and Load Removal for Shadow of the Tomb Raider
 
@@ -56,7 +56,7 @@ Just a reference for when this needs updating
 
 **Loading** = Search for `1064680971` when Loading, 0 when not in `"SOTTR.exe"`
 
-**Cutscene** = Search for `1285745313` in `1st Cozumel Cutscene`
+**Cutscene** = Search for `1285745313` in `1st Cozumel Cutscene (Slow walk talking with Jonah before gate)` and `2018288263` in `First cutscene in the save provided on sr.com` 
 
 **Area** = Load 1st save, search `dd_day_of_the_dead_010`, bottom address
 #### Collectible Base
