@@ -1,6 +1,6 @@
 # Shadow of the Tomb Raider Load Removal and Auto Splitting
 
-## 458.0
+## Steam up to v458.0 | Epic Games v458.0 only
 
 Auto spliiting, starting, stopping and Load Removal for Shadow of the Tomb Raider
 
@@ -52,14 +52,44 @@ Choosing both will cause it to split twice once all collectibles of the given ty
  - This is due to them not being near the other collectibles in Memory
 
 # Finding Addresses
-Just a reference for when this needs updating
 
-**Loading** = Search for `1064680971` when Loading, 0 when not in `"SOTTR.exe"`
+Use [Cheat Engine]()
 
-**Cutscene** = Search for `1285745313` in `1st Cozumel Cutscene (Slow walk talking with Jonah before gate)` and `2018288263` in `First cutscene in the save provided on sr.com`. It should be one of the bottom addresses. 
+## Loading
+ - **Value type:** `4 Bytes`
+ - **Module:** `SOTTR.exe`
 
-**Area** = Load 1st save, search `dd_day_of_the_dead_010`, bottom address
-#### Collectible Base
+1. Enter a loading screen
+   - First scan for `1064680971`
+2. Wait for the loading screen to exit
+   - Next scan for `0`
+
+## Cutscene
+ - **Value type:** `4 Bytes`
+ - **Module:** `All`
+
+Using the save from [speedrun.com]()
+
+1. Do a `Array of Byte` scan for `41 89 76 04 4C 8B B4 24 C8 00 00 00 48 81 C4 D8 00 00 00` 
+   - Using the `All Memory` preset in `Scan Options`
+2. Disassemble the memory region of the found address
+3. Find out what addresses this instruction accesses
+   - Choose the one that is `2018288263` in the first cutscene (After jumping the wall)
+4. Pointer scan for the address with a max level of `3`
+   - Correct pointer is `0x0, 0xB78, 0x574`
+
+## Area
+ - **Value type:** `String`
+ - **Module:** `SOTTR.exe`
+
+Using the save from [speedrun.com]()
+
+1. Load the save
+   - First scan for `dd_day_of_the_dead_010`
+   - Use the **bottom address**
+
+
+## Collectible Base
  1. Find `Survival Cache` address in `Paititi`
  2. Find out what `writes to` the address
     - Get another of the same Collectible
