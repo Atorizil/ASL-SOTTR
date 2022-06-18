@@ -1,126 +1,130 @@
-/* #region State Descriptors */
-state("SOTTR", "458.0")
+state("SOTTR", "[Epic Games] 458.0")
+{
+  bool Loading : 0x33F6BD0;
+  uint Cutscene : 0x34FFF08, 0x0, 0xB78, 0x574;
+  string50 Area : 0x3417C38;
+}
+
+state("SOTTR", "[Steam] 458.0")
 {
   bool Loading : 0x35A4CD0;
   uint Cutscene : 0x036AE138, 0x0, 0xB78, 0x574;
   string50 Area : 0x35A9218;
 }
-state("SOTTR", "298.0")
+state("SOTTR", "[Steam] 298.0")
 {
   bool Loading : 0x358ACC0;
   uint Cutscene : 0x03693F10, 0x68, 0x2C0, 0xA8, 0x22C;
   string50 Area : 0x35ABD28;
 }
-state("SOTTR", "296.0")
+state("SOTTR", "[Steam] 296.0")
 {
   bool Loading : 0x358ACC0;
   uint Cutscene : 0x03693F10, 0x68, 0x2C0, 0xA8, 0x22C;
   string50 Area : 0x35ABD28;
 }
-state("SOTTR", "294.0")
+state("SOTTR", "[Steam] 294.0")
 {
   bool Loading : 0x35885C0;
   uint Cutscene : 0x03691808, 0x0, 0x330, 0x40, 0x294;
   string50 Area : 0x35A9628;
 }
-state("SOTTR", "292.0")
+state("SOTTR", "[Steam] 292.0")
 {
   bool Loading : 0x35885C0;
   uint Cutscene : 0x03691808, 0x0, 0x330, 0x40, 0x294;
   string50 Area : 0x35A9628;
 }
-state("SOTTR", "286.0")
+state("SOTTR", "[Steam] 286.0")
 {
   bool Loading : 0x3587640;
   uint Cutscene : 0x03690880, 0x68, 0x688, 0x90, 0x10, 0x294;
   string50 Area : 0x35A86A8;
 }
-state("SOTTR", "280.0")
+state("SOTTR", "[Steam] 280.0")
 {
   bool Loading : 0x358D8C0;
   uint Cutscene : 0x03696B08, 0x0, 0x628, 0x40, 0x484;
   string50 Area : 0x35AE928;
 }
-state("SOTTR", "279.0")
+state("SOTTR", "[Steam] 279.0")
 {
   bool Loading : 0x3586540;
   uint Cutscene : 0x0368F700, 0x0, 0x120, 0x10, 0x334;
   string50 Area : 0x35A75A8;
 }
-state("SOTTR", "270.0")
+state("SOTTR", "[Steam] 270.0")
 {
   bool Loading : 0x357D2C0;
   uint Cutscene : 0x036864B8, 0x0, 0x628, 0x40, 0x3F4;
   string50 Area : 0x359E328;
 }
-state("SOTTR", "260.0")
+state("SOTTR", "[Steam] 260.0")
 {
   bool Loading : 0x3579240;
   uint Cutscene : 0x03682438, 0x0, 0x458, 0x8, 0x130, 0x144;
   string50 Area : 0x359A2A8;
 }
-state("SOTTR", "247.0")
+state("SOTTR", "[Steam] 247.0")
 {
   bool Loading : 0x355E050;
   uint Cutscene : 0x036671B0, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x357F0A8;
 }
-state("SOTTR", "243.0")
+state("SOTTR", "[Steam] 243.0")
 {
   bool Loading : 0x3557F10;
   uint Cutscene : 0x03661060, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x3578F78;
 }
-state("SOTTR", "241.0")
+state("SOTTR", "[Steam] 241.0")
 {
   bool Loading : 0x3551A90;
   bool Cutscene : 0x0365ABD0, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x3572AF8;
 }
-state("SOTTR", "237.6")
+state("SOTTR", "[Steam] 237.6")
 {
   bool Loading : 0x3550A90;
   uint Cutscene : 0x03659BD0, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x3571AF8;
 }
-state("SOTTR", "236.1")
+state("SOTTR", "[Steam] 236.1")
 {
   bool Loading : 0x3506150;
   uint Cutscene : 0x0360F150, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x35271A8;
 }
-state("SOTTR", "235.3")
+state("SOTTR", "[Steam] 235.3")
 {
   bool Loading : 0x3506140;
   uint Cutscene : 0x0360F130, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x3527198;
 }
-state("SOTTR", "234.1")
+state("SOTTR", "[Steam] 234.1")
 {
 	bool Loading : 0x35050C0;
 	uint Cutscene : 0x0360E0D0, 0x0, 0x120, 0x10, 0x1D4;
 	string50 Area : 0x35260F8;
 }
-state("SOTTR", "230.9")
+state("SOTTR", "[Steam] 230.9")
 {
   bool Loading : 0x3503040;
   uint Cutscene : 0x0360C060, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x3524088;
 }
-state("SOTTR", "230.8")
+state("SOTTR", "[Steam] 230.8")
 {
   bool Loading : 0x3500F70;
   uint Cutscene : 0x03609F80, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x3521FB8;
 }
-state("SOTTR", "224.2") // First Release
+state("SOTTR", "[Steam] 224.2") // First Release
 {
   bool Loading : 0x34F7270;
   uint Cutscene : 0x03600250, 0x0, 0x120, 0x10, 0x1D4;
   string50 Area : 0x35182A8;
 }
-
-/* #endregion */
 
 startup{ // When the script first runs
   /* #region Area Splits List */
@@ -447,80 +451,84 @@ init{ // When the game is launched
     int CollectibleBase = 0; // Depending on the version this will be changed to the correct address
   	switch(modules.First().ModuleMemorySize)
     {
+      case 72753152:
+        version = "[Epic Games] 458.0";
+        CollectibleBase = 0x34F95F0;
+        break;
       case 73621504:
-        version = "458.0";
+        version = "[Steam] 458.0";
         CollectibleBase = 0x36A7720;
         break;
       case 308834304:
-        version = "296.0";
+        version = "[Steam] 296.0";
         CollectibleBase = 0x368D4B0;
         break;
       case 314028032:
-        version = "294.0";
+        version = "[Steam] 294.0";
         CollectibleBase = 0x368AD90;
         break;
       case 313888768:
-        version = "292.0";
+        version = "[Steam] 292.0";
         CollectibleBase = 0x368AD90;
         break;
       case 306704384:
-        version = "286.0";
+        version = "[Steam] 286.0";
         CollectibleBase = 0x3689E20;
         break;
       case 312975360:
-        version = "280.0";
+        version = "[Steam] 280.0";
         CollectibleBase = 0x36900A0;
         break;
       case 311033856:
-        version = "279.0";
+        version = "[Steam] 279.0";
         CollectibleBase = 0x3688D20;
         break;
       case 308297728:
-        version = "270.0";
+        version = "[Steam] 270.0";
         CollectibleBase = 0x367FA50;
         break;
       case 313040896:
-        version = "260.0";
+        version = "[Steam] 260.0";
         CollectibleBase = 0x367B9C8;
         break;
       case 312098816:
-        version = "247.0";
+        version = "[Steam] 247.0";
         CollectibleBase = 0x36607A8;
         break;
       case 314839040:
-        version = "243.0";
+        version = "[Steam] 243.0";
         CollectibleBase = 0x365A758;
         break;
       case 317931520:
-        version = "241.0";
+        version = "[Steam] 241.0";
         CollectibleBase = 0x36541E0;
         break;
       case 316542976:
-        version = "237.6";
+        version = "[Steam] 237.6";
         CollectibleBase = 0x36531E0;
         break;
       case 316497920:
-        version = "236.1";
+        version = "[Steam] 236.1";
         CollectibleBase = 0x3608758;
         break;
       case 314748928:
-        version = "235.3";
+        version = "[Steam] 235.3";
         CollectibleBase = 0x3608730;
         break;
   		case 310804480:
-  			version = "234.1";
+  			version = "[Steam] 234.1";
         CollectibleBase = 0x36076E0;
   			break;
       case 311508992:
-        version = "230.9";
+        version = "[Steam] 230.9";
         CollectibleBase = 0x3605660;
         break;
       case 313163776:
-        version = "230.8";
+        version = "[Steam] 230.8";
         CollectibleBase = 0x3603688;
         break;
       case 315301888:
-        version = "224.2";
+        version = "[Steam] 224.2";
         CollectibleBase = 0x35F9948;
         break;
       }
