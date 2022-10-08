@@ -459,6 +459,10 @@ init{ // When the game is launched
         version = "[Steam] 458.0";
         CollectibleBase = 0x36A7720;
         break;
+      case 310468608:
+        version = "[Steam] 298.0";
+        CollectibleBase = 0x368D4B0;
+        break;
       case 308834304:
         version = "[Steam] 296.0";
         CollectibleBase = 0x368D4B0;
