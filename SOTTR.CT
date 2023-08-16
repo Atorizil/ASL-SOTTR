@@ -2455,6 +2455,51 @@
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
+        <CheatEntry>
+          <ID>661</ID>
+          <Description>"492.0"</Description>
+          <Options moHideChildren="1"/>
+          <Color>FF8000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>662</ID>
+              <Description>"Loading"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>SOTTR.exe+33FAC40</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>664</ID>
+              <Description>"Cutscene"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"SOTTR.exe"+03503F78</Address>
+              <Offsets>
+                <Offset>574</Offset>
+                <Offset>B78</Offset>
+                <Offset>0</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>665</ID>
+              <Description>"Area"</Description>
+              <VariableType>String</VariableType>
+              <Length>22</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>SOTTR.exe+341BCA8</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>669</ID>
+              <Description>"Collectible Base"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"SOTTR.exe"+034FD660</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
