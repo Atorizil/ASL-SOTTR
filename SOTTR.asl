@@ -1,3 +1,10 @@
+state("SOTTR", "[Steam] 492.0") 
+{
+  bool Loading : 0x35A8CD0;
+  uint Cutscene : 0x036B2118, 0x0, 0xB78, 0x574;
+  string50 Area : 0x35C9D38
+}
+
 state("SOTTR", "[Epic Games] 458.0")
 {
   bool Loading : 0x33F6BD0;
@@ -454,6 +461,10 @@ init{ // When the game is launched
       case 72753152:
         version = "[Epic Games] 458.0";
         CollectibleBase = 0x34F95F0;
+        break;
+      case 73662464:
+        version = "[Steam] 492.0";
+        CollectibleBase = 0x036AB728;
         break;
       case 73621504:
         version = "[Steam] 458.0";
