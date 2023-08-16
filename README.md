@@ -1,12 +1,12 @@
 # Shadow of the Tomb Raider Load Removal and Auto Splitting
 
-## Steam up to v458.0 | Epic Games v458.0 only
+## Steam & Epic Games 492.0
 
-Auto spliiting, starting, stopping and Load Removal for Shadow of the Tomb Raider
+Auto splitting, starting, stopping and Load Removal for Shadow of the Tomb Raider
 
 ## Use
 
-This script can be used in Livesplit by activating it in the split editor once you have chosen `Shadow of the Tomb Raider` as a game
+This script can be used in LiveSplit by activating it in the split editor once you have chosen `Shadow of the Tomb Raider` as a game
 
 ### Manual use
 1. In **LiveSplit**, **Right Click** anywhere and click **Edit Layout**
@@ -37,12 +37,12 @@ The setting names in the script are the actual names of the areas used in the ga
 The script isn't linear so you can use these splits to split in any order you want.
 
 ### Double Split Prevention
-This is recommended because you revisit multiple areas numeorus times and if this option is not selected it will split again when you reach these areas.
+This is recommended because you revisit multiple areas numerous times and if this option is not selected it will split again when you reach these areas.
 
 You can disable this option but just make sure your route and splits will work with it.
 
-### 100% Autosplitting
-This script allows you to Autosplit for each collectible in every area of the game. There are two options for each collectible, **All** or **Each**.
+### 100% Auto Splitting
+This script allows you to auto split for each collectible in every area of the game. There are two options for each collectible, **All** or **Each**.
  - **Each** will split for every collectible you pick up
  - **All** will split when you collect all of the given type of collectible in the given area
  
@@ -53,7 +53,7 @@ Choosing both will cause it to split twice once all collectibles of the given ty
 
 # Finding Addresses
 
-Use [Cheat Engine]()
+Use [Cheat Engine](https://www.cheatengine.org/)
 
 ## Loading
  - **Value type:** `4 Bytes`
@@ -68,7 +68,7 @@ Use [Cheat Engine]()
  - **Value type:** `4 Bytes`
  - **Module:** `All`
 
-Using the save from [speedrun.com]()
+Using the save from [speedrun.com](https://www.speedrun.com/sottr/resources/k0bga)
 
 1. Do a `Array of Byte` scan for `41 89 76 04 4C 8B B4 24 C8 00 00 00 48 81 C4 D8 00 00 00` 
    - Using the `All Memory` preset in `Scan Options`
@@ -82,7 +82,7 @@ Using the save from [speedrun.com]()
  - **Value type:** `String`
  - **Module:** `SOTTR.exe`
 
-Using the save from [speedrun.com]()
+Using the save from [speedrun.com](https://www.speedrun.com/sottr/resources/k0bga)
 
 1. Load the save
    - First scan for `dd_day_of_the_dead_010`
